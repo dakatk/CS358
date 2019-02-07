@@ -1,0 +1,44 @@
+RADIOSONDE OBSERVATION   Date: 20/05/2009  Time: 20:23 GMT   Ref No. : 002_001
+LOCATION: OCT - 3 42.062N 102.809W
+
+  Surface Observations                 Sonde Details
+------------------------             ------------------------
+PRESSURE       :  875.0 mb             
+HEIGHT         : 1159.4 Meter          
+TEMPERATURE    :   30.4 Deg            SONDE TYPE : IMET1 AA
+HUMIDITY       :    0.0 %              SONDE No.  : s7097
+WIND DIR.      :    0.0 Deg
+WIND VEL.      :    0.0 Knot
+CLOUD CODE     :  /////
+STATION No.    :  99999
+STATION NAME   :   KVUW
+
+
+	            DATA FOR STANDARD LEVELS
+  PRES.     TIME     HGT/MSL  TEMP.   RH     DEWP   W.D    W.S 
+   mb     HH:MM:SS   Meter     °C      %      °C    Deg.  Knots
+---------------------------------------------------------------
+   875    00:00:00   1159      30.4    0    -31.5     0     0
+   850    00:00:42   1417      24.4   30      5.7    28    12
+   700    00:05:10   3073       9.1   57      1.0   307    13
+   500    00:13:01   5748     -12.5   53    -20.1   276    38
+   400    00:19:22   7417     -23.8   46    -32.1   276    42
+   300    00:27:04   9448     -39.1   15    -55.5   261    46
+   250    00:31:44  10668     -49.6    9    -68.2   266    51
+   200    00:37:00  12098     -59.0   10    -75.0   279    59
+   150    00:43:05  13875     -58.5   10    -74.8   259    13
+   100    00:51:08  16371     -62.6    7    -80.0   270    16
+
+ INVERSION
+
+ FREEZING LEVEL
+ 615.6    00:07:47   4117       0.0   69     -5.0   282    17
+
+ TROPOPAUSE
+ 169.3    00:40:46  13126     -66.0   12    -80.1   267    48
+
+ MAX WIND
+ 204.7    00:36:25  11949     -58.2   10    -74.5   279    61
+
+ LAST LEVEL
+  85.7    00:54:19  17310     -65.0    7    -82.2   267    19

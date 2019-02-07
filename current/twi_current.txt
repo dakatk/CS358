@@ -1,0 +1,8 @@
+Updated: 2/8/16 9:26:02
+Temperature: 32.0°F
+Wind Chill: 27°F
+Dew Point: 30°F
+Humidity: 95%
+Wind: SSW @ 5.4 mph
+Pressure: 1004.17409759 mb ▲
+Solar: 37.0 K

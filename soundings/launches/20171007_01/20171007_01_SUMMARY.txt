@@ -1,0 +1,48 @@
+SUMMARY INFORMATION FOR SOUNDING "20171007_01"
+=============================================
+
+Station Name             : KVUM
+.       WMO Number       : /////
+.       ICAO Number      : /////
+.       Mobile Call Sign : /////
+.       Latitude         : 41.46421°N
+.       Longitude        : 087.03859°W
+.       Altitude (MSL)   : 230m
+
+Sonde   Type             : iMet-1-ABx
+.       Serial Number    : 19312
+
+Surface Pressure         : 972.9hPa
+.       Temperature      : +27.2°C
+.       Humidity         : 63%
+.       Wind Speed       : 22.0kts
+.       Wind Direction   : 190.0°
+.       Cloud Code       : /////
+
+Launched (UTC)           : 10/7/2017 18:15:14
+
+--------------------------------------------------------------------------------
+
+Operator                 : David Goines
+
+Balloon             Make : Unknown
+.                 Weight : 200
+.                    Age : 
+
+Data    Minimum Pressure : 153.4hPa
+.       Maximum Altitude : 13593m
+.            Ascent Rate : 184m/min
+.    Maximum Temperature : +27.2°C
+.    Minimum Temperature : -61.8°C
+.    Maximum Humidity    : 100%
+.    Minimum Humdity     : 12%
+.    Maximum Slant Range : 152.782km
+.      Final Slant Range : 152.782km
+.        Final Elevation : 5.1°
+
+Termination (UTC)        : 10/7/2017 19:38:11
+.                 Source : Automatic
+.                 Reason : Excessive missing data frames
+.        Ascent Duration : 1 hours 13 minutes 46 seconds
+
+--------------------------------------------------------------------------------

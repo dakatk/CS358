@@ -1,0 +1,4 @@
+DirectoryIndex index.php
+Options +FollowSymLinks
+RewriteEngine on
+RewriteRule ^(.*)/(.*)/(.*)$ index.php?a=$1&b=$2&c=$3 [L]

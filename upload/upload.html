@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>File Upload Form</title>
+</head>
+<body>
+This form allows you to upload a file to the server.<br>
+
+<form name="sounding" action="getfile.php" method="post" enctype="multipart/form-data"><br>
+Type (or select) Filename: <input type="file" name="uploadFile[]" multiple>
+<input type="submit" value="Upload Files">
+</form>
+
+<form name="flightpath" action="getfile.php" method="post" enctype="multipart/form-data"><br>
+Type the flight number (e.g., 101_001) <input type="text" name="launchnum"><br>
+Type HTML code for googleEarth flight path: <input type="textarea" rows=5 name="flightpath" wrap="virtual"><br>
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

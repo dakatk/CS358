@@ -1,0 +1,448 @@
+<html>
+<head>
+<title>TWI Weather Server</title>
+<link href="http://fujita.valpo.edu/~dgoines/mchp.css" rel="stylesheet" type="text/css" />
+<script src="http://fujita.valpo.edu/~dgoines/mchp.js" type="text/javascript"></script>
+<script src="http://fujita.valpo.edu/~dgoines/eds.js" type="text/javascript"></script>
+
+<style type="text/css">
+</style>
+
+
+
+</head>
+
+<body onLoad="allowAJAX=true; putTitleData();" onUnload="allowAJAX=false;">
+<div id="shadow-one"><div id="shadow-two"><div id="shadow-three"><div id="shadow-four">
+<div id="page">
+
+<div id="heading">
+	<table>
+		<tr>
+			<td style="padding:5px 5px 5px 5px"><a href="HTTP://txwx.com"><img src="http://fujita.valpo.edu/~dgoines/twilogo.gif" /></a></td>
+			<td id="tName" width="100%" style="padding:5px 5px 5px 5px; font-size:36px; color:rgb(255,255,255); text-align:center;"></td>
+		</tr>
+	</table>
+			
+</div>
+
+<div>
+	<table border="0" id="title">
+		<tr>
+			<td width="60%" align="left"><a id="xLink" href="HTTP://txwx.com/web">TWI Weather Station and Web Server</a></td>
+			<td width="40%" align="right"><a id="tLink" href="HTTP://txwx.com">LINK</a></td>
+		</tr>
+	</table>
+</div>
+
+<div id="menu">
+<a href="/index.htm">Current Conditions</a>
+<a href="/twidata.txt">TWI Data Text</a>
+<a href="/protect/cintro.htm">Configuration</a>
+</div>
+
+<script type="text/javascript">
+
+function getCookie(c_name)
+{
+if (document.cookie.length>0)
+  {
+  c_start=document.cookie.indexOf(c_name + "=");
+  if (c_start!=-1)
+    { 
+    c_start=c_start + c_name.length+1; 
+    c_end=document.cookie.indexOf(";",c_start);
+    if (c_end==-1) c_end=document.cookie.length;
+		CurrentUnits = unescape(document.cookie.substring(c_start,c_end))
+    return CurrentUnits;
+    } 
+  }
+return "";
+}
+
+function setCookie(c_name,value,expiredays) {
+	CurrentUnits = value;
+	var exdate=new Date();
+	exdate.setDate(exdate.getDate()+expiredays);
+	document.cookie=c_name + "=" + escape(value)+(";expires="+exdate.toGMTString());
+	//document.cookie=c_name + "=" + escape(value)+((expiredays==null) ? "" : ";expires="+exdate.toGMTString());
+}
+
+function checkCookie()
+{
+	var Units=getCookie('units');
+	if (Units!='English' && Units!='Metric') {
+		Units = 'English';
+		setCookie('units', Units, 365);
+	}
+
+		alert('Units: '+Units);
+
+  //username=prompt('Please enter your name:',"");
+  //if (username!=null && username!="")
+  //  {
+  //  setCookie('units',English,365);
+  //  }
+}
+
+function setCookieMetric() {
+	setCookie('units', 'Metric', 365);
+}
+
+function setCookieEnglish() {
+	setCookie('units', 'English', 365);
+}
+
+</script>
+
+
+<div id="content">
+
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%" CLASS="module" >
+	<TR>
+		<TD ALIGN="center" style="color: rgb(102,102,102);"><H2 CLASS="moduleTitleBar"><B>Current Conditions</BR>
+		</TD>
+	</TR>
+	<TR>
+		<TD VALIGN="TOP" colspan="2">
+			<TABLE WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0"  CLASS="Basic2">
+				<TR>
+					<TD VALIGN="TOP" CLASS="vbgE" STYLE="padding: 10px 10px 0px 10px; BACKGROUND-COLOR: #e8eefa;" COLSPAN="2">
+						<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH="100%">
+							<TR>
+								<TD WIDTH="30%" VALIGN="TOP">
+									<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH="100%" CLASS="Basic2"  HEIGHT="80"  >
+										<TR>
+											<TD WIDTH="50%" VALIGN=MIDDLE ALIGN=CENTER>
+												<DIV STYLE="padding: 10px 0px 3px 5px;"><B CLASS=obsTempTextA id="devODTemp">?</B><BR>
+													<B CLASS=obsTextA id="devHum2">?</B>
+												</DIV>
+											</TD>
+										</TR>
+									</TABLE>
+									<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH="100%">
+										<TR>
+											<TD VALIGN="MIDDLE" ALIGN="LEFT" STYLE="font-family:arial,verdana;font-size:10px;color:#0B2C58;padding:0px 0px 5px 0px;" id="devDateTime">?</TD>
+										</TR>
+										<TR>
+											<td id="tempConverter" valign=middle align=left style="padding: 20px 0px 0px; font-size: 10px;">
+												<script language="JavaScript1.2">
+													if (getCookie('units') != 'Metric') {
+														document.write('[ English | <a href="javascript:setCookieMetric();window.location.reload(forceGet=false);");>Metric</a> ]');
+													}else{
+														document.write('[ <a href="javascript:setCookieEnglish();window.location.reload(forceGet=false);");>English</a> | Metric ]');
+													}
+												</script>
+											</td>
+										</TR>
+									</TABLE>
+								</TD>
+								<TD WIDTH="50%" VALIGN="TOP">
+									<TABLE CELLPADDING=0 BORDER="0" CELLSPACING=0 VALIGN="top" ALIGN="LEFT">
+										<TR>
+											<TD VALIGN="top" align="left"  STYLE="padding:0px 0px 0px 10px;">
+												<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH="100%">
+													<TR>
+														<TD VALIGN="top"  CLASS="obsTextA" WIDTH="110" >Wind:</td>
+														<TD>&nbsp;</TD>
+														<TD VALIGN="top"  CLASS="obsTextA" WIDTH="170" id="devWind" colspan="2">?</td>
+													</tr>
+													<TR>
+														<TD VALIGN="top"  CLASS="obsTextA" WIDTH="110">Humidity:</td>
+														<TD>&nbsp;</TD>
+														<TD VALIGN="top"  CLASS="obsTextA" id="devHum" colspan="2">?</td>
+													</tr>
+													<TR>
+														<TD VALIGN="top"  CLASS="obsTextA">Pressure:</td>
+														<TD>&nbsp;</TD>
+														<TD VALIGN="top"  CLASS="obsTextA" id='devBP' width="85">?</td>
+														<td>
+															<IMG id="BPImage" align="left" src="/sp.gif" WIDTH=10px HEIGHT=10px BORDER=0 ALT="">
+														</td>
+													</tr>
+													<TR>
+														<TD VALIGN="top"  CLASS="obsTextA">Dew Point:</td>
+														<TD>&nbsp;</TD>
+														<TD VALIGN="top"  CLASS="obsTextA" id="devDP" colspan="2">?</td>
+													</tr>
+													<TR>
+														<TD VALIGN="top"  CLASS="obsTextA">Heat Index:</td>
+														<TD>&nbsp;</TD>
+														<TD VALIGN="top"  CLASS="obsTextA" id="devHI" colspan="2">?</td>
+													</tr>
+													<TR>
+														<TD VALIGN="top"  CLASS="obsTextA">Wind Chill:</td>
+														<TD>&nbsp;</TD>
+														<TD VALIGN="top"  CLASS="obsTextA" id="devWC" colspan="2">?</td>
+													</tr>
+													<TR>
+														<TD VALIGN="top"  CLASS="obsTextA">Rainfall Rate:</td>
+														<TD>&nbsp;</TD>
+														<TD VALIGN="top"  CLASS="obsTextA" id="devTermRain" colspan="2">?</td>
+													</tr>
+													<TR>
+														<TD VALIGN="top"  CLASS="obsTextA">Daily Rain:</td>
+														<TD>&nbsp;</TD>
+														<TD VALIGN="top"  CLASS="obsTextA" id='devDayRain' colspan="2">?</td>
+													</tr>
+													<TR>
+														<TD VALIGN="top"  CLASS="obsTextA">Monthly Rain:</td>
+														<TD>&nbsp;</TD>
+														<TD VALIGN="top"  CLASS="obsTextA" id="devMonthRain" colspan="2">?</td>
+													</tr>
+													<TR>
+														<TD VALIGN="top"  CLASS="obsTextA" id="devIDTempLbl">Indoor Temp:</td>
+														<TD>&nbsp;</TD>
+														<TD VALIGN="top"  CLASS="obsTextA" id="devIDTemp" colspan="2">?</td>
+													</tr>
+													<TR>
+														<TD VALIGN="top"  CLASS="obsTextA" id="devAuxTempLbl">Auxiliary Temp:</td>
+														<TD>&nbsp;</TD>
+														<TD VALIGN="top"  CLASS="obsTextA" id="devAuxTemp" colspan="2">?</td>
+													</tr>
+													<TR>
+														<TD VALIGN="top"  CLASS="obsTextA" id="devLNLbl">Lightning:</td>
+														<TD>&nbsp;</TD>
+														<TD VALIGN="top"  CLASS="obsTextA" id="devLN" colspan="2">?</td>
+													</tr>
+													<TR>
+													</tr>
+												</TABLE>
+											</TD>
+										</TR>
+									</TABLE>
+								</TD>
+							</TR>
+							<TR>
+								<TD COLSPAN="2" ALIGN="LEFT">
+									<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH="100%" style="position:relative;z-index:1;">
+										<tr>
+											<TD height="10" class="blkVerdanaText10" STYLE="padding:0px 0px 0px 0px;">
+											</TD>
+										</tr>
+									</TABLE>
+								</TD>
+								
+							</TR>
+						</TABLE>
+					</TD>
+				</TR>
+			</TABLE>
+		</TD>
+	</TR>
+</TABLE>
+
+<br></br>
+		
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="100%" CLASS="module" >
+	<TR VALIGN="TOP">
+		<TD ALIGN="center" style="color: rgb(102,102,102);"><H2 CLASS="moduleTitleBar"><B>Weather Station Details</B></H2>
+		</TD>
+	</TR>
+	<TR>
+		<TD valign="top" colspan="2">
+			<TABLE WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0"  CLASS="Basic1">
+				<TR>
+					<TD VALIGN="TOP" CLASS="vbgE" STYLE="padding: 10px 10px 0px 10px; BACKGROUND-COLOR: #e8eefa;" COLSPAN="2">
+						<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH="100%">
+							<TR>
+								<TD WIDTH="50%" style="padding: 0px 10px 0px 10px;">
+									<TABLE  margin="10px" WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+										<tr><td CLASS="obsTextA" style="padding: 0px 0px 1px">Firmware version:</td><td>&nbsp;</td><td id="devFWV">?</td></tr>
+										<tr><td CLASS="obsTextA" style="padding: 1px 0px 1px">Serial number:</td><td>&nbsp;</td><td id="devSN">?</td></tr>
+										<tr><td CLASS="obsTextA" style="padding: 1px 0px 1px">Unit ID:</td><td>&nbsp;</td><td id="devID">?</td></tr>
+										<tr><td CLASS="obsTextA" style="padding: 1px 0px 0px">Connection status:</td><td>&nbsp;</td><td id="constat">?</td></tr>
+									</TABLE>
+								</TD>
+								<TD WIDTH="50%" VALIGN="center">
+									<form>
+										<div id="status">
+											<div id="ajaxdisplay">
+												<p>&nbsp;<a id="ajaxled" style="font-size: 12pt;">&bull;</a>&nbsp;&nbsp;&nbsp;Data activity</p>
+												<p><input type="checkbox" class="sm" width="auto" id="enupd" name="enupdate" checked="true" onclick="configenupdate()"/> Enable auto update</p>
+											</div>
+										</div>
+									</form>
+								</TD>
+							</TR>
+						</TABLE>
+					</TD>
+				</TR>
+			</TABLE>
+		</TD>
+	</TR>
+</TABLE>
+
+<P>Welcome to the Texas Weather Instruments weather station. This page shows the current
+weather conditions. The data on this page is continuously updated. This is accomplished by 
+retrieving, on a timed basis, the file <a href="http://152.228.140.57/status.xml">status.xml</a> from the weather
+station and updating the corresponding fields.</p>
+<p></P>
+<P>For more information on this or any other Texas Weather Instruments product, 
+please refer to 
+<A href="http://www.txwx.com">www.txwx.com</A>.</P>
+
+</div>
+
+<script type="text/javascript">
+/**
+ * Parses the xmlResponse from status.xml and updates the status box
+ */
+var flg = 0;
+var CurrentUnits;
+var Resolution;
+
+function updateStatus(xmlData) {
+
+	setTimeout("newAJAXCommand('status.xml', updateStatus, false)",1000);	
+	
+	// Check if a timeout occurred
+	if(!xmlData)
+	{
+		document.getElementById('constat').innerHTML = 'ERROR';
+		return;
+	}
+
+	// Make sure we're displaying the status display
+	document.getElementById('constat').innerHTML = 'OK';
+	
+	// Toggle the data led
+	if(flg == 0)
+	{
+		document.getElementById('ajaxled').style.color = '#ddd';
+		flg = 1;
+	}
+	else
+	{
+		document.getElementById('ajaxled').style.color = '#090';
+		flg = 0;
+	}
+
+	Resolution = getXMLValue(xmlData, 'resolution');
+	// Put XML data on page
+	document.getElementById('devFWV').innerHTML = getXMLValue(xmlData, 'firmwarever');
+	document.getElementById('devSN').innerHTML = getXMLValue(xmlData, 'sernum');
+	document.getElementById('devID').innerHTML = getXMLValue(xmlData, 'unitid');
+	//document.getElementById('devUnits').innerHTML = getXMLValue(xmlData, 'units');
+	document.getElementById('devDateTime').innerHTML = 'Updated '+getXMLValue(xmlData, 'date')+" "+getXMLValue(xmlData, 'time');
+	//document.getElementById('devTime').innerHTML = getXMLValue(xmlData, 'time');
+	document.getElementById('devWind').innerHTML = 'From '+getXMLValue(xmlData, 'winddirtxt')+' at '+GetDisplaySpeed(getXMLValue(xmlData, 'windspd'));
+	//document.getElementById('devWindDir').innerHTML = getXMLValue(xmlData, 'winddirtxt');
+	document.getElementById('devODTemp').innerHTML = GetDisplayTemp(getXMLValue(xmlData, 'tmp3'));
+	document.getElementById('devLN').innerHTML = getXMLValue(xmlData, 'lightning');
+	var tmp = getXMLValue(xmlData, 'tmp2');
+	var tmptype = getXMLValue(xmlData, 'tmp2type');
+	if(tmptype == 'F') {
+		if(tmp > 300) {
+			document.getElementById('devIDTemp').innerHTML = '';
+			document.getElementById('devIDTempLbl').innerHTML = '';
+		}
+		else {
+			document.getElementById('devIDTemp').innerHTML = GetDisplayTemp(tmp);
+			document.getElementById('devIDTempLbl').innerHTML = 'Indoor Temp:';
+		}
+	}
+	else {
+		document.getElementById('devIDTemp').innerHTML = tmp+' K';
+		document.getElementById('devIDTempLbl').innerHTML = 'Solar:';
+	}
+	s = getXMLValue(xmlData, 'rh');
+	document.getElementById('devHum').innerHTML = s+'%';
+	document.getElementById('devHum2').innerHTML = s+'% RH';
+	tmp = getXMLValue(xmlData, 'tmp1');
+	tmptype = getXMLValue(xmlData, 'tmp1type');
+	if(tmptype == 'F') {
+		if(tmp > 300) {
+			document.getElementById('devAuxTemp').innerHTML = '';
+			document.getElementById('devAuxTempLbl').innerHTML = '';
+		}
+		else {
+			document.getElementById('devAuxTemp').innerHTML = GetDisplayTemp(tmp);
+			document.getElementById('devAuxTempLbl').innerHTML = 'Auxiliary Temp:';
+		}
+	}
+	else {
+		document.getElementById('devAuxTemp').innerHTML = tmp+" K";
+		document.getElementById('devAuxTempLbl').innerHTML = 'Solar:';
+	}
+	document.getElementById('devBP').innerHTML = GetDisplayBaroPres(getXMLValue(xmlData, 'baropres'));
+	
+	document.getElementById('BPImage').src = GetDisplayBPImage(getXMLValue(xmlData, 'baropresdir'));
+	
+	document.getElementById('devDayRain').innerHTML =  GetDisplayRain(getXMLValue(xmlData, 'dayrain'));
+	document.getElementById('devMonthRain').innerHTML =  GetDisplayRain(getXMLValue(xmlData, 'monthrain'));
+	document.getElementById('devTermRain').innerHTML =  GetDisplayRain(getXMLValue(xmlData, 'termrain')) + "/hr.";
+	document.getElementById('devDP').innerHTML = GetDisplayTemp(getXMLValue(xmlData, 'dewpt'));
+	document.getElementById('devHI').innerHTML = GetDisplayTemp(getXMLValue(xmlData, 'heatindx'));
+	document.getElementById('devWC').innerHTML = GetDisplayTemp(getXMLValue(xmlData, 'windchill'));
+}
+
+setTimeout("newAJAXCommand('http://152.228.140.57/status.xml', updateStatus, false)",500);
+
+function GetDisplayBPImage(chr) {
+	if(chr == 'R' || chr == 'r')
+		return "/rp.gif";
+	else if(chr == 'F' || chr == 'f')
+		return "/fp.gif";
+	else
+		return "/sp.gif";
+}
+
+function GetDisplayRain(rain) {
+	if(CurrentUnits != 'Metric')
+		return rain + ' in.';
+	else
+		return Math.round(rain*25.4) + ' mm.';
+}
+
+function GetDisplayBaroPres(bp) {
+	if(CurrentUnits != 'Metric')
+		return bp + ' in.';
+	else {
+		var num = (bp*33.86);
+		if(Resolution != "High")
+			return num.toFixed(1) + ' mb.';
+		else
+			return num.toFixed(2) + ' mb.';
+	}
+}
+
+function GetDisplaySpeed(spd) {
+	if(CurrentUnits != 'Metric')
+		return spd + ' mph';
+	else
+		if(Resolution != "High")
+			return Math.round(spd*1.60934400061) + ' kph';
+		else {
+			var num = (spd*1.60934400061);
+			return num.toFixed(1) + ' kph';
+		}
+}
+
+function GetDisplayTemp(tmp) {
+	if(CurrentUnits != 'Metric')
+		return tmp + '&deg;F';
+	else
+		if(Resolution != "High")
+			return Math.round((tmp-32)*0.5555556) + '&deg;C';
+		else{
+			var num = ((tmp-32)*0.5555556);
+			return num.toFixed(1) + '&deg;C';
+		}
+}
+	
+function configenupdate() {
+	EnFlg = document.forms[0].enupdate.checked;
+}
+
+configenupdate();
+
+</script>
+
+<div class="spacer">&nbsp;</div>
+<div id="footer">Copyright &copy; 2011 Texas Weather Instruments, Inc.</div>
+
+</div></div></div></div></div>
+
+</body>
+</html>

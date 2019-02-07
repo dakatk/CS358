@@ -1,0 +1,24 @@
+SNFILE  /home/kgoebber/http/soundings/launches/091_001/091_001.gem                                                                      
+DATTIM  last                                                                                                                            
+AREA    @VUM                                                                                                                            
+SNPARM  DWPC                                                                                                                            
+LINE    3/2/5                                                                                                                           
+PTYPE   skew                                                                                                                            
+VCOORD  PRES                                                                                                                            
+STNDEX                                                                                                                                  
+STNCOL  1                                                                                                                               
+WIND    bk1                                                                                                                             
+WINPOS  1                                                                                                                               
+MARKER  0                                                                                                                               
+BORDER  1                                                                                                                               
+TITLE                                                                                                                                   
+DEVICE  psc|/home/kgoebber/http/soundings/launches/091_001/091_001_KVUM.ps | 8;10                                                       
+YAXIS   ///1;1                                                                                                                          
+XAXIS   -30/40/10/1;1                                                                                                                   
+FILTER  YES                                                                                                                             
+CLEAR   NO                                                                                                                              
+PANEL   0                                                                                                                               
+TEXT    1.5/2/2                                                                                                                         
+THTALN  8                                                                                                                               
+THTELN  21                                                                                                                              
+MIXRLN  4/2                                                                                                                             

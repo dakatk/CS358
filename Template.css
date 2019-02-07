@@ -1,0 +1,171 @@
+/* nav bar */
+  html, body {
+    background-color: #FFF;
+
+  }
+
+	#body
+	{
+		font-family: 'Warnock W01';
+		font-weight: 400;
+		font-style: normal;
+		font-size: 14px;
+	}
+	
+	article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {display:block;}
+	
+
+	.nav
+	{
+		overflow: hide;
+		background-color: #381e0e;
+		position: fixed;
+		top: 0;
+		left: -0px;
+		width: 105%;
+		vertical-align:middle;
+		padding-left:33%;
+		padding-right:33%;
+		box-shadow: 0 5px 3px rgba(0,0,0,.5);
+	}
+
+	.main-col
+	{
+		color: #0060a8;
+		min-height: 100vh;
+		border: none;
+		background-color: #0c0c30;
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+		overflow-x: hidden;
+	}
+	
+	.mainmid
+	{
+		width: 1%
+	}
+	
+	.mainleft, .mainright
+	{
+		color: #0060a8;
+		background-color: #0c0c30;
+		width: 25%;
+		overflow: hidden;
+	}
+
+	.nav img
+	{
+		max-width: fixed;
+		height: auto;
+		vertical-align:middle;
+		float:center;
+
+	}
+
+	a:hover, a:focus
+	{
+		
+	} 
+
+/* end of navbar */
+
+/* top most titles */
+	#intro
+	{
+		text-align: center;
+		margin-left:-4%;
+		color: #F3F3CF;
+	}
+
+	#intro h1
+	{
+		margin-bottom: 0;
+
+	}
+	#intro h2
+	{
+		font-size: 1.2em;
+		text-transform: uppercase;
+		letter-spacing: .2em;
+		margin-top: 3em;
+		text-align: center;
+
+	}
+
+	#intro p
+	{
+		font-family: Georgia, "Times New Roman", Times, serif;
+		font-style: italic;
+		margin: 1em;
+		text-align: center;
+	}
+/* end of top most titles */
+
+/* body work */
+	#content 
+	{
+		text-align:center;
+		position: initial;
+		padding: 1px;
+		margin: -20% 0 0 0;
+		height: auto;
+
+	}
+	#content h1
+	{
+		margin: 0 0 0 -8em;
+		color: #0060a8;
+
+	}
+
+	#article
+	{
+		width: 50vw;
+		background-color: #F3F3CF;
+		line-height: 1em;
+		border: 3px solid #0060a8;
+		padding: 1em 5%;
+		margin: 1em 20.5em 1em 1em;
+		clear: both;
+	}
+
+
+	#article h2
+	{
+		font-size: 1.2em;
+		color: #0060a8;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	#article h3
+	{
+		font-size: 1em;
+		text-transform: uppercase;
+		color: #0060a8;
+		border-top: 1px solid;
+		border-left: 3px solid;
+		padding-left: 1em;
+		margin-top: 2.5em;
+	}
+
+	#article img
+	{
+		float: left;
+		margin: 0 6px 6px 0;
+	}
+
+	#article .more
+	{
+		clear: left;
+	}
+
+	.main
+	{
+		padding: 1px;
+		margin-top: 30px;
+		height: 1500px;
+
+	}
+/* end of body work */

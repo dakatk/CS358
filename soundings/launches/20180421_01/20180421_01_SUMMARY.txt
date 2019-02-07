@@ -1,0 +1,48 @@
+SUMMARY INFORMATION FOR SOUNDING "20180421_01"
+==============================================
+
+Station Name             : KVUM
+.       WMO Number       : /////
+.       ICAO Number      : /////
+.       Mobile Call Sign : /////
+.       Latitude         : 41.46423°N
+.       Longitude        : 087.03860°W
+.       Altitude (MSL)   : 248m
+
+Sonde   Type             : iMet-1-ABx
+.       Serial Number    : 18951
+
+Surface Pressure         : 993.7hPa
+.       Temperature      : +13.0°C
+.       Humidity         : 36%
+.       Wind Speed       : 3.0kts
+.       Wind Direction   : 200.0°
+.       Cloud Code       : /////
+
+Launched (UTC)           : 4/21/2018 6:12:00 PM
+
+--------------------------------------------------------------------------------
+
+Operator                 : David Goines
+
+Balloon             Make : Unknown
+.                 Weight : 200
+.                    Age : 
+
+Data    Minimum Pressure : 33.6hPa
+.       Maximum Altitude : 21668m
+.            Ascent Rate : 236m/min
+.    Maximum Temperature : +13.0°C
+.    Minimum Temperature : -67.7°C
+.    Maximum Humidity    : 95%
+.    Minimum Humdity     : 5%
+.    Maximum Slant Range : 100.335km
+.      Final Slant Range : 100.335km
+.        Final Elevation : 12.5°
+
+Termination (UTC)        : 4/21/2018 7:44:25 PM
+.                 Source : Automatic
+.                 Reason : Balloon burst (Rate = -328m/min  Threshold = -300m/min)
+.        Ascent Duration : 1 hours 31 minutes 44 seconds
+
+--------------------------------------------------------------------------------

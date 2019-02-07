@@ -1,0 +1,19 @@
+The iMetOS Log File Columns are as follows:
+1) Blank. This is implied time, starting from t=0 (preflight) at 1 second intervals
+2) Temp (°C)
+3) Virtual Temp (K)
+4) RH (%)
+5) Smooth Pressure (hPa)
+6) Geopotential Height (m)
+7) RDF Elevation Angle (rad)
+8) RDF Azimuth Angle (rad)
+9) Wind Direction (rad)
+10) Wind Speed (kts)
+11) Slant Range (m)
+12) Status Flags
+13) Latitude (°)
+14) Longitude (°)
+15) Raw Temp (°C)
+16) Geometric Height (m)
+17) Record Time (0 of interpolated)*
+18) Other Status

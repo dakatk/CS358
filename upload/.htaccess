@@ -1,0 +1,7 @@
+AuthUserFile /home/kgoebber/http/upload/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Secure Document"
+AuthType Basic
+
+require user kgoebber
+require user student
