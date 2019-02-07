@@ -1,7 +1,0 @@
-7
-m_data_
-These are the two files that the program is using: /home/kgoebber/http/soundings/launches/m_data_/m_data_.STD, /home/kgoebber/http/soundings/launches/m_data_/m_data_.SIG
-Traceback (most recent call last):
-  File "/home/kgoebber/http/upload/create_gem_data_VUM_soundings.py", line 46, in <module>
-    for line in open(std_levels):
-IOError: [Errno 2] No such file or directory: '/home/kgoebber/http/soundings/launches/m_data_/m_data_.STD'
