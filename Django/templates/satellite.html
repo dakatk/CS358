@@ -1,9 +1,12 @@
 <html>
 	<head>
-		<title>Satellite</title>
+		<title>{{ satellite_type }} Satellite</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
-		<h2>Satellite</h2>
+		<h2>{{ satellite_type }} Satellite</h2>
+		<div>{% include "base_nav.html" %}</div>
+		<h3>Types:</h3>
+		<div>{% include "satellite_nav.html" %}</div>
 	</body>
 </html>

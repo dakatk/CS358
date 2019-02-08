@@ -3,6 +3,8 @@ from django.http import Http404, HttpResponseForbidden
 
 def satellite(request):
 
+    # Dictionary of allowed type ids and
+    # their corresponding display names
     satellite_types = {'true_color': 'True-Color',
                        '1_blue': '1: Visible (Blue)',
                        '2_red': '2: Visible (Red)',
@@ -11,13 +13,13 @@ def satellite(request):
     context = dict()
     
     if request.method == 'GET':
-        radar_type = request.GET['type']
-        if not (radar_type in radar_types):
+        satellite_type = request.GET['type']
+        if not (satellite_type in satellite_types):
             raise Http404('Page not found')
         else:
-            context['radar_type'] = radar_types[radar_type]
+            context['satellite_type'] = satellite_types[satellite_type]
     else:
         return HttpResponseForbidden()
 
-    # HTML files are found in this app's 'templates' folder
+    # HTML files are found in the site's 'templates' folder
     return render(request, 'satellite.html', context)
