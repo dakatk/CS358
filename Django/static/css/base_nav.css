@@ -1,0 +1,29 @@
+#base_nav_list
+{
+	list-style-type: none;
+	padding: 0;
+	width: 15%;
+	background-color: #FFF;
+	margin: 0;
+	position: sticky;
+	top: 0;
+	overflow: auto;
+	box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+}
+
+#base_nav_button a
+{
+	margin-bottom: 1px;
+	background-color: #F2EDE3;
+	display: block;
+	padding: 5px 10px;
+	color: #7C7C7C;
+	text-decoration: none;
+	text-align: center;
+}
+
+#base_nav_button a:hover
+{
+	background: #584A42;
+	color: white;
+}

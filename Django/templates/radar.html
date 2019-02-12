@@ -1,12 +1,23 @@
 <html>
 	<head>
-		<title>{{ radar_type }} Radar</title>
+		<title>{{ radar_name }} Radar</title>
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		{% load static %}
+		{% load radar_extras %}
 	</head>
 	<body>
-		<h2>{{ radar_type }} Radar</h2>
-		<div>{% include "base_nav.html" %}</div>
+		{% with radar_type|image_file:"0" as img_files %}
+			<img src="{% static img_file %}" alt="Missing image">
+		{% endwith %}
+
+		<h2>{{ radar_name }} Radar</h2>
+		<div>{% include "nav/base_nav.html" %}</div>
+
 		<h3>Types:</h3>
-		<div>{% include "radar_nav.html" %}</div>
+		<div>{% include "nav/radar_nav.html" %}</div>
 	</body>
 </html>
