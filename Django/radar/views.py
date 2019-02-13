@@ -1,5 +1,8 @@
 from django.shortcuts import render
-from django.http import Http404, HttpResponseForbidden
+from django.http import Http404, JsonResponse
+from django.views.decorators.csrf import csrf_protect
+
+from .templatetags.radar_extras import image_file
 
 # Number of images to loop through (constant value)
 NUM_IMAGES = 23
@@ -40,13 +43,21 @@ def radar(request):
 
 # Parses the POST request that the page uses to
 # retrieve specified data via JS and Ajax
-def image_desc():
+@csrf_protect
+def image_desc(request):
     global NUM_IMAGES, current_radar_type
 
     # Ensure this is a POST request, otherwise return
     # a 'forbidden' response
     if request.method != 'POST':
         return HttpResonseForbidden()
+
+    # List of every image path used in the loop
+    # (setup in the backend helps with this a lot)
+    image_path = lambda i: image_file(current_radar_type, i + 1)
+    image_cycle = list(map(image_path, range(NUM_IMAGES)))
     
-    return HttpResponse({'num_images': NUM_IMAGES, 'radar_type': current_radar_type})
+    context = {'image_cycle': image_cycle}
+    
+    return JsonResponse(context)
     
