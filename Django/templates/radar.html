@@ -8,15 +8,22 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 		{% load static %}
-		<script src="{% static "js/radar.js" %}"></script>
-		{% load radar_extras %}
+		<link rel="stylesheet" type="text/css" href="{% static "css/radar.css" %}" />
 	</head>
 	<body>
-		{% with radar_type|image_file:1 as img_file %}
-			<img id="radar_current_img" src="{% static img_file %}" alt="Missing image">
-		{% endwith %}
+		<form>
+			<input hidden name="static_url" value="{% static "" %}" />
+			<input hidden name="radar_type" value="{{ radar_type }}" />
+		</form>
+	
+		<div id="fade_loop">
+			<img id="radar_current_img" src="" alt="" />
+			<img style="display:none;" id="radar_next_img" src="" alt="" />
+		</div>
 
-		<h2>{{ radar_name }} Radar</h2>
+		<!-- <h2>{{ radar_name }} Radar</h2> -->
 		<div>{% include "nav/radar_full_nav.html" %}</div>
+
+		<script src="{% static "js/radar.js" %}"></script>
 	</body>
 </html>

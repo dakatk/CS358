@@ -1,0 +1,11 @@
+#fade_loop 
+{
+	position: relative;
+}
+
+#fade_loop img 
+{
+	position: absolute;
+	width: 300px;
+	height: 300px;
+}
