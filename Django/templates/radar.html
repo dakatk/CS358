@@ -5,22 +5,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         	{% csrf_token %}
+			{% load static %}
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="{% static "js/radar.js" %}"></script>
-
-		{% load static %}
 		<link rel="stylesheet" type="text/css" href="{% static "css/radar.css" %}" />
+		<link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
 	</head>
 	<body>
-		<form>
-			<input hidden name="image_path" value="{{ radar_path_name }}" />
-			<input hidden name="radar_type" value="{{ radar_type }}" />
-		</form>
-	
-		<div id="fade_loop">
+	<div class="content">
+		<div class="content-nav">
+			<div>{% include "nav/radar_full_nav.html" %}</div>
 		</div>
-
-		<!-- <h2>{{ radar_name }} Radar</h2> -->
-		<div>{% include "nav/radar_full_nav.html" %}</div>
+		<div class="content-main">
+			<form>
+				<input hidden name="image_path" value="{{ radar_path_name }}" />
+				<input hidden name="radar_typex`" value="{{ radar_type }}" />
+			</form>
+			<div id="fade_loop">
+			</div>
+		</div>
+	</div>
 	</body>
 </html>
