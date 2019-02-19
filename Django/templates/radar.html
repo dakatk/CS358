@@ -6,24 +6,21 @@
 
         	{% csrf_token %}
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="{% static "js/radar.js" %}"></script>
 
 		{% load static %}
 		<link rel="stylesheet" type="text/css" href="{% static "css/radar.css" %}" />
 	</head>
 	<body>
 		<form>
-			<input hidden name="static_url" value="{% static "" %}" />
+			<input hidden name="image_path" value="{{ radar_path_name }}" />
 			<input hidden name="radar_type" value="{{ radar_type }}" />
 		</form>
 	
 		<div id="fade_loop">
-			<img id="radar_current_img" src="" alt="" />
-			<img style="display:none;" id="radar_next_img" src="" alt="" />
 		</div>
 
 		<!-- <h2>{{ radar_name }} Radar</h2> -->
 		<div>{% include "nav/radar_full_nav.html" %}</div>
-
-		<script src="{% static "js/radar.js" %}"></script>
 	</body>
 </html>
