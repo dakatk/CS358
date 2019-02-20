@@ -1,17 +1,27 @@
 <html>
 	<head>
-		<title>{{ satellite_type }} Satellite</title>
+		<title>{{ satellite_name }} Satellite</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		{% csrf_token %}
+		{% load static %}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="{% static "js/radar.js" %}"></script>
 	</head>
 	<body>
+		<form>
+			<input hidden name="satellite_channel" value="{{ satellite_channel }}" />
+		</form>
 		<h2>{{ satellite_type }} Satellite</h2>
 		<div class="content">
 			<div class="content-nav">
 				<div>{% include "nav/satellite_full_nav.html" %}</div>
 			</div>
 			<div class="content-main">
-			<!-- pics go here -->
+				<div id="fade_loop">
+					<img id="current_img" alt="" src="" />
+				</div>
 			</div>
 
 	</body>
