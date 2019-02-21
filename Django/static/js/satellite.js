@@ -17,13 +17,12 @@ $(function () {
       image_index = image_cycles.length - 1;
     }
 
-    /*image_tag.animate({}, {
+    image_tag.animate({}, {
       duration: loop_delay,
       complete: function () {
-        window.setTimeout(loop_images, 1);
+        window.setTimeout(loop_images, loop_delay);
       }
-    });*/
-    window.setTimeout(loop_images, loop_delay);
+    });
   }
 
   $.ajax({

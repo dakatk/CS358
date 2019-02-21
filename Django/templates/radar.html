@@ -4,26 +4,28 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        	{% csrf_token %}
-			{% load static %}
+		{% csrf_token %}
+		{% load static %}
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="{% static "js/radar.js" %}"></script>
+
 		<link rel="stylesheet" type="text/css" href="{% static "css/radar.css" %}" />
 		<link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
 	</head>
 	<body>
-	<div class="content">
-		<form>
-			<input hidden name="radar_type" value="{{ radar_type }}" />
-		</form>
-		<div class="content-nav">
-			<div>{% include "nav/radar_full_nav.html" %}</div>
-		</div>
-		<div class="content-main">
-			<div id="animate_loop">
-				<img id="current_image" alt="" src="" />
+		<div class="content">
+			<form>
+				<input hidden name="radar_type" value="{{ radar_type }}" />
+			</form>
+			<div class="content-nav">
+				<div>{% include "nav/radar_full_nav.html" %}</div>
+			</div>
+			<div class="content-main">
+				<div id="animate_loop">
+					<img id="current_image" alt="" src="" />
+				</div>
 			</div>
 		</div>
-	</div>
 	</body>
 </html>

@@ -6,17 +6,18 @@
 
 		{% csrf_token %}
 		{% load static %}
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="{% static "js/satellite.js" %}"></script>
+
 		<link rel="stylesheet" type="text/css" href="{% static "css/satellite.css" %}" />
 		<link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
 	</head>
 	<body>
-		<form>
-			<input hidden name="satellite_channel" value="{{ satellite_channel }}" />
-		</form>
-		<h2>{{ satellite_type }} Satellite</h2>
 		<div class="content">
+			<form>
+				<input hidden name="satellite_channel" value="{{ satellite_channel }}" />
+			</form>
 			<div class="content-nav">
 				<div>{% include "nav/satellite_full_nav.html" %}</div>
 			</div>
@@ -25,6 +26,5 @@
 					<img id="current_image" alt="" src="" />
 				</div>
 			</div>
-
 	</body>
 </html>
