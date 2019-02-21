@@ -18,9 +18,7 @@ $(function () {
       image_index = 0;
     }
 
-    window.setTimeout(function () {
-        loop_images();
-    }, loop_delay);
+    window.setTimeout(loop_images, loop_delay);
   }
 
   $.ajax({

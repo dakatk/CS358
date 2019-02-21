@@ -36,7 +36,7 @@ def satellite(request):
     context = dict()
     
     if request.method == 'GET':
-        satellite_channel = str(request.GET['channel'])
+        satellite_channel = request.GET['channel']
         if not (satellite_channel in satellite_channels):
             raise Http404('Page not found')
         else:
