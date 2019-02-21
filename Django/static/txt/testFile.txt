@@ -1,0 +1,46 @@
+Today
+High: 30
+Low:
+Wind Direction: W
+Wind Speed: 7
+Cloud: clr:Clear
+Prcp Type: none
+POP: 0
+
+Tonight
+High:
+Low: 21
+Wind Direction: NW
+Wind Speed: 5
+Cloud: plc:Partly Cloudy
+Prcp Type: none
+POP: 0
+
+Tomorrow
+High: 28
+Low: 22
+Wind Direction: NE
+Wind Speed: 5
+Cloud: clr:Clear
+Prcp Type: none
+POP: 0
+
+Sunday
+High: 31
+Low: 26
+Wind Direction: N
+Wind Speed: 5
+Cloud: clr:Clear
+Prcp Type: none
+POP: 0
+
+Monday
+High: 32
+Low: 23
+Wind Direction: N
+Wind Speed: 5
+Cloud: clr:Clear
+Prcp Type: none
+POP: 0
+23
+Friday 7 December 2018
