@@ -7,7 +7,9 @@
 		{% csrf_token %}
 		{% load static %}
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="{% static "js/radar.js" %}"></script>
+		<script src="{% static "js/satellite.js" %}"></script>
+		<link rel="stylesheet" type="text/css" href="{% static "css/satellite.css" %}" />
+		<link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
 	</head>
 	<body>
 		<form>
@@ -20,7 +22,7 @@
 			</div>
 			<div class="content-main">
 				<div id="fade_loop">
-					<img id="current_img" alt="" src="" />
+					<img id="current_image" alt="" src="" />
 				</div>
 			</div>
 

@@ -3,6 +3,8 @@ $(function () {
   const satellite_channel = $('[name=satellite_channel]').val();
 
   var loop_delay = 100;
+
+  var image_cycles = [''];
   var image_index = 0;
 
   function loop_images() {
@@ -10,9 +12,9 @@ $(function () {
     let image_tag = $('#fade_loop #current_image');
     image_tag.attr('src', image_cycles[image_index]);
 
-    image_index ++;
-    if (image_index >= image_cycles.length) {
-      image_index = 0;
+    image_index --;
+    if (image_index <= 0) {
+      image_index = image_cycles.length - 1;
     }
 
     window.setTimeout(loop_images, loop_delay);
@@ -31,6 +33,8 @@ $(function () {
     success: function(response) {
 
       image_cycles = response['image_cycle'];
+      image_index = image_cycles.length - 1;
+
       loop_images();
     }
   });
