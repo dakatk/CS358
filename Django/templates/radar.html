@@ -13,15 +13,15 @@
 	</head>
 	<body>
 	<div class="content">
+		<form>
+			<input hidden name="radar_type" value="{{ radar_type }}" />
+		</form>
 		<div class="content-nav">
 			<div>{% include "nav/radar_full_nav.html" %}</div>
 		</div>
 		<div class="content-main">
-			<form>
-				<input hidden name="image_path" value="{{ radar_path_name }}" />
-				<input hidden name="radar_typex`" value="{{ radar_type }}" />
-			</form>
 			<div id="fade_loop">
+				<img id="current_image" alt="" src="" />
 			</div>
 		</div>
 	</div>
