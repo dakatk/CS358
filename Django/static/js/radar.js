@@ -3,14 +3,14 @@ $(function () {
   const csrf_token = $('[name=csrfmiddlewaretoken]').val();
   const radar_type = $('[name=radar_type]').val();
 
-  var loop_delay = 100;
+  var loop_delay = 200;
   
   var image_cycles = [''];
   var image_index = 0;
 
   function loop_images() {
 
-    let image_tag = $('#fade_loop #current_image');
+    let image_tag = $('#animate_loop #current_image');
     image_tag.attr('src', image_cycles[image_index]);
     
     image_index --;
