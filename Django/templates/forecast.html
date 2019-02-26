@@ -11,78 +11,21 @@
         <table style="margin-left: 300px;">
             <caption id="forecast_title">Valpo Forecast</caption>
             <tr>
+                {% for arr in data %}
                 <td>
-                    <div class="container">
-                        <!-- Could make it such that there's a different image depending on the precipitation for that day-->
-                        <!-- There is definitely a better way to do this all dynamically (likely involving javascript). Will get around to this at a later date.-->
+                    <div class="forecast_container">
                         <img src="http://bergeron.valpo.edu/images/futureclr.jpg" alt = "Weather Picture">
-                        <div class="forecast_text" style="font-size: 22px;">{{ Day0 }}</div>
-                        <div class="forecast_text" style="top: 20px;">{{ High0 }}</div>
-                        <div class="forecast_text" style="top: 50px;">{{ Low0 }}</div>
-                        <div class="forecast_text" style="top: 80px;">{{ WindDirection0 }}</div>
-                        <div class="forecast_text" style="top: 110px;">{{ WindSpeed0 }}</div>
-                        <div class="forecast_text" style="top: 140px;">{{ Cloud0 }}</div>
-                        <div class="forecast_text" style="top: 170px;">{{ PrcpType0 }}</div>
-                        <div class="forecast_text" style="top: 200px;">{{ POP0 }}</div>
+                        {% for field in arr %}
+                            <div class="forecast_text">{{ field }}</div>
+                        {% endfor %}
                     </div>
                 </td>
-                <td>
-                    <div class="container">
-                        <img src="http://bergeron.valpo.edu/images/futureclr.jpg" alt = "Weather Picture">
-                        <div class="forecast_text" style="font-size: 22px;">{{ Day1 }}</div>
-                        <div class="forecast_text" style="top: 20px;">{{ High1 }}</div>
-                        <div class="forecast_text" style="top: 50px;">{{ Low1 }}</div>
-                        <div class="forecast_text" style="top: 80px;">{{ WindDirection1 }}</div>
-                        <div class="forecast_text" style="top: 110px;">{{ WindSpeed1 }}</div>
-                        <div class="forecast_text" style="top: 140px;">{{ Cloud1 }}</div>
-                        <div class="forecast_text" style="top: 170px;">{{ PrcpType1 }}</div>
-                        <div class="forecast_text" style="top: 200px;">{{ POP1 }}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="container">
-                        <img src="http://bergeron.valpo.edu/images/futureclr.jpg" alt = "Weather Picture">
-                        <div class="forecast_text" style="font-size: 22px;">{{ Day2 }}</div>
-                        <div class="forecast_text" style="top: 20px;">{{ High2 }}</div>
-                        <div class="forecast_text" style="top: 50px;">{{ Low2 }}</div>
-                        <div class="forecast_text" style="top: 80px;">{{ WindDirection2 }}</div>
-                        <div class="forecast_text" style="top: 110px;">{{ WindSpeed2 }}</div>
-                        <div class="forecast_text" style="top: 140px;">{{ Cloud2 }}</div>
-                        <div class="forecast_text" style="top: 170px;">{{ PrcpType2 }}</div>
-                        <div class="forecast_text" style="top: 200px;">{{ POP2 }}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="container">
-                        <img src="http://bergeron.valpo.edu/images/futureclr.jpg" alt = "Weather Picture">
-                        <div class="forecast_text" style="font-size: 22px;">{{ Day3 }}</div>
-                        <div class="forecast_text" style="top: 20px;">{{ High3 }}</div>
-                        <div class="forecast_text" style="top: 50px;">{{ Low3 }}</div>
-                        <div class="forecast_text" style="top: 80px;">{{ WindDirection3 }}</div>
-                        <div class="forecast_text" style="top: 110px;">{{ WindSpeed3 }}</div>
-                        <div class="forecast_text" style="top: 140px;">{{ Cloud3 }}</div>
-                        <div class="forecast_text" style="top: 170px;">{{ PrcpType3 }}</div>
-                        <div class="forecast_text" style="top: 200px;">{{ POP3 }}</div>
-                    </div>
-                </td>
-                <td>
-                    <div class="container">
-                        <img src="http://bergeron.valpo.edu/images/futureclr.jpg" alt = "Weather Picture">
-                        <div class="forecast_text" style="font-size: 22px;">{{ Day4 }}</div>
-                        <div class="forecast_text" style="top: 20px;">{{ High4 }}</div>
-                        <div class="forecast_text" style="top: 50px;">{{ Low4 }}</div>
-                        <div class="forecast_text" style="top: 80px;">{{ WindDirection4 }}</div>
-                        <div class="forecast_text" style="top: 110px;">{{ WindSpeed4 }}</div>
-                        <div class="forecast_text" style="top: 140px;">{{ Cloud4 }}</div>
-                        <div class="forecast_text" style="top: 170px;">{{ PrcpType4 }}</div>
-                        <div class="forecast_text" style="top: 200px;">{{ POP4 }}</div>
-                    </div>
-                </td>
+                {% endfor %}
             </tr>
         </table>
-
-        <h2>Forecast Graphic</h2>
-        <img src="http://bergeron.valpo.edu/forecast/current_wxgraphic.jpg" alt="Forecast Graphic">
-
+        <div id="graphic_container">
+            <div id="graphic_title">Forecast Graphic</div>
+            <img src="http://bergeron.valpo.edu/forecast/current_wxgraphic.jpg" alt="Forecast Graphic">
+        </div>
 	</body>
 </html>

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseForbidden
+from django.http import HttpResponseForbidden, Http404
 '''
 The number of days in the forecast file
 '''
@@ -17,11 +17,13 @@ def forecast(request):
     # Stop POST and other potentially harmful requests
     if request.method != 'GET':
         return HttpResponseForbidden()
-
-    # Not sure if this method of getting the text file will stay this way.
+    # Don't display the page if any thing is passed with the GET request
+    if len(request.GET) > 0:
+        raise Http404()
+    # Open and read the file containing the forecast data
     file = open("static/txt/testFile.txt", "r")
     data = file.readlines()
-    # Remove White spaces, /n's, and blank lines
+    # Remove white spaces and \n's at front and end of string (#strip) and blank lines
     index = len(data) - 1
     while index >= 0:
         data[index] = data[index].strip()
@@ -29,17 +31,21 @@ def forecast(request):
             data.remove(data[index])
         index -= 1
 
-    # Format variables to be put in context (With dict key "FieldName" + str(i))
-    # Spaces are removed from the FieldName
+    # Store data as a two dimensional list of [day][dataForDay]
+    out_data = []
     for i in range(NUM_DAYS):
+        arr = []
         for j in range(NUM_FIELDS):
             s = data[i*NUM_FIELDS + j]
             # First "field" of each day will always be the day (I.E. "Today" or "Monday")
+            # This if is only necessary because one field has two ':'s
             if j == 0:
-                context["Day" + str(i)] = s
+                arr.append(s)
             else:
-                arr = s.split(":")
-                context[arr[0].replace(" ", "") + str(i)] = arr[0].strip() + ": " + arr[-1].strip()
+                separated = s.split(":")
+                arr.append(separated[0].strip() + ": " + separated[-1].strip())
+        out_data.append(arr)
 
+    context["data"] = out_data
     # HTML files are found in the site's 'templates' folder
     return render(request, 'forecast.html', context)
