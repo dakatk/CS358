@@ -7,7 +7,9 @@ from . import views
 # Specifies URL paths within this app
 # (relative to the app's base URL, not the site's)
 urlpatterns = [
+    
     path('', views.radar, name='radar'),
-    path('image_desc/', views.image_desc, name='image_desc') 
+    path('image_desc/', views.image_desc, name='image_desc')
+    
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

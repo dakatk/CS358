@@ -8,14 +8,17 @@
 	<li class="nav_button">
 		<a href="/forecast/">Forecast</a>
 	</li>
-	<li class="nav_button" id="selected">
-		<a>Radar</a>
-	</li>
-	</ul>
-	{% include "nav/radar_child_nav.html" %}
-	<ul class="nav_list">
 	<li class="nav_button">
-		<a href="/satellite?channel=true_color">Satellite</a>
+		<a href="/radar?type=ref">Radar</a>
+	</li>
+	<li class="nav_button"  id="selected">
+		<a>Satellite</a>
+	</li>
+</ul>
+{% include "nav/child/satellite_child_nav.html" %}
+<ul class="nav_list">
+	<li class="nav_button">
+		<a href="/ncep_models">GFS Model</a>
 	</li>
 	<li class="nav_button">
 		<a href="https://www.valpo.edu/geography-meteorology/meteorology/" 

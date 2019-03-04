@@ -1,0 +1,47 @@
+
+  html, body {
+    background-color: #FFF;
+  }
+
+
+	article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {display:block;}
+	
+
+	.top-bar
+	{
+		overflow: hide;
+		background-color: #381e0e;
+		position: absolute;
+		top: 0;
+		left:0;
+		width: 100.75%;
+		vertical-align:middle;
+		box-shadow: 0 5px 3px rgba(0,0,0,.5);
+	}
+
+
+	.top-bar img
+	{
+		max-width: fixed;
+		height: auto;
+		vertical-align:middle;
+		padding-left:33%;
+
+	}
+
+	
+
+	#intro
+	{
+		text-align: center;
+		margin-left:-1%;
+		color: #F3F3CF;
+	}
+
+
+	#navbar
+	{
+		margin:-22% 4%;
+	}
+
+

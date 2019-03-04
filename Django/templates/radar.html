@@ -2,15 +2,15 @@
 	<head>
 		<title>{{ radar_name }} Radar</title>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 		{% csrf_token %}
 		{% load static %}
-		{% include "scripts.html" %}
+
+		{% include "frag/metas.html" %}
+		{% include "frag/scripts.html" %}
 
 		<script src="{% static "js/radar.js" %}"></script>
 
-		<link rel="stylesheet" type="text/css" href="{% static "css/radar.css" %}" />
+		<link rel="stylesheet" type="text/css" href="{% static "css/loop.css" %}" />
 		<link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
 	</head>
 	<body>
@@ -18,13 +18,19 @@
 			<form>
 				<input hidden name="radar_type" value="{{ radar_type }}" />
 			</form>
-			<div class="content-nav">
-				<div>{% include "nav/radar_full_nav.html" %}</div>
+
+			<div>{% include "frag/header.html" %}</div>
+
+			<div id="navbar">
+				<div>{% include "nav/radar_nav.html" %}</div>
 			</div>
+
+			<div id="preload"></div>
+
 			<div class="content-main">
-				<div id="animate_loop">
-					<img id="current_image" alt="" src="" />
-				</div>
+				<div id="container"></div>
+				<h2 id="title">{{ radar_name }} Radar</h2>
+				<div id="animate_loop"></div>
 			</div>
 		</div>
 	</body>

@@ -1,4 +1,5 @@
 To install dependencies: 
+
  - On Unix, cd into the Django directory from a Terminal window, then run `bash install.sh`
  - On Windows, cd into the Django directory from Command Prompt, then run `install.bat`
  

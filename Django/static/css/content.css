@@ -1,20 +1,38 @@
 	.content
 	{
-		min-height: 100vh;
-		border: none;
-		display: inline-block;
-		margin: 0;
-		padding: 0;
+		margin-top: 4%
 	}
-	
-	.content-nav
-	{
-		padding-left:20px;
-	}
-	
 	.content-main
 	{
-		margin-left: 260px;
-		margin-top:-270px;
-
+		margin-left: 27%;
+		margin-top:0;
+		max-width:700px;
+		z-index: +1;
 	}
+	.content-main img
+	{
+		position:absolute;
+	}
+	
+	#title
+	{
+		font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+		text-shadow: none;
+		font-weight: 600;
+		margin-left: 13vw;
+		margin-top; 2vh;
+	}
+	
+	.container
+	{
+	background: blue;
+	width:50%;
+	filter:opacity(.7);
+	overflow:hidden;
+	}
+	
+	.extra-space
+	{
+		margin-top: -26%;
+	}
+

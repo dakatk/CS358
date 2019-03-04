@@ -14,16 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import include, path, re_path
+from django.views.generic.base import RedirectView
+
+favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
 
 # Specifies URLs for all apps relative to the site's base URL
 urlpatterns = [
     # Home page
     path('', include('home.urls')),
+    # Favicon Redirect
+    re_path(r'^favicon\.ico$', favicon_view),
     # Valpo Forecast
     path('forecast/', include('forecast.urls')),
     # Valpo Radar
     path('radar/', include('radar.urls')),
     # Regional Satellite
     path('satellite/', include('satellite.urls')),
+    # GFS Model
+    path('ncep_models/', include('ncep_models.urls')),
 ]

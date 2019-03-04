@@ -2,10 +2,17 @@
 	<head>
 		<title>Home Page</title>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		{% load static %}
+
+		{% include "frag/metas.html" %}
 	</head>
 	<body>
 		<h2>Home Page</h2>
-		<div>{% include "nav/base_nav.html" %}</div>
+		
+		<div>{% include "frag/header.html" %}</div>
+
+		<div id="navbar">
+			<div>{% include "nav/home_nav.html" %}</div>
+		</div>
 	</body>
 </html>

@@ -1,31 +1,43 @@
 <html>
 	<head>
 		<title>Forecast</title>
-        {% load static %}
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        	{% load static %}
+
+		{% include "frag/metas.html" %}
+
+		<link rel="stylesheet" type="text/css" href="{% static "css/forecast.css" %}" />
+		<link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
 	</head>
 	<body>
-		<h2>Forecast</h2>
-		<div>{% include "nav/forecast_nav.html" %}</div>
-        <link rel="stylesheet" type="text/css" href="{% static "css/forecast.css" %}" />
-        <table style="margin-left: 300px;">
-            <caption id="forecast_title">Valpo Forecast</caption>
-            <tr>
-                {% for arr in data %}
-                <td>
-                    <div class="forecast_container">
-                        <img src="http://bergeron.valpo.edu/images/futureclr.jpg" alt = "Weather Picture">
-                        {% for field in arr %}
-                            <div class="forecast_text">{{ field }}</div>
-                        {% endfor %}
-                    </div>
-                </td>
-                {% endfor %}
-            </tr>
-        </table>
-        <div id="graphic_container">
-            <div id="graphic_title">Forecast Graphic</div>
-            <img src="http://bergeron.valpo.edu/forecast/current_wxgraphic.jpg" alt="Forecast Graphic">
-        </div>
+		<div class="content">
+			<div>{% include "frag/header.html" %}</div>
+
+			<div id="navbar">
+				<div>{% include "nav/forecast_nav.html" %}</div>
+			</div>
+
+			<div class="forecast">
+				<table style="margin-left:21%;">
+					<caption id="forecast_title">Valpo Forecast</caption>
+					<tr>
+						{% for arr in data %}
+						<td>
+							<div class="forecast_container">
+								<img src="http://bergeron.valpo.edu/images/futureclr.jpg" alt = "Weather Picture">
+								{% for field in arr %}
+									<div class="forecast_text">{{ field }}</div>
+								{% endfor %}
+							</div>
+						</td>
+						{% endfor %}
+					</tr>
+				</table>
+				<div id="graphic_container">
+					<div id="graphic_title">Forecast Graphic</div>
+					<img src="http://bergeron.valpo.edu/forecast/current_wxgraphic.jpg" alt="Forecast Graphic">
+				</div>
+			</div>
+		</div>
 	</body>
 </html>

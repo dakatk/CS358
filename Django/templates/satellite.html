@@ -2,28 +2,38 @@
 	<head>
 		<title>{{ satellite_name }} Satellite</title>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 		{% csrf_token %}
 		{% load static %}
-		{% include "scripts.html" %}
+
+		{% include "frag/metas.html" %}
+		{% include "frag/scripts.html" %}
+		
 		<script src="{% static "js/satellite.js" %}"></script>
 
-		<link rel="stylesheet" type="text/css" href="{% static "css/satellite.css" %}" />
+		<link rel="stylesheet" type="text/css" href="{% static "css/loop.css" %}" />
 		<link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
 	</head>
 	<body>
 		<div class="content">
+
 			<form>
 				<input hidden name="satellite_channel" value="{{ satellite_channel }}" />
 			</form>
-			<div class="content-nav">
-				<div>{% include "nav/satellite_full_nav.html" %}</div>
+
+			<div>{% include "frag/header.html" %}</div>
+
+			<div id="navbar">
+				<div>{% include "nav/satellite_nav.html" %}</div>
 			</div>
-			<div class="content-main">
-				<div id="animate_loop">
-					<img id="current_image" alt="" src="" />
+
+			<div id="preload"></div>
+
+			<div class="extra-space">
+				<div class="content-main">
+					<h2 id="title">{{ satellite_name }} Satellite</h2>
+					<div id="animate_loop"></div>
 				</div>
 			</div>
+		</div>
 	</body>
 </html>
