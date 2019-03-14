@@ -1,0 +1,25 @@
+{% extends "nav/child/wrf_model/base_child_nav.html" %}
+
+{% block winds_sub_nav %}
+	<li class="child_nav_button" id="selected_child">
+		<a href="/wrf_model/wspd?pressure=300">Winds</a>
+	</li>
+</ul>
+
+<ul class="child_sub_nav_list">
+	<li class="child_sub_nav_button">
+		<a href="/wrf_model/wspd?pressure=300">300 hPa</a>
+	</li>
+	<li class="child_sub_nav_button">
+		<a href="/wrf_model/wspd?pressure=500">500 hPa</a>
+	</li>
+	<li class="child_sub_nav_button">
+		<a href="/wrf_model/wspd?pressure=700">700 hPa</a>
+	</li>
+	<li class="child_sub_nav_button">
+		<a href="/wrf_model/wspd?pressure=850">850 hPa</a>
+	</li>
+</ul>
+
+<ul class="child_nav_list">
+{% endblock %}

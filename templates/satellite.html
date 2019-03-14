@@ -1,0 +1,22 @@
+{% extends "loop_base.html" %}
+{% load static %}
+
+{% block title %}
+{{ satellite_name }} Satellite
+{% endblock %}
+
+{% block script %}
+<script src="{% static "js/satellite.js" %}"
+{% endblock %}
+
+{% block form_data %}
+<input hidden name="satellite_channel" value="{{ satellite_channel }}" />
+{% endblock %}
+
+{% block navbar %}
+<div>{% include "nav/satellite_nav.html" %}</div>
+{% endblock %}
+
+{% block content_title %}
+{{ satellite_name }} Satellite
+{% endblock %}

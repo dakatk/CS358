@@ -1,0 +1,19 @@
+{% extends "nav/child/wrf_model/base_child_nav.html" %}
+
+{% block abs_vort_sub_nav %}
+	<li class="child_nav_button" id="selected_child">
+		<a href="/wrf_model/avor?pressure=500">Abs Vort</a>
+	</li>
+</ul>
+
+<ul class="child_sub_nav_list">
+	<li class="child_sub_nav_button">
+		<a href="/wrf_model/avor?pressure=500">500 hPa</a>
+	</li>
+	<li class="child_sub_nav_button">
+		<a href="/wrf_model/avor?pressure=700">700 hPa</a>
+	</li>
+</ul>
+
+<ul class="child_nav_list">
+{% endblock %}

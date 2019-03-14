@@ -1,0 +1,22 @@
+{% extends "loop_base.html" %}
+{% load static %}
+
+{% block title %}
+{{ model_name }}
+{% endblock %}
+
+{% block script %}
+<script src="{% static "js/wrf_model.js" %}"
+{% endblock %}
+
+{% block form_data %}
+<input hidden name="model_type" value="{{ model_type }}" />
+{% endblock %}
+
+{% block navbar %}
+{% include "nav/wrf_model/base_nav.html" %}
+{% endblock %}
+
+{% block content_title %}
+{{ model_name }}
+{% endblock %}

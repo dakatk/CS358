@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>{% block title %}{% endblock %}</title>
+
+		{% csrf_token %}
+		{% load static %}
+
+		{% include "frag/metas.html" %}
+		{% include "frag/scripts.html" %}
+
+		{% block script %}{% endblock %}
+
+		<link rel="stylesheet" type="text/css" href="{% static "css/loop.css" %}" />
+		<link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
+	</head>
+	<body>
+		<div class="content">
+			<form>
+				{% block form_data %}{% endblock %}
+			</form>
+
+			<div>{% include "frag/header.html" %}</div>
+
+			<div id="navbar">
+				{% block navbar %}{% endblock %}
+			</div>
+
+			<div id="preload"></div>
+
+			<div class="extra-space">
+				<div class="content-main">
+					<h2 id="title">{% block content_title %}{% endblock %}</h2>
+					<div id="animate_loop"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

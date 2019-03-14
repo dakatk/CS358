@@ -1,0 +1,18 @@
+{% extends "loop_base.html" %}
+{% load static %}
+
+{% block title %}
+GFS Model
+{% endblock %}
+
+{% block script %}
+<script src="{% static "js/ncep_models.js" %}"
+{% endblock %}
+
+{% block navbar %}
+<div>{% include "nav/ncep_models_nav.html" %}</div>
+{% endblock %}
+
+{% block content_title %}
+GFS Model
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "loop_base.html" %}
+{% load static %}
+
+{% block title %}
+{{ radar_name }}Radar
+{% endblock %}
+
+{% block script %}
+<script src="{% static "js/radar.js" %}"
+{% endblock %}
+
+{% block form_data %}
+<input hidden name="radar_type" value="{{ radar_type }}" />
+{% endblock %}
+
+{% block navbar %}
+<div>{% include "nav/radar_nav.html" %}</div>
+{% endblock %}
+
+{% block content_title %}
+{{ radar_name }}Radar
+{% endblock %}

@@ -1,0 +1,38 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static "css/nav.css" %}" />
+
+<ul class="child_nav_list">
+	<li class="child_nav_button">
+		<a href="/wrf_model/mslp">MSLP</a>
+	</li>
+
+	<li class="child_nav_button">
+		<a href="/wrf_model/tmpc?pressure=500">Temp</a>
+		{% block temp_sub_nav %}{% endblock %}
+	</li>
+
+	{% block winds_sub_nav %}
+	<li class="child_nav_button">
+		<a href="/wrf_model/wspd?pressure=300">Winds</a>
+	</li>
+	{% endblock %}
+
+	{% block precip_sub_nav %}
+	<li class="child_nav_button">
+		<a href="/wrf_model/precip?type=total">Precip</a>
+	</li>
+	{% endblock %}
+
+	{% block abs_vort_sub_nav %}
+	<li class="child_nav_button">
+		<a href="/wrf_model/avor?pressure=500">Abs Vort</a>
+	</li>
+	{% endblock %}
+
+	<li class="child_nav_button">
+		<a href="/wrf_model/cape">CAPE</a>
+	</li>
+	<li class="child_nav_button">
+		<a href="/wrf_model/mslp">Sim. dBz</a>
+	</li>
+</ul>
