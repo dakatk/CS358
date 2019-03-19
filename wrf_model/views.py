@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.http import Http404, HttpResponseForbidden, JsonResponse
+from django.views.decorators.csrf import csrf_protect
 
 
 # Number of images to loop through (constant value)

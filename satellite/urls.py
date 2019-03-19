@@ -9,6 +9,6 @@ from . import views
 urlpatterns = [
     
     path('', views.satellite, name='satellite'),
-    path('images', views.images, name='images')
+    path('images/', views.images, name='images')
     
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
