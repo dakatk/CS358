@@ -10,8 +10,6 @@ NUM_FIELDS = 8
 
 def forecast(request):
     """Parses the GET request that loads the forecast page"""
-    
-    global NUM_DAYS, NUM_FIELDS
 
     # TODO Implement This System Better
     context = dict()
@@ -23,7 +21,16 @@ def forecast(request):
     # Don't display the page if any thing is passed with the GET request
     if len(request.GET) > 0:
         raise Http404()
-    
+
+    parse_forecast_data(context)
+
+    # HTML files are found in the site's 'templates' folder
+    return render(request, 'forecast.html', context)
+
+
+def parse_forecast_data(context):
+
+    global NUM_DAYS, NUM_FIELDS
     # Open and read the file containing the forecast data
     file = open("static/txt/testFile.txt", "r")
 
@@ -32,7 +39,7 @@ def forecast(request):
     for line in file.readlines():
 
         line = line.strip()
-        
+
         if line is not '':
             data.append(line)
 
@@ -41,23 +48,19 @@ def forecast(request):
 
     # Store data as a two dimensional list of [day][dataForDay]
     out_data = [list(fields_range) for _ in days_range]
-    
+
     for i in days_range:
-        
+
         for j in fields_range:
-            
+
             s = data[i * NUM_FIELDS + j]
-            
+
             # First "field" of each day will always be the day (I.E. "Today" or "Monday")
             # This if is only necessary because one field has two ':'s
             if j is not 0:
-                
                 separated = s.split(":")
                 s = separated[0].strip() + ": " + separated[-1].strip()
-                
+
             out_data[i][j] = s
 
     context['data'] = out_data
-    
-    # HTML files are found in the site's 'templates' folder
-    return render(request, 'forecast.html', context)

@@ -16,28 +16,14 @@
 			<div id="navbar">
 				<div>{% include "nav/forecast_nav.html" %}</div>
 			</div>
-
-			<div class="forecast">
-				<table style="margin-left:21%;">
-					<caption id="forecast_title">Valpo Forecast</caption>
-					<tr>
-						{% for arr in data %}
-						<td>
-							<div class="forecast_container">
-								<img src="http://bergeron.valpo.edu/images/futureclr.jpg" alt = "Weather Picture">
-								{% for field in arr %}
-									<div class="forecast_text">{{ field }}</div>
-								{% endfor %}
-							</div>
-						</td>
-						{% endfor %}
-					</tr>
-				</table>
-				<div id="graphic_container">
-					<div id="graphic_title">Forecast Graphic</div>
-					<img src="http://bergeron.valpo.edu/forecast/current_wxgraphic.jpg" alt="Forecast Graphic">
-				</div>
-			</div>
+			<div id="forecast">
+                <div id="forecast_title">Valpo Forecast</div>
+                {% include "frag/forecast_data.html" %}
+                <div id="graphic_container">
+                    <div id="graphic_title">Forecast Graphic</div>
+                    <img src="http://bergeron.valpo.edu/forecast/current_wxgraphic.jpg" alt="Forecast Graphic">
+                </div>
+            </div>
 		</div>
 	</body>
 </html>
