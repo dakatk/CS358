@@ -15,7 +15,7 @@ urlpatterns = [
     path('precip/', views.precip, name='precip'),
     path('avor/', views.abs_vort, name='abs_vort'),
     path('cape/', views.cape, name='cape'),
-    path('dbz/', views.sim_dbz, name='sim_dbz'),
+    path('sim_dbz/', views.sim_dbz, name='sim_dbz'),
     path('images/', views.images, name='images')
     
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

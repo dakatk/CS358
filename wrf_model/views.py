@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import Http404, HttpResponseForbidden, JsonResponse
 from django.views.decorators.csrf import csrf_protect
 
@@ -15,7 +15,7 @@ def image_file(model_type, index):
     """Returns the absolute url of an image file given type and index"""
 
     global IMAGE_URL    
-    return IMAGE_URL + '%s_f%03d' % (model_type, index * 3) 
+    return IMAGE_URL + '%s_f%03d.png' % (model_type, index * 3) 
 
 
 def wrf_model(request):
@@ -27,7 +27,7 @@ def wrf_model(request):
     if len(request.GET) is not 0:
         return Http404('Page not found')
 
-    return redirect('/wrf_model/mslp')
+    return redirect('/wrf_model/mslp/')
 
 
 def mslp(request):
@@ -196,7 +196,7 @@ def images(request):
         return image_file(model_type, i)
 
     image_cycle = list(map(image_path, range(NUM_IMAGES)))
-    context = {'image_cycle': image_cycle}
+    context = {'image_cycle': image_cycle[::-1]}
 
     request.session[session_key] = context
 

@@ -6,10 +6,11 @@
 		<a href="/wrf_model/mslp">MSLP</a>
 	</li>
 
+	{% block temp_sub_nav %}
 	<li class="child_nav_button">
 		<a href="/wrf_model/tmpc?pressure=500">Temp</a>
-		{% block temp_sub_nav %}{% endblock %}
 	</li>
+	{% endblock %}
 
 	{% block winds_sub_nav %}
 	<li class="child_nav_button">
@@ -33,6 +34,6 @@
 		<a href="/wrf_model/cape">CAPE</a>
 	</li>
 	<li class="child_nav_button">
-		<a href="/wrf_model/mslp">Sim. dBz</a>
+		<a href="/wrf_model/sim_dbz">Sim. dBz</a>
 	</li>
 </ul>
