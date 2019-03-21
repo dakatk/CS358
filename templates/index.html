@@ -5,14 +5,50 @@
 		{% load static %}
 
 		{% include "frag/metas.html" %}
+        <link rel="stylesheet" type="text/css" href="{% static "css/home_page.css" %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}"/>
 	</head>
 	<body>
-		<h2>Home Page</h2>
-		
+        <div class="content">
+
 		<div>{% include "frag/header.html" %}</div>
 
 		<div id="navbar">
 			<div>{% include "nav/home_nav.html" %}</div>
 		</div>
+
+        <div id="content">
+            <table>
+                <tr>
+                    <td colspan="2">
+                        <a href="forecast/">
+                            <div id="forecast_data">
+                                <div class="column-header">Forecast</div>
+                                {% include "frag/forecast_data.html" %}
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="non-first-element">
+                            <a href="radar/?type=ref">
+                                <div class="column-header">Local Radar</div>
+                                <img src="http://bergeron.valpo.edu/~wxweb/radar/reflectivity/ref_img0.png" alt="Radar Picture"/>
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="non-first-element">
+                            <a href="wrf_model/">
+                                <div class="column-header">WRF Forecast</div>
+                                <img src="http://bergeron.valpo.edu/model/WRF/sfc_mslp_tmpf_wind_f000.png" alt="Forecast Picture"/>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        </div>
 	</body>
 </html>
