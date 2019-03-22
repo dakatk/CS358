@@ -1,12 +1,13 @@
 {% extends "loop_base.html" %}
 {% load static %}
 
+
 {% block title %}
-{{ radar_name }}Radar
+{{ radar_name }} Radar
 {% endblock %}
 
 {% block script %}
-<script src="{% static "js/radar.js" %}"
+<script src="{% static "js/radar.js" %}"></script>
 {% endblock %}
 
 {% block form_data %}
@@ -18,5 +19,5 @@
 {% endblock %}
 
 {% block content_title %}
-{{ radar_name }}Radar
+{{ radar_name }} Radar
 {% endblock %}

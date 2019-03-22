@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import Http404, HttpResponseForbidden, JsonResponse
 from django.views.decorators.csrf import csrf_protect
 
+
 # Number of images to loop through (constant value)
 NUM_IMAGES = 81
 
@@ -14,7 +15,7 @@ def image_file(index):
     """Returns the absolute url of an image file given the index"""
     
     global IMAGE_URL
-    return IMAGE_URL + '/gfs_four_panel_f%d.png' % (index * 3)
+    return IMAGE_URL + '/gfs_four_panel_f%02d.png' % (index * 3)
 
 
 def ncep_models(request):

@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import Http404, HttpResponseForbidden, JsonResponse
 from django.views.decorators.csrf import csrf_protect
 
+
 # Number of images to loop through (constant value)
 NUM_IMAGES = 30
 
@@ -46,12 +47,11 @@ def radar(request):
         # Context data to help the page display some
         # data computed from the backend
         context = dict()
-            
-        else:
-            context['radar_name'] = radar_types[radar_type]
-            context['radar_type'] = radar_type
 
-            request.session[session_key] = context
+        context['radar_name'] = radar_types[radar_type]
+        context['radar_type'] = radar_type
+
+        request.session[session_key] = context
     
     # HTML files are found in the site's 'templates' folder
     return render(request, 'radar.html', context)
