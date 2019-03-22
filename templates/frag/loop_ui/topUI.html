@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>Top UI</title>
+</head>
+<body>
+<table width="750" border="0">
+	<tbody><tr>
+	  <td width="250px" align="center"><font class="text1">
+            <input value="Start" onclick="start_play();" name="button3" type="button" class="mapbutton">
+            <input value="Stop" onclick="stop_play();" name="button" type="button" class="mapbutton">
+	    </font>
+          </td>
+	  <td width="250px" align="center"><font class="text1"><strong>Direction</strong>
+            <input value="Reverse" onclick="reverse();" name="direction" type="button" class="mapbutton2">
+	  </font></td>	
+	  <td width="250px" align="right"><font class="text1"> <strong>Speed: </strong>
+            <input value="<<" onclick="delay=delay*inc; show_delay();" name="button2" type="button">
+            <input value=">>" onclick="delay=delay/inc; show_delay();" name="button2" type="button"></font>
+	  </td>
+	  <td><font class="text1">
+	   <input value="" name="dly" size="10" type="text" class="maptext"></font>
+	  </td>
+	</tr>
+    </tbody></table>
+</body>
+</html>
