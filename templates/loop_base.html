@@ -30,7 +30,9 @@
 			<div class="extra-space">
 				<div class="content-main">
 					<h2 id="title">{% block content_title %}{% endblock %}</h2>
+					{% include "frag/loop_ui/top.html" %}
 					<div id="animate_loop"></div>
+					{% include "frag/loop_ui/bottom.html" %}
 				</div>
 			</div>
 		</div>

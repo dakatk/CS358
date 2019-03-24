@@ -2,7 +2,7 @@ from django.test import TestCase, Client
 from .views import NUM_IMAGES
 
 
-class NCEPModelTestCase(TestCase):
+class NCEPModelsTestCase(TestCase):
 
     def setUp(self):
         """Initialize test data"""

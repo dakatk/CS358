@@ -9,6 +9,7 @@
         {% include "frag/metas.html" %}
         {% include "frag/scripts.html" %}
 
+        <script src="{% static "js/soundings.js" %}"></script>
         <link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
     </head>
     <body>
@@ -23,8 +24,7 @@
 
 			<div class="extra-space">
 				<div class="content-main">
-					<h2 id="title"></h2>
-					<div id="animate_loop"></div>
+					<select id="options"></select>
 				</div>
 			</div>
         </div>
