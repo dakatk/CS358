@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponseForbidden, Http404
 
+
 # The number of days in the forecast file
 NUM_DAYS = 5
+
 
 # The number of fields for each day in the forecast file
 NUM_FIELDS = 8
@@ -10,25 +12,22 @@ NUM_FIELDS = 8
 
 def forecast(request):
     """Parses the GET request that loads the forecast page"""
-
-    # TODO Implement This System Better
-    context = dict()
     
     # Stop POST and other potentially harmful requests
     if request.method != 'GET':
         return HttpResponseForbidden()
     
     # Don't display the page if any thing is passed with the GET request
-    if len(request.GET) > 0:
+    if len(request.GET) is not 0:
         raise Http404()
 
-    parse_forecast_data(context)
+    context = parse_forecast_data()
 
     # HTML files are found in the site's 'templates' folder
     return render(request, 'forecast.html', context)
 
 
-def parse_forecast_data(context):
+def parse_forecast_data():
 
     global NUM_DAYS, NUM_FIELDS
     # Open and read the file containing the forecast data
@@ -63,4 +62,4 @@ def parse_forecast_data(context):
 
             out_data[i][j] = s
 
-    context['data'] = out_data
+    return {'data': out_data}
