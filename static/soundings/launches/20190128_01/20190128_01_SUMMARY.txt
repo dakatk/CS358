@@ -1,0 +1,48 @@
+SUMMARY INFORMATION FOR SOUNDING "20190128_01"
+==============================================
+
+Station Name             : KVUM
+.       WMO Number       : /////
+.       ICAO Number      : /////
+.       Mobile Call Sign : /////
+.       Latitude         : 41.46421°N
+.       Longitude        : 087.03857°W
+.       Altitude (MSL)   : 249m
+
+Sonde   Type             : iMet-4-AB
+.       Serial Number    : 21557
+
+Surface Pressure         : 971.63hPa
+.       Temperature      : +1.0°C
+.       Humidity         : 90%
+.       Wind Speed       : 11.0kts
+.       Wind Direction   : 200.0°
+.       Cloud Code       : /////
+
+Launched (UTC)           : 1/28/2019 16:14:15
+
+--------------------------------------------------------------------------------
+
+Operator                 : Kristen Axon
+
+Balloon             Make : Unknown
+.                 Weight : 300
+.                    Age : 
+
+Data    Minimum Pressure : 71.98hPa
+.       Maximum Altitude : 17778m
+.            Ascent Rate : 355m/min
+.    Maximum Temperature : +1.0°C
+.    Minimum Temperature : -61.1°C
+.    Maximum Humidity    : 99%
+.    Minimum Humdity     : 0%
+.    Maximum Slant Range : 89.784km
+.      Final Slant Range : 89.784km
+.        Final Elevation : 11.4°
+
+Termination (UTC)        : 1/28/2019 17:05:03
+.                 Source : Automatic
+.                 Reason : Balloon burst (Rate = -324m/min  Threshold = -300m/min)
+.        Ascent Duration : 0 hours 50 minutes 2 seconds
+
+--------------------------------------------------------------------------------

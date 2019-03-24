@@ -13,7 +13,6 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.urls import include, path, re_path
 from django.views.generic.base import RedirectView
 
@@ -35,4 +34,6 @@ urlpatterns = [
     path('ncep_models/', include('ncep_models.urls')),
     # WRF Model
     path('wrf_model/', include('wrf_model.urls')),
+    # KVUM Soundings
+    path('soundings/', include('soundings.urls'))
 ]

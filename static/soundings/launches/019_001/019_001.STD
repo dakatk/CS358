@@ -1,0 +1,41 @@
+RADIOSONDE OBSERVATION   Date: 18/05/2010  Time: 20:27 GMT   Ref No. : 019_001
+LOCATION: OCT - 3 35.238N 102.660W
+
+  Surface Observations                 Sonde Details
+------------------------             ------------------------
+PRESSURE       :  871.1 mb             
+HEIGHT         : 1220.6 Meter          
+TEMPERATURE    :   24.4 Deg            SONDE TYPE : IMET1 AA
+HUMIDITY       :   56.5 %              SONDE No.  : S7101
+WIND DIR.      :  165.0 Deg
+WIND VEL.      :    7.0 Knot
+CLOUD CODE     :  /////
+STATION No.    :  99999
+STATION NAME   :   KIMS
+
+
+	            DATA FOR STANDARD LEVELS
+  PRES.     TIME     HGT/MSL  TEMP.   RH     DEWP   W.D    W.S 
+   mb     HH:MM:SS   Meter     °C      %      °C    Deg.  Knots
+---------------------------------------------------------------
+   871    00:00:00   1221      24.4   57     15.2   165     7
+   850    00:00:36   1434      21.0   56     11.9   152    24
+   700    00:06:14   3076       8.0   66      2.1   219    28
+   500    00:18:31   5753     -11.2   62    -17.0   242    35
+   400    00:25:27   7426     -22.5   61    -28.0   252    52
+   300    00:33:48   9469     -39.1   44    -46.6   259    54
+   250    00:37:58  10686     -50.4   34    -59.2   273    58
+   200    00:42:57  12101     -61.5   28    -70.6   269    64
+
+ INVERSION
+
+ FREEZING LEVEL
+ 607.2    00:11:36   4232       0.0   41    -11.7   206    38
+
+ TROPOPAUSE
+
+ MAX WIND
+ 229.7    00:39:38  11231     -55.6   31    -64.6   273    70
+
+ LAST LEVEL
+ 175.4    00:45:55  12907     -63.2   24    -73.1   279    68

@@ -31,7 +31,7 @@ def parse_forecast_data():
 
     global NUM_DAYS, NUM_FIELDS
     # Open and read the file containing the forecast data
-    file = open("static/txt/testFile.txt", "r")
+    file = open("static/forecast/testFile.txt", "r")
 
     data = []
 

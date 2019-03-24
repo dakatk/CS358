@@ -1,0 +1,48 @@
+SUMMARY INFORMATION FOR SOUNDING "20180328_01"
+==============================================
+
+Station Name             : KVUM
+.       WMO Number       : /////
+.       ICAO Number      : /////
+.       Mobile Call Sign : /////
+.       Latitude         : 41.46423°N
+.       Longitude        : 087.03860°W
+.       Altitude (MSL)   : 248m
+
+Sonde   Type             : iMet-1-ABx
+.       Serial Number    : 14991
+
+Surface Pressure         : 981.8hPa
+.       Temperature      : +6.9°C
+.       Humidity         : 70%
+.       Wind Speed       : 5.0kts
+.       Wind Direction   : 90.0°
+.       Cloud Code       : /////
+
+Launched (UTC)           : 3/28/2018 3:16:25 PM
+
+--------------------------------------------------------------------------------
+
+Operator                 : Savannah Jorgensen
+
+Balloon             Make : Unknown
+.                 Weight : 300
+.                    Age : 
+
+Data    Minimum Pressure : 669.9hPa
+.       Maximum Altitude : 3081m
+.            Ascent Rate : 283m/min
+.    Maximum Temperature : +7.5°C
+.    Minimum Temperature : -4.4°C
+.    Maximum Humidity    : 79%
+.    Minimum Humdity     : 14%
+.    Maximum Slant Range : 4.390km
+.      Final Slant Range : 4.390km
+.        Final Elevation : 44.6°
+
+Termination (UTC)        : 3/28/2018 3:33:47 PM
+.                 Source : Automatic
+.                 Reason : Excessive missing data frames
+.        Ascent Duration : 0 hours 10 minutes 53 seconds
+
+--------------------------------------------------------------------------------

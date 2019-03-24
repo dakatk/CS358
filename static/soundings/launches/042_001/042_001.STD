@@ -1,0 +1,50 @@
+RADIOSONDE OBSERVATION   Date: 26/04/2011  Time: 20:44 GMT   Ref No. : 042_001
+LOCATION: OCT - 3 41.464N 87.039W
+
+  Surface Observations                 Sonde Details
+------------------------             ------------------------
+PRESSURE       :  967.3 mb             
+HEIGHT         :  223.9 Meter          
+TEMPERATURE    :   18.2 Deg            SONDE TYPE : IMET1 AA
+HUMIDITY       :   72.7 %              SONDE No.  : S15816
+WIND DIR.      :  180.0 Deg
+WIND VEL.      :   10.0 Knot
+CLOUD CODE     :  /////
+STATION No.    :  99999
+STATION NAME   :   KVUM
+
+
+	            DATA FOR STANDARD LEVELS
+  PRES.     TIME     HGT/MSL  TEMP.   RH     DEWP   W.D    W.S 
+   mb     HH:MM:SS   Meter     °C      %      °C    Deg.  Knots
+---------------------------------------------------------------
+   967    00:00:00    224      18.2   73     13.2   180    10
+   925    00:01:09    612      14.7   89     13.0   197    25
+   850    00:03:01   1322       9.6   99      9.5   193    39
+   700    00:05:24   2917       1.2   99      1.1   210    55
+   500    00:10:30   5534     -21.2   44    -30.3   230    77
+   400    00:18:17   7145     -31.6   41    -40.4   218    67
+   300    00:24:36   9120     -43.7   65    -47.5   207    83
+   250    00:28:04  10350     -47.1   58    -51.8   211    78
+
+ INVERSION
+
+ FREEZING LEVEL
+ 680.5    00:05:38   3134       0.0   99     -0.1   211    58
+
+ TROPOPAUSE
+
+ MAX WIND
+ 450.0    00:14:58   6304     -26.6   40    -36.1   220    79
+ 298.8    00:24:41   9147     -43.8   65    -47.7   209    83
+ 237.7    00:29:24  10678     -49.3   56    -54.2   213    79
+
+ LAST LEVEL
+ 201.2    00:34:52  11770     -50.2   53    -55.5   221    65
+
+
+--------------
+HAINES INDEX
+LOW  - 3
+MED  - 3
+HIGH - 4
