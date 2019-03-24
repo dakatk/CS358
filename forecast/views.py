@@ -24,7 +24,7 @@ def forecast(request):
     context = parse_forecast_data()
 
     # HTML files are found in the site's 'templates' folder
-    return render(request, 'forecast.html', context)
+    return render(None, 'forecast.html', context)
 
 
 def parse_forecast_data():

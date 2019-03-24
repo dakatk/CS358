@@ -20,9 +20,15 @@ def soundings(request):
     if len(request.GET) is not 0:
         raise Http404()
 
-    context = parse_soundings_data()
+    session_key = 'soundings'
 
-    return render(request, 'soundings.html', context)
+    if session_key in request.session:
+        return render(None, 'soundings.html', request.session[session_key])
+
+    context = parse_soundings_data()
+    request.session[session_key] = context
+
+    return render(None, 'soundings.html', context)
 
 
 def parse_soundings_data():
@@ -39,11 +45,11 @@ def parse_soundings_data():
         summary_path = f'{LAUNCH_DIR}/{ref}/{ref}_SUMMARY.txt'
 
         if os.path.isfile(std_path):
-            with open(std_path, 'r') as f:
+            with open(std_path, 'r', encoding='utf-8', errors='ignore') as f:
                 names[index] = parse_name_from_std(f)
 
         elif os.path.isfile(summary_path):
-            with open(summary_path, 'r') as f:
+            with open(summary_path, 'r', encoding='utf-8', errors='ignore') as f:
                 names[index] = parse_name_from_summary(f)
 
     return {'names': names}
@@ -83,12 +89,20 @@ def images(request):
 
     global LAUNCH_DIR
 
-    context = {'image_selects': []}
+    if request.method != 'POST':
+        return HttpResponseForbidden()
+
+    session_key = 'soundings_selects'
+
+    if session_key in request.session:
+        return JsonResponse(request.session[session_key])
+
+    context = dict()
 
     image_ref_dirs = get_launch_sub_dirs()
-    image_selects = [f'{LAUNCH_DIR}/{ref}/{ref}_KVUM.png' for ref in image_ref_dirs]
 
-    context['image_selects]'] = image_selects
+    context['image_selects'] = [f'  {LAUNCH_DIR}/{ref}/{ref}_KVUM.png' for ref in image_ref_dirs]
+    request.session[session_key] = context['images_selects']
 
     return JsonResponse(context)
 
@@ -97,6 +111,11 @@ def get_launch_sub_dirs():
     """Returns all sub-directories of the 'launch' directory as an array"""
 
     walk = os.walk('static/soundings/launches')
-    blacklist = ['007_001', '039_002']
+    blacklist = ['launches', '007_001', '039_002']
 
-    return [d[0] for d in walk if d[0] not in blacklist]
+    def dirname(d):
+        return d.split('/')[-1]
+
+    dirs = [dirname(d[0]) for d in walk if dirname(d[0]) not in blacklist]
+
+    return sorted(dirs)

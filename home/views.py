@@ -15,7 +15,7 @@ def index(request):
     if len(request.GET) > 0:
         return Http404()
 
-    parse_forecast_data(context)
+    context = parse_forecast_data()
 
     # HTML files are found in the site's 'templates' folder
     return render(request, 'index.html', context)

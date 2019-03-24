@@ -30,7 +30,7 @@ def ncep_models(request):
     if len(request.GET) is not 0:
         raise Http404('Page not found')
 
-    return render(request, 'ncep_models.html', dict())
+    return render(None, 'ncep_models.html', dict())
     
 
 @csrf_protect

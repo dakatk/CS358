@@ -24,7 +24,12 @@
 
 			<div class="extra-space">
 				<div class="content-main">
-					<select id="options"></select>
+					<select id="options">
+					    {% for name in names %}
+					        <option value="{{ forloop.counter0 }}" {% if forloop.first %}selected="selected"{% endif %}>{{ name }}</option>
+					    {% endfor %}
+					</select>
+					<img
 				</div>
 			</div>
         </div>
