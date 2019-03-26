@@ -1,0 +1,13 @@
+Location, Start, End
+427 W Randolth St, 10/15/1871, 06/11/1872
+20 N Wacker Drive, 06/11/1872, 06/8/1873
+Roanoke Building, 06/8/1873, 01/01/1887
+Chicago Opera House, 01/01/1887, 02/01/1890
+Auditorium Tower, 02/01/1890, 07/01/1905
+U.S. Court House 219 S Dearborn St, 07/01/2905, 12/31/1925
+University of Chicago, 01/01/1926, 06/30/1942
+Midway Airport, 07/01/1942, 01/17/1980
+O'Hare Airport International Terminal, 01/17/1980, 03/07/1985
+O'Hare Airport Hardstand Building, 03/07/1985, 01/19/1989
+O'Hare Airport Corporate Tower, 01/19/1989, 02/01/1996
+O'Hare Airport ASOS, 02/01/1996, Present

@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Sfc Station Climo</title>
+
+        {% csrf_token %}
+        {% load static %}
+
+		{% include "frag/metas.html" %}
+		<link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
+		<link rel="stylesheet" type="text/css" href="{% static "css/station_climo.css" %}" />
+    </head>
+
+    <body>
+        <script src="{% static "js/modules/min/jquery.min.js" %}"></script>
+        <script src="{% static "js/station_climo.js" %}"></script>
+        <div class="content">
+            <div>{% include "frag/header.html" %}</div>
+
+            <div id="navbar">
+				<div>{% include "nav/station_climo_nav.html" %}</div>
+			</div>
+
+            <div id="content">
+                <input type="hidden" name="current_station" value="{{ current_station }}" />
+                <form method="GET">
+                    <select id="station" name="station" onchange="submit(); return false;">
+
+                    </select>
+                </form>
+			    <div id="graph">{% include station_template %}</div>
+			    <div id="station_history">
+			        <h2>Station History</h2>
+			    </div>
+		    </div>
+        </div>
+    </body>
+</html>
