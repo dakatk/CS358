@@ -1,0 +1,39 @@
+.column {
+  float: left;
+  width: 24%;
+}
+
+.row{
+  content: "";
+  display: table;
+  clear: both;
+  overflow: hide;
+  background-color: #381e0e;
+  position: absolute;
+  left:0;
+  width: 100%;
+  vertical-align:middle;
+  text-align: center;
+}
+.column h3
+{
+font-size:13px;
+line-height:5px;
+font-weight:normal;
+color:white;
+}
+.column h2
+{
+font-size:15px;
+text-decoration: underline;
+color:#c8b18b;
+}
+.column a, .column a:active, .column a:visited
+{
+color:white;
+text-decoration:none;
+}
+.column a:hover
+{
+color:yellow;
+}

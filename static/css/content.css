@@ -1,6 +1,7 @@
 	.content
 	{
-		margin-top: 4%
+		margin-top: -2	%
+		
 	}
 	.content-main
 	{
@@ -30,9 +31,13 @@
 	filter:opacity(.7);
 	overflow:hidden;
 	}
-	
+
 	.extra-space
 	{
 		margin-top: -26%;
 	}
 
+	footer
+	{
+		padding-top:90vh;
+	}
