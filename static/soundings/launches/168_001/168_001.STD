@@ -1,0 +1,58 @@
+RADIOSONDE OBSERVATION   Date: 22/01/2016  Time: 22:18 GMT   Ref No. : 168_001
+LOCATION: OCT - 0 41.464N 87.038W
+
+  Surface Observations                 Sonde Details
+------------------------             ------------------------
+PRESSURE       : 1023.2 mb             
+HEIGHT         :  218.9 Meter          
+TEMPERATURE    :   -2.6 Deg            SONDE TYPE : IMET1 AB
+HUMIDITY       :   65.0 %              SONDE No.  : 16478
+WIND DIR.      :  210.0 Deg
+WIND VEL.      :   12.2 Knot
+CLOUD CODE     :  /////
+STATION No.    :  99999
+STATION NAME   :   KVUM
+
+
+	            DATA FOR STANDARD LEVELS
+  PRES.     TIME     HGT/MSL  TEMP.   RH     DEWP   W.D    W.S 
+   mb     HH:MM:SS   Meter     °C      %      °C    Deg.  Knots
+---------------------------------------------------------------
+  1023    00:00:00    219      -2.6   65     -8.3   210    12
+  1000    00:00:28    433      -4.4   62    -10.6    19    16
+   925    00:02:05   1039     -10.0   79    -13.0    43    22
+   850    00:03:47   1676     -13.8   95    -14.4    40    19
+   700    00:07:50   3168     -13.4   54    -20.6    12    19
+   500    00:14:16   5643     -29.6   67    -33.8   316     4
+   400    00:18:19   7166     -39.1   47    -46.1   246    27
+   300    00:23:29   9062     -50.2   40    -57.7   307    13
+   250    00:27:31  10232     -48.9   10    -66.7   340    13
+   200    00:32:26  11663     -50.8    6    -72.4   286    18
+   150    00:38:42  13496     -51.8    5    -74.6   278    17
+   100    00:47:11  16014     -54.2    4    -76.5   296    26
+
+ INVERSION
+
+BASE
+ 851.1    00:03:45   1665     -14.3   94    -15.1    40    19
+
+TOP
+ 801.9    00:05:01   2126      -7.6   34    -20.8    26    23
+DIF. TEMPERATURE     6.74    DIF. HEIGHT   461.55
+
+ FREEZING LEVEL
+
+ TROPOPAUSE
+ 311.1    00:22:46   8865     -51.4   50    -57.1   261    17
+
+ MAX WIND
+
+ LAST LEVEL
+  78.8    00:51:51  17466     -56.3    5    -78.0   268    21
+
+
+--------------
+HAINES INDEX
+LOW  - 3
+MED  - 2
+HIGH - 2

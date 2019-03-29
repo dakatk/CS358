@@ -1,0 +1,48 @@
+SUMMARY INFORMATION FOR SOUNDING "177_001"
+==========================================
+
+Station Name             : KVUM
+.       WMO Number       : /////
+.       ICAO Number      : /////
+.       Mobile Call Sign : /////
+.       Latitude         : 41.46422°N
+.       Longitude        : 087.03856°W
+.       Altitude (MSL)   : 254m
+
+Sonde   Type             : iMet-1-ABx
+.       Serial Number    : 19457
+
+Surface Pressure         : 985.6hPa
+.       Temperature      : +31.8°C
+.       Humidity         : 47%
+.       Wind Speed       : 3.9kts
+.       Wind Direction   : 270.0°
+.       Cloud Code       : /////
+
+Launched (UTC)           : 8/9/2016 18:09:55
+
+--------------------------------------------------------------------------------
+
+Operator                 : David Goines
+
+Balloon             Make : Unknown
+.                 Weight : 200
+.                    Age : 
+
+Data    Minimum Pressure : 24.4hPa
+.       Maximum Altitude : 24795m
+.            Ascent Rate : 227m/min
+.    Maximum Temperature : +31.8°C
+.    Minimum Temperature : -66.9°C
+.    Maximum Humidity    : 87%
+.    Minimum Humdity     : 6%
+.    Maximum Slant Range : 58.916km
+.      Final Slant Range : 54.393km
+.        Final Elevation : 27.1°
+
+Termination (UTC)        : 8/9/2016 19:59:52
+.                 Source : Automatic
+.                 Reason : Balloon burst (Rate = -325m/min  Threshold = -300m/min)
+.        Ascent Duration : 1 hours 49 minutes 17 seconds
+
+--------------------------------------------------------------------------------

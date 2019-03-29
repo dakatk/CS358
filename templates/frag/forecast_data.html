@@ -4,14 +4,14 @@
 <table>
     <tr>
         {% for arr in data %}
-            <td>
-                <div id="forecast_container">
-                    <img src="http://bergeron.valpo.edu/images/futureclr.jpg" alt = "Weather Picture">
-                    {% for field in arr %}
-                        <div class="forecast_text">{{ field }}</div>
-                    {% endfor %}
-                </div>
-            </td>
+        <td>
+            <div id="forecast_container">
+                <img src="http://bergeron.valpo.edu/images/futureclr.jpg" alt="Weather Picture">
+                {% for field in arr %}
+                    <div class="forecast_text">{{ field }}</div>
+                {% endfor %}
+            </div>
+        </td>
         {% endfor %}
     </tr>
 </table>
