@@ -4,3 +4,8 @@
     right: 25%;
     margin-top: 5%;
 }
+
+#station_history table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
