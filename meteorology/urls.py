@@ -35,5 +35,7 @@ urlpatterns = [
     # WRF Model
     path('wrf_model/', include('wrf_model.urls')),
     # KVUM Soundings
-    path('soundings/', include('soundings.urls'))
+    path('soundings/', include('soundings.urls')),
+    # Sfc Station Climo
+    path('station_climo/', include('station_climo.urls')),
 ]
