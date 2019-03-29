@@ -1,0 +1,8 @@
+Location, Start, End
+900 Block North Main, 12/1872, 10/1893
+731 North Court Street, 11/1893, 12/1912
+1135 North Court Street, 01/1913, 06/01/1918
+731 North Court Street, 06/02/1918, 07/29/1920
+324 Churchill Street, 07/30/1920, 12/19/1950
+Greater Rockford Airport Federal Facilities Building, 12/19/1950, 07/01/1995
+Greater Rockford Airport ASOS, 07/01/1995, Present
