@@ -22,10 +22,6 @@
 
 			<div>{% include "frag/header.html" %}</div>
 
-			<div id="navbar">
-				{% block navbar %}{% endblock %}
-			</div>
-
 			<div id="preload"></div>
 
 			<div class="extra-space">
@@ -39,10 +35,15 @@
 					{% include "frag/loop_ui/bottom.html" %}
 				</div>
 			</div>
+			
+			<div id="navbar">
+				{% block navbar %}{% endblock %}
+			</div>
+
 		</div>
 	</body>
 	<footer>
-			<div id="links">
+		<div id="links">
 			{% include "frag/footer.html" %}
 		</div>
 	</footer>

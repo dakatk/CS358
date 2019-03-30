@@ -14,26 +14,27 @@
         <link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
     </head>
     <body>
-        <div class="content">
-
-            <div>{% include "frag/header.html" %}</div>
-
-            <div id="navbar">
-		        <div>{% include "nav/soundings_nav.html" %}</div>
-	        </div>
-
-	        <div id="preload"></div>
-
-            <div class="extra-space">
-		        <div class="content-main">
-		        <select id="options">
-		        {% for name in names %}
-		            <option value="{{ forloop.counter0 }}" {% if forloop.first %}selected="selected"{% endif %}>{{ name }}</option>
-		        {% endfor %}
-		        </select>
-            <div id="show_image"></div>
-		</div>
-	    </div>
+		<div>{% include "frag/header.html" %}</div>
+		<div class="space">
+			<div id="navbar">
+				<div>{% include "nav/soundings_nav.html" %}</div>
+				<div id="preload"></div>
+				<div class="content-main">
+					<select id="options">
+						{% for name in names %}
+							<option value="{{ forloop.counter0 }}" {% if forloop.first %}selected="selected"{% endif %}>{{ name }}</option>
+						{% endfor %}
+					</select>
+					<div id="show_image"></div>
+				</div>
+			</div>
         </div>
+	</div>
+	<div class="home">
+			{% include "frag/footer.html" %}
+		</div>
     </body>
+	<footer>
+	
+	</footer>
 </html>

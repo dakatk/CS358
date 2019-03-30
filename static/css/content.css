@@ -1,12 +1,11 @@
 	.content
 	{
-		margin-top: -2	%
+		margin-top: 0%;
 		
 	}
 	.content-main
 	{
-		margin-left: 27%;
-		margin-top:0;
+		margin: -27% 0% 0% 22%;
 		max-width:700px;
 		z-index: +1;
 	}
@@ -20,8 +19,8 @@
 		font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
 		text-shadow: none;
 		font-weight: 600;
-		margin-left: 13vw;
-		margin-top: 2vh;
+		text-align: center;
+		
 	}
 	
 	.container
@@ -34,10 +33,20 @@
 
 	.extra-space
 	{
-		margin-top: -26%;
+		padding: 0% 0% 0% 0%;
 	}
 
 	footer
 	{
-		padding-top:90vh;
+		margin: 25% 0% 0% 0%;
+	}
+	
+	#below
+	{
+		margin: 88% 0% 0% 10%;
+	}
+
+	.satellite
+	{
+		margin: 50% 0% 0% 0%;
 	}

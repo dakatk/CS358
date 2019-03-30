@@ -1,8 +1,8 @@
 
 #content {
-    position: absolute;
-    left: 25%;
-    margin-top:5%;
+    position: relative;
+    margin: -20% 0% 0% 22%;
+	height: 500px;
 }
 
 #content td {
