@@ -15,11 +15,13 @@
     </head>
     <body>
 		<div>{% include "frag/header.html" %}</div>
-		<div class="space">
-			<div id="navbar">
+			<div id="nav_sounding">
 				<div>{% include "nav/soundings_nav.html" %}</div>
+			</div>
+			<div class="space">
 				<div id="preload"></div>
 				<div class="content-main">
+					<h2>HVUM Soundings</h2>
 					<select id="options">
 						{% for name in names %}
 							<option value="{{ forloop.counter0 }}" {% if forloop.first %}selected="selected"{% endif %}>{{ name }}</option>
@@ -28,8 +30,9 @@
 					<div id="show_image"></div>
 				</div>
 			</div>
-        </div>
-	</div>
+			<div class="container-soundings"></div>	
+	
+
 	<div class="home">
 			{% include "frag/footer.html" %}
 		</div>

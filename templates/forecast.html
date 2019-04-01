@@ -12,10 +12,11 @@
 	<body>
 		<div class="content">
 			<div>{% include "frag/header.html" %}</div>
-
+			
 			<div id="navbar">
 				<div>{% include "nav/forecast_nav.html" %}</div>
 			</div>
+			
 			<div id="forecast">
                 <div id="forecast_title">Valpo Forecast</div>
                 {% include "frag/forecast_data.html" %}
@@ -24,6 +25,8 @@
                     <img src="http://bergeron.valpo.edu/forecast/current_wxgraphic.jpg" alt="Forecast Graphic">
                 </div>
             </div>
+			<div class="container-forecast">
+			</div>
 		</div>
 	</body>
 	<footer>

@@ -15,12 +15,13 @@
 		<link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
 	</head>
 	<body>
+		<div>{% include "frag/header.html" %}</div>
 		<div class="content">
 			<form>
 				{% block form_data %}{% endblock %}
 			</form>
 
-			<div>{% include "frag/header.html" %}</div>
+			
 
 			<div id="preload"></div>
 
@@ -39,7 +40,6 @@
 			<div id="navbar">
 				{% block navbar %}{% endblock %}
 			</div>
-
 		</div>
 	</body>
 	<footer>

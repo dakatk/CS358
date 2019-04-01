@@ -3,7 +3,7 @@
 {
     margin: -20% 0% 0% 22%;
     position: relative;
-   
+	z-index:2;
 }
 
 #forecast img {
@@ -44,7 +44,7 @@
 
 #graphic_container {
     position: relative;
-    margin: -30% 0% 0% 0%;
+    margin: -28% 0% 0% 0%;
     width: 1020px;
 }
 
@@ -61,7 +61,7 @@
     font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-#navbar
+.forecast
 {
-	margin: -25% 0% 0% 3%;
+	margin: 0% 0% 0% 0%;
 }

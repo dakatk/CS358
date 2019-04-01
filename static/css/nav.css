@@ -121,7 +121,17 @@
 }
 
 #selected_child 
-{
-	background: #eaf;
+{	background: #eaf;
 	color: #502207;
+}
+
+.nav_loop
+{
+	margin: -58% 0 30% 0;
+}
+
+
+.nav_ncep
+{
+	margin: -58% 0 40% 0;
 }

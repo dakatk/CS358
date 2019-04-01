@@ -1,6 +1,7 @@
 {% extends "loop_base.html" %}
 {% load static %}
 
+<link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
 
 {% block title %}
 {{ radar_name }} Radar
@@ -15,7 +16,7 @@
 {% endblock %}
 
 {% block navbar %}
-<div>{% include "nav/radar_nav.html" %}</div>
+<div class="nav_loop">{% include "nav/radar_nav.html" %}</div>
 {% endblock %}
 
 {% block content_title %}

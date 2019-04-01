@@ -3,6 +3,7 @@
     position: relative;
     margin: -20% 0% 0% 22%;
 	height: 500px;
+	z-index:2;
 }
 
 #content td {
@@ -37,3 +38,4 @@
 {
 	padding-top: 45%;
 }
+

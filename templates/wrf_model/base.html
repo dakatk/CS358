@@ -1,6 +1,6 @@
 {% extends "loop_base.html" %}
 {% load static %}
-
+	<link rel="stylesheet" type="text/css" href="{% static "css/wrf.css" %}" />
 {% block title %}
 {{ model_name }}
 {% endblock %}
@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block navbar %}
-{% include "nav/wrf_model/base_nav.html" %}
+	<div class="nav_loop">{% include "nav/wrf_model/base_nav.html" %}</div>
 {% endblock %}
 
 {% block content_title %}
