@@ -44,7 +44,7 @@ define(function () {
   function _update_frame () {
     
     image_tag.html(image_cycles[image_index]);
-    playback_bar.val(image_cycles.length - (image_index + 1));
+    playback_bar.val(image_cycles.length - image_index);
   }
   
   function _loop_images () {
