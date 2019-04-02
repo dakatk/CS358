@@ -15,7 +15,9 @@ def station_climo(request):
     context = dict()
 
     context['station_template'] = 'station_climo/' + request.GET['station'] + '.html'
-    context['current_station'] = request.GET['station']
+    s = request.GET['station']
+    context['current_station'] = s
+    context['current_city'] = s.split('_')[0]
     return render(request, 'station_climo.html', context)
 
 

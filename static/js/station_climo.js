@@ -14,10 +14,9 @@ $(function() {
         success: function(response) {
             let files = response['file_names'];
             for(let i = 0; i < files.length; i++) {
-                $("#station").append('<option value="' + files[i] + (files[i] === current_station ? '" selected>' : '">') + files[i] + "</option>");
+                $("#station").append('<option value="' + files[i] + (files[i] === current_station ? '" selected>' : '">') + files[i].replace(/_/g, " ") + "</option>");
             }
             let historyData = response['history_data'];
-            //alert(historyData);
             $("#station_history").append(historyData);
         }
     });

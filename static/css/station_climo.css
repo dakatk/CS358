@@ -5,6 +5,10 @@
     margin-top: 5%;
 }
 
+#graph a:hover {
+    display: inline;
+}
+
 #station_history table, td {
     border: 1px solid black;
     border-collapse: collapse;

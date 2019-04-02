@@ -6,8 +6,7 @@
         {% load static %}
 
 	{% include "frag/metas.html" %}
-	{% include "frag/scripts.html" %}
-
+    <script src="{% static "js/modules/min/jquery.min.js" %}"></script>
 	<script src="{% static "js/station_climo.js" %}"></script>
 
 	<link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
@@ -24,6 +23,7 @@
 	    </div>
 
             <div id="content">
+                <h1 style="text-align: center;">Surface Temp from {{ current_city }}</h1>
                 <input type="hidden" name="current_station" value="{{ current_station }}" />
                 <form method="GET">
                     <select id="station" name="station" onchange="submit(); return false;"></select>

@@ -23,10 +23,6 @@
     position: relative;
 }
 
-#forecast_text_container {
-    position: absolute;
-    z-index: 20;
-}
 
 .forecast_text {
     width: 100%;
