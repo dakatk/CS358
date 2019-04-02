@@ -116,7 +116,7 @@ def get_launch_sub_dirs():
     blacklist = ['launches', '007_001', '039_002']
 
     def dirname(d):
-        return d.split('/')[-1]
+        return d.replace('\\', '/').split('/')[-1]
 
     dirs = [dirname(d[0]) for d in walk if dirname(d[0]) not in blacklist]
 
