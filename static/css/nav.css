@@ -2,8 +2,8 @@
 {
 	list-style-type: none;
 	padding: 0;
-	min-width: 200px;
-	width: 15%;
+	min-width: 12em;
+	width: 10em;
 	margin: 0;
 	color: #7C7C7C;
 	background-color: #F2EDE3;
@@ -15,10 +15,10 @@
 
 .nav_button a, a:visited, a:active
 {
-	margin-bottom: 1px;
+	margin-bottom: 0px;
 	color: black;
 	display: block;
-	padding: 5px 10px;
+	padding: .32em 1em;
 	text-decoration: none;
 	text-align: center;
 	font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -36,10 +36,10 @@
 {
 	list-style-type: none;
 	padding: 0;
-	min-width: 200px;
-	width: 15%;
+	min-width: 12em;
+	width: 10em;
 	margin:0;
-	margin-left: 15px;
+	margin-left: 1em;
 	color: #7c7c7c;
 	background-color: #fcf0bd;
 	position: relative;
@@ -53,9 +53,9 @@
 
 .child_nav_button a, a:visited, a:active
 {
-	margin-bottom: 1px;
+	margin-bottom: .05em;
 	display: block;
-	padding: 5px 10px;
+	padding: .25em 1em;
 	color: black;
 	text-decoration: none;
 	text-align: center;
@@ -84,9 +84,9 @@
 	list-style-type: none;
 	padding: 0;
 	min-width: 200px;
-	width: 15%;
+	width: 3em;
 	margin:0;
-	margin-left: 30px;
+	margin-left: 4em;
 	color: #7c7c7c;
 	background-color: #fcf0bd;
 	position: relative;
@@ -100,9 +100,9 @@
 
 .child_sub_nav_button a, a:visited, a:active
 {
-	margin-bottom: 1px;
+	margin-bottom: .05em;
 	display: block;
-	padding: 5px 10px;
+	padding: .25em 1em;
 	color: black;
 	text-decoration: none;
 	text-align: center;
@@ -127,11 +127,12 @@
 
 .nav_loop
 {
-	margin: -58% 0 30% 0;
+	margin: -48em 0 30em 0;
 }
 
 
 .nav_ncep
 {
-	margin: -58% 0 40% 0;
+	margin: -48em 0 35em 0;
 }
+

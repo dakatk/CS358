@@ -1,8 +1,11 @@
 
 #content {
     position: absolute;
-    right: 25%;
-    margin-top: 5%;
+    right: 17em;
+    margin-top: -20em;
+	width:56vw;
+	max-width:60vw;
+	min-width:55vw;
 }
 
 #graph a:hover {

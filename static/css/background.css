@@ -26,7 +26,7 @@
 		max-width: fixed;
 		height: auto;
 		vertical-align:middle;
-		padding-left:33%;
+		padding-left:33vw;
 
 	}
 	
@@ -39,12 +39,8 @@
 
 	#navbar
 	{
-		margin: -25% 0% 0% 3%;
+		margin: -20em 0 3em 4em;
 	}
 	
-	#nav_sounding
-	{
-		margin: -25% 0% 0% 3%;
-	}
 	.
 

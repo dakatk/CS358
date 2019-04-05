@@ -1,7 +1,7 @@
 
 #content {
     position: relative;
-    margin: -20% 0% 0% 22%;
+    margin: -19em 0 0 19em;
 	height: 500px;
 	z-index:2;
 }
@@ -20,11 +20,11 @@
 
 #non-first-element {
     position: relative;
-    top: -300px;
+    top: -17em;
 }
 
 #non-first-element img {
-    height: 400px;
+    height: 25em;
 }
 .column-header {
     font-size: 25px;
@@ -36,6 +36,6 @@
 
 .home
 {
-	padding-top: 45%;
+	padding: 58em 0 0em 0;
 }
 
