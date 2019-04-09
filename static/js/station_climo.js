@@ -17,7 +17,18 @@ $(function() {
                 $("#station").append('<option value="' + files[i] + (files[i] === current_station ? '" selected>' : '">') + files[i].replace(/_/g, " ") + "</option>");
             }
             let historyData = response['history_data'];
-            $("#station_history").append(historyData);
+
+            let output = "<table>";
+            for(let i = 0; i < historyData.length; i++) {
+                output += "<tr>";
+                let s = historyData[i].split(",");
+                for(let j = 0; j < s.length; j++) {
+                    output += "<td>" + s[j] + "</td>";
+                }
+                output += "</tr>";
+            }
+            output += "</table>";
+            $("#station_history").append(output);
         }
     });
 });

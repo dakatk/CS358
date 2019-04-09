@@ -4,11 +4,16 @@
 	height: 550px;
 }
 
+#nav_sounding {
+	position: relative;
+	z-index: 10;
+}
+
 .space
 {
 	position: relative;
 	margin: 6% 0% 0% 5%;
-	z-index:3;
+	z-index: 3;
 }
  
 .home

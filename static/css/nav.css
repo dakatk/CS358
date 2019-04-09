@@ -28,6 +28,7 @@
 
 .nav_button a:hover
 {
+	display: block;
 	background: #584A42;
 	color: white;
 }
@@ -38,8 +39,7 @@
 	padding: 0;
 	min-width: 12em;
 	width: 10em;
-	margin:0;
-	margin-left: 1em;
+	margin: 0 0 0 1em;
 	color: #7c7c7c;
 	background-color: #fcf0bd;
 	position: relative;
