@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_protect
 NUM_IMAGES = 30
 
 # Base url for pulling images
-IMAGE_URL = 'http://bergeron.valpo.edu/~wxweb/satellite/conus/'
+IMAGE_URL = '/static/satellite/conus/'
 
 
 def image_file(channel, index):
@@ -14,9 +14,9 @@ def image_file(channel, index):
     
     global IMAGE_URL
 
-    channel_path = f"ch{channel}"
+    channel_path = f'ch{channel}'
     
-    return IMAGE_URL + f"{channel_path}/{channel_path}_img{index}.png"
+    return IMAGE_URL + f'{channel_path}/{channel_path}_img{index}.png'
 
 
 def satellite(request):
