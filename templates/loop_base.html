@@ -6,9 +6,9 @@
 		{% load static %}
 
 		{% include "frag/metas.html" %}
-		{% include "frag/scripts.html" %}
 
-		{% block script %}{% endblock %}
+		<script src="{% static "js/min/jquery.min.js" %}"></script>
+		<script src="{% static "js/playback_loop.js" %}"></script>
 
 		<link rel="stylesheet" type="text/css" href="{% static "css/loop.css" %}" />
 		<link rel="stylesheet" type="text/css" href="{% static "css/loop_ui.css" %}" />
@@ -17,11 +17,9 @@
 	<body>
 		<div>{% include "frag/header.html" %}</div>
 		<div class="content">
-			<form>
+			<form id="send_data" action={% block post_url %}"images/"{% endblock %}>
 				{% block form_data %}{% endblock %}
 			</form>
-
-			
 
 			<div id="preload"></div>
 
