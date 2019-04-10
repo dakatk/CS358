@@ -192,8 +192,6 @@ $(function () {
       for (let i in image_urls) {
             
         image_cycles[i] = new Image();
-        image_cycles[i].onload = function () {};
-            
         image_cycles[i].src = image_urls[i];
       }
           

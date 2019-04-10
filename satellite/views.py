@@ -78,7 +78,7 @@ def images(request):
         '4_nir': 4, '9_wv': 2, '14_longwave': 2
     }
 
-    satellite_channel = request.POST['channel']
+    satellite_channel = request.POST['satellite_channel']
 
     session_key = satellite_channel + '_post'
 
