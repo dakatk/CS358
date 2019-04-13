@@ -1,8 +1,28 @@
 {% load static %}
+
+<script src="{% static "js/min/jquery.modal.min.js" %}"></script>
+
+<link rel="stylesheet" type="text/css" href="{% static "css/min/jquery.modal.min.css" %}" />
 <link rel="stylesheet" type="text/css" href="{% static "css/background.css" %}" />
+
+<form action="" class="login_form modal" id="login_popup">
+    <h3>Please login to continue</h3>
+    <p>
+        <label for="modal_username">Username:</label>
+        <input id="modal_username" name="modal_username" type="text">
+    </p>
+    <p>
+        <label for="modal_password">Password:</label>
+        <input id="modal_password" name="modal_password" type="password">
+    </p>
+    <p>
+        <input type="submit" value="Login">
+    </p>
+</form>
 
 <div id="intro" style="min-height:60vh; width:102.5%; background-size:cover;background-image: url(https://www.valpo.edu/geography-meteorology/files/2014/12/20141111-JLH-Meteorology-Class-0251.jpg)"></div>
 
 <div class="top-bar">
 	<a><img src="https://www.valpo.edu/geography-meteorology/wp-content/themes/cws-valpo/img/header/valpo_prestige_logo.png" alt="Valpo Home"></a>
+    <a href="#login_popup" rel="modal:open">Login</a>
 </div>
