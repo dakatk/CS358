@@ -38,4 +38,6 @@ urlpatterns = [
     path('soundings/', include('soundings.urls')),
     # Sfc Station Climo
     path('station_climo/', include('station_climo.urls')),
+    # Upload
+    path('upload/', include('upload.urls')),
 ]
