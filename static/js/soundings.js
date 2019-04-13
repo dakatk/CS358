@@ -3,7 +3,7 @@ $(function () {
   const csrf_token = $('[name=csrfmiddlewaretoken]').val();
   const image_tag = $('#show_image');
   
-  var image_selects = [];
+  let image_selects = [];
   
   $('#options').on('change', function (event) {
     
@@ -34,7 +34,7 @@ $(function () {
         image_preload.append('<div style="background-image: ' + image_urls[i] + ';"></div>');
       }
       
-      for (let i in image_urls) {
+      for (let i in image_selects) {
         
         image_selects[i] = new Image();
         image_selects[i].onload = function () {

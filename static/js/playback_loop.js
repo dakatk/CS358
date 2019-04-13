@@ -1,3 +1,5 @@
+"use strict"
+
 $(function () {
 
   const image_tag = $('#animate_loop');
@@ -16,14 +18,13 @@ $(function () {
 
   const form_data = $('#send_data');
   
-  var image_cycles = [];
-  var image_index = 0;
+  let image_cycles = [];
+  let image_index = 0;
 
-  var running = true;
-  var forward = true;
+  let running = true;
+  let forward = true;
 
-  var interval;
-  var speed;
+  let interval;
 
   function step_forward () {
 
@@ -82,8 +83,8 @@ $(function () {
 
   function serialize_form(form) {
     
-    var unindexed_array = form.serializeArray();
-    var indexed_array = {};
+    let unindexed_array = form.serializeArray();
+    let indexed_array = {};
 
     $.map(unindexed_array, function(data, i){
         indexed_array[data['name']] = data['value'];
@@ -95,7 +96,7 @@ $(function () {
   function ui_setup () {
       
     // Top
-    start_button.on('click', function (event) {
+    start_button.on('click', function () {
         
       start_button.prop('disabled', true);
       stop_button.prop('disabled', false);
@@ -109,7 +110,7 @@ $(function () {
       running = true;
     });
       
-    stop_button.on('click', function (event) {
+    stop_button.on('click', function () {
         
       stop_button.prop('disabled', true);
       start_button.prop('disabled', false);
@@ -127,24 +128,24 @@ $(function () {
       forward = !forward;
     });
       
-    speed_value.on('change', function (event) {
+    speed_value.on('change', function () {
       reset_interval();
     });
       
     // Bottom
-    back_button.on('click', function (event) {
+    back_button.on('click', function () {
         
       step_backward();
       update_frame();
     });
       
-    forward_button.on('click', function (event) {
+    forward_button.on('click', function () {
         
       step_forward();
       update_frame();
     });
       
-    playback_bar.on('input', function (event) {
+    playback_bar.on('input', function () {
         
       image_index = parseInt(playback_bar.val()) - 1;
 
@@ -184,19 +185,23 @@ $(function () {
       playback_bar.prop('max', image_urls.length);
           
       for (let i in image_urls) {
-            
-        let preload_el = '<div style="background-image: url(' + image_urls[i] + ');"></div>';
-        image_preload.append($(preload_el));
+
+        if (image_urls.hasOwnProperty(i)) {
+
+          let preload_el = '<div style="background-image: url(' + image_urls[i] + ');"></div>';
+          image_preload.append($(preload_el));
+        }
       }
           
-      for (let i in image_urls) {
+      for (let i in image_cycles) {
             
         image_cycles[i] = new Image();
         image_cycles[i].src = image_urls[i];
       }
           
       image_index = image_cycles.length - 1;
-          
+
+      update_frame();
       reset_interval();
     }
   });

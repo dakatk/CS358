@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
     <head>
         <title>KVUM Sounding</title>
 
@@ -6,8 +6,8 @@
         {% load static %}
 
         {% include "frag/metas.html" %}
-        {% include "frag/scripts.html" %}
 
+        <script src="{% static "js/min/jquery.min.js" %}"></script>
         <script src="{% static "js/soundings.js" %}"></script>
 
 	<link rel="stylesheet" type="text/css" href="{% static "css/soundings.css" %}" />
@@ -21,8 +21,9 @@
 			<div class="space">
 				<div id="preload"></div>
 				<div class="content-main">
-					<h2>HVUM Soundings</h2>
-					<select id="options">
+					<h2>KVUM Soundings</h2>
+                    <label for="options"></label>
+					<select id="options" name="options">
 						{% for name in names %}
 							<option value="{{ forloop.counter0 }}" {% if forloop.first %}selected="selected"{% endif %}>{{ name }}</option>
 						{% endfor %}

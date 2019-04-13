@@ -8,7 +8,7 @@ NUM_IMAGES = 81
 
 
 # Base url for pulling images
-IMAGE_URL = 'http://bergeron.valpo.edu/ncep_models/gfs/'
+IMAGE_URL = '/ncep_models/gfs/'
 
 
 def image_file(index):
