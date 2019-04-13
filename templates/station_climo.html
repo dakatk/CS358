@@ -5,12 +5,13 @@
         {% csrf_token %}
         {% load static %}
 
-	{% include "frag/metas.html" %}
-    <script src="{% static "js/min/jquery.min.js" %}"></script>
-	<script src="{% static "js/station_climo.js" %}"></script>
+	    {% include "frag/metas.html" %}
 
-	<link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
-	<link rel="stylesheet" type="text/css" href="{% static "css/station_climo.css" %}" />
+        <script src="{% static "js/min/jquery.min.js" %}"></script>
+	    <script src="{% static "js/station_climo.js" %}"></script>
+
+	    <link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
+	    <link rel="stylesheet" type="text/css" href="{% static "css/station_climo.css" %}" />
     </head>
 
     <body>

@@ -2,8 +2,8 @@
 #content {
     position: relative;
     margin: -20% 0% 0% 22%;
-	height: 500px;
-	z-index:2;
+    height: 500px;
+    z-index: 2;
 }
 
 #content td {
@@ -26,16 +26,16 @@
 #non-first-element img {
     height: 400px;
 }
+
 .column-header {
     font-size: 25px;
     font-weight: bold;
     position: relative;
     margin-bottom: 25px;
-    font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Avenir LT W01 65 Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.home
-{
-	padding-top: 45%;
+.home {
+    padding-top: 45%;
 }
 

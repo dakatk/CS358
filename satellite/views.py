@@ -84,7 +84,7 @@ def images(request):
 
     # Reload from session cookies if applicable
     if session_key in request.session:
-            return JsonResponse(request.session[session_key])
+        return JsonResponse(request.session[session_key])
 
     # Check that sent data is a proper value
     if satellite_channel not in channel_values:

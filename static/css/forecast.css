@@ -1,9 +1,7 @@
-
-#forecast
-{
+#forecast {
     margin: -20% 0% 0% 22%;
     position: relative;
-	z-index:2;
+    z-index: 2;
 }
 
 #forecast img {
@@ -23,7 +21,6 @@
     position: relative;
 }
 
-
 .forecast_text {
     width: 100%;
     text-align: center;
@@ -35,7 +32,7 @@
     color: #000;
     font-weight: bold;
     margin-bottom: 20px;
-    font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Avenir LT W01 65 Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #graphic_container {
@@ -54,10 +51,9 @@
     margin-bottom: 10px;
     font-size: 25px;
     font-weight: bold;
-    font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Avenir LT W01 65 Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.forecast
-{
-	margin: 0% 0% 0% 0%;
+.forecast {
+    margin: 0 0 0 0;
 }

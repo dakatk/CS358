@@ -2,13 +2,16 @@
 	<head>
 		<title>Forecast</title>
 
-        	{% load static %}
+        {% load static %}
 
 		{% include "frag/metas.html" %}
+
+        <script src="{% static "js/min/jquery.min.js" %}"></script>
 
 		<link rel="stylesheet" type="text/css" href="{% static "css/forecast.css" %}" />
 		<link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
 	</head>
+
 	<body>
 		<div class="content">
 			<div>{% include "frag/header.html" %}</div>

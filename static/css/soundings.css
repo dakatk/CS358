@@ -1,22 +1,18 @@
-#show_image img
-{
-	width: 600px;
-	height: 550px;
+#show_image img {
+    width: 600px;
+    height: 550px;
 }
 
-.space
-{
-	position: relative;
-	margin: 6% 0% 0% 5%;
-	z-index:3;
-}
- 
-.home
-{
-	margin: 10% 0% 0% 0%;
+.space {
+    position: relative;
+    margin: 6% 0 0 5%;
+    z-index: 3;
 }
 
-.content-main h2
-{
-	margin-left: 30%;
+.home {
+    margin: 10% 0 0 0;
+}
+
+.content-main h2 {
+    margin-left: 30%;
 }
