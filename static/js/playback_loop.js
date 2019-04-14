@@ -1,5 +1,3 @@
-"use strict"
-
 $(function () {
 
   const image_tag = $('#animate_loop');
@@ -18,13 +16,13 @@ $(function () {
 
   const form_data = $('#send_data');
   
-  let image_cycles = [];
-  let image_index = 0;
+  var image_cycles = [];
+  var image_index = 0;
 
-  let running = true;
-  let forward = true;
+  var running = true;
+  var forward = true;
 
-  let interval;
+  var interval;
 
   function step_forward () {
 
@@ -153,7 +151,7 @@ $(function () {
       frame_value.val(image_index + 1);
     });
       
-    frame_value.on('input', function (event) {
+    frame_value.on('input', function () {
         
       image_index = parseInt(frame_value.val()) - 1;
 
@@ -186,14 +184,11 @@ $(function () {
           
       for (let i in image_urls) {
 
-        if (image_urls.hasOwnProperty(i)) {
-
-          let preload_el = '<div style="background-image: url(' + image_urls[i] + ');"></div>';
-          image_preload.append($(preload_el));
-        }
+        let preload_el = '<div style="background-image: url(' + image_urls[i] + ');"></div>';
+        image_preload.append($(preload_el));
       }
           
-      for (let i in image_cycles) {
+      for (let i in image_urls) {
             
         image_cycles[i] = new Image();
         image_cycles[i].src = image_urls[i];
@@ -203,6 +198,9 @@ $(function () {
 
       update_frame();
       reset_interval();
+    },
+    error: function (response) {
+      alert('Error loading images');
     }
   });
   ui_setup();

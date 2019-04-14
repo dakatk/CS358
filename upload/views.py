@@ -17,10 +17,26 @@ def upload(request):
     return render(request, 'upload.html', dict())
 
 
+@csrf_protect
 def files(request):
     """Parses the POST request for uploading files"""
 
     if request.method != 'POST':
         return HttpResponseForbidden()
 
-    print(request.POST)
+    files_dict = dict(request.FILES.lists())
+
+    for file in files_dict['uploadFile[]']:
+        write_from_uploaded_file(file)
+
+    return JsonResponse(dict())
+
+
+def write_from_uploaded_file(uploaded_file):
+    """Write contents of in-memory uploaded file to
+       raw file text on the server"""
+
+    with open(uploaded_file.name, 'w+') as f:
+
+        for chunk in uploaded_file.chunks():
+            f.write(chunk)

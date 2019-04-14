@@ -3,7 +3,7 @@ $(function () {
   const csrf_token = $('[name=csrfmiddlewaretoken]').val();
   const image_tag = $('#show_image');
   
-  let image_selects = [];
+  var image_selects = [];
   
   $('#options').on('change', function (event) {
     
@@ -34,12 +34,9 @@ $(function () {
         image_preload.append('<div style="background-image: ' + image_urls[i] + ';"></div>');
       }
       
-      for (let i in image_selects) {
+      for (let i in image_urls) {
         
         image_selects[i] = new Image();
-        image_selects[i].onload = function () {
-          // TODO
-        };
         image_selects[i].src = image_urls[i];
       }
       image_tag.html(image_selects[0]);
