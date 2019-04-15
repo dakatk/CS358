@@ -3,6 +3,10 @@ from django.http import Http404, HttpResponseForbidden, JsonResponse
 from django.views.decorators.csrf import csrf_protect
 
 
+# Username and password pair for logging into student-specific pages
+CREDENTIALS = ['student', 'valpo1991']
+
+
 def upload(request):
     """Parses the GET request that loads the upload page"""
 
@@ -22,11 +26,27 @@ def upload(request):
 
 @csrf_protect
 def verify_credentials(request):
+    """Verify that the username and password exist ain sent data and
+       that they are valid credentials for accessing certain pages"""
+
+    global CREDENTIALS
 
     if request.method != 'POST':
         return HttpResponseForbidden()
 
-    print(request.POST)
+    if 'modal_username' not in request.POST:
+        return JsonResponse({'error': 'Username not supplied'})
+
+    if 'modal_password' not in request.POST:
+        return JsonResponse({'error': 'Password not supplied'})
+
+    username = request.POST['modal_username']
+    password = request.POST['modal_password']
+
+    if [username, password] != CREDENTIALS:
+        return JsonResponse({'error': 'Invalid credentials'})
+
+    request.session['logged_in'] = True
 
     return JsonResponse({'success': 'Credentials successfully validated'})
 
@@ -40,12 +60,8 @@ def files(request):
 
     files_dict = dict(request.FILES.lists())
 
-    try:
-        for file in files_dict['uploadFile[]']:
-            write_from_uploaded_file(file)
-
-    except Exception:
-        return JsonResponse({'error': 'Could not write files to server'})
+    for file in files_dict['uploadFile[]']:
+        write_from_uploaded_file(file)
 
     return JsonResponse({'success': 'Files successfully written'})
 

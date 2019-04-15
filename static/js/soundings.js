@@ -1,6 +1,6 @@
 $(function () {
   
-  const csrf_token = $('[name=csrfmiddlewaretoken]').val();
+  const csrf_form = $('#csrf_form');
   const image_tag = $('#show_image');
   
   var image_selects = [];
@@ -14,15 +14,22 @@ $(function () {
     }
     image_tag.html(image_selects[val]);
   });
+
+  function serialize_form_data (form) {
+
+    let form_data = {};
+
+    $.map(form.serializeArray(), function (data, i) {
+      form_data[data['name']] = data['value'];
+    });
+    return form_data;
+  }
   
   $.ajax({
     type: 'POST',
     url: 'images/',
     dataType: 'JSON',
-    data: {},
-    headers: {
-      'X-CSRFTOKEN': csrf_token
-    },
+    data: serialize_form_data(csrf_form),
     success: function (response) {
       
       let image_urls = response['image_selects'];

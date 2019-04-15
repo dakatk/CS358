@@ -2,7 +2,6 @@
     <head>
         <title>KVUM Sounding</title>
 
-        {% csrf_token %}
         {% load static %}
 
         {% include "frag/metas.html" %}
@@ -14,6 +13,7 @@
         <link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
     </head>
     <body>
+        <form id="csrf_form">{% csrf_token %}</form>
 		<div>{% include "frag/header.html" %}</div>
 			<div id="nav_sounding">
 				<div>{% include "nav/soundings_nav.html" %}</div>
