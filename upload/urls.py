@@ -7,5 +7,6 @@ from . import views
 urlpatterns = [
 
     path('', views.upload, name='upload'),
-    path('files/', views.files, name='files')
+    path('files/', views.files, name='files'),
+    path('verify/', views.verify_credentials, name='verify')
 ]

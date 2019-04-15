@@ -1,5 +1,41 @@
 {% load static %}
+
+<script src="{% static "js/min/bootstrap.min.js" %}"></script>
+
 <link rel="stylesheet" type="text/css" href="{% static "css/nav.css" %}" />
+
+<!-- Modal -->
+<div class="modal" id="login_modal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Login</h4>
+            </div>
+            <div class="modal-body">
+                <form id="login_form">
+                    <p>
+                        <label for="modal_username">Username:</label>
+                        <input id="modal_username" name="modal_username" type="text">
+                    </p>
+                    <p>
+                        <label for="modal_password">Password:</label>
+                        <input id="modal_password" name="modal_password" type="password">
+                    </p>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="login">Login</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="{% static "js/nav_login.js" %}"></script>
 
 <ul class="nav_list">
 
@@ -55,4 +91,10 @@
 		<a href="https://www.valpo.edu/geography-meteorology/meteorology/" 
 		   target="_blank">Department Page</a>
 	</li>
+
+    {% block upload_nav %}
+    <li class="nav_button login_required">
+        <a id="upload_link">Upload</a>
+    </li>
+    {% endblock %}
 </ul>

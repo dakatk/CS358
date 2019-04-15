@@ -14,7 +14,21 @@ def upload(request):
     if len(request.GET) is not 0:
         raise Http404()
 
+    if 'logged_in' not in request.session:
+        return HttpResponseForbidden()
+
     return render(request, 'upload.html', dict())
+
+
+@csrf_protect
+def verify_credentials(request):
+
+    if request.method != 'POST':
+        return HttpResponseForbidden()
+
+    print(request.POST)
+
+    return JsonResponse({'success': 'Credentials successfully validated'})
 
 
 @csrf_protect
@@ -26,10 +40,14 @@ def files(request):
 
     files_dict = dict(request.FILES.lists())
 
-    for file in files_dict['uploadFile[]']:
-        write_from_uploaded_file(file)
+    try:
+        for file in files_dict['uploadFile[]']:
+            write_from_uploaded_file(file)
 
-    return JsonResponse(dict())
+    except Exception:
+        return JsonResponse({'error': 'Could not write files to server'})
+
+    return JsonResponse({'success': 'Files successfully written'})
 
 
 def write_from_uploaded_file(uploaded_file):
