@@ -14,6 +14,7 @@ $(function () {
         error_response.text('');
 
         login_modal.modal('show');
+        login_modal.appendTo('body');
     });
 
     //$('#login').click(function () {
