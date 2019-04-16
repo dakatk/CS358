@@ -149,7 +149,6 @@ $(function () {
     });
   }
 
-  //const csrf_token = $('[name=csrfmiddlewaretoken]').val();
   const url = form_data.attr('action');
 
   $.ajax({

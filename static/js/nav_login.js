@@ -17,7 +17,6 @@ $(function () {
         login_modal.appendTo('body');
     });
 
-    //$('#login').click(function () {
     login_form.on('submit', function (event) {
 
         event.preventDefault();
@@ -26,7 +25,7 @@ $(function () {
             type: 'POST',
             url: '/upload/verify/',
             dataType: 'JSON',
-            data: login_form.jsonify_form(),//form_data,
+            data: login_form.jsonify_form(),
             success: function (response) {
 
                 if (response.hasOwnProperty('success')) {

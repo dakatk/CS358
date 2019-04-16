@@ -11,14 +11,11 @@ $(function() {
         url: 'file_names/',
         dataType: 'json',
         data: {'current_station': current_station, 'csrfmiddlewaretoken': csrf_token},
-        /*headers: {
-          'X-CSRFTOKEN': csrf_token
-        },*/
         success: function(response) {
 
             let files = response['file_names'];
 
-            // TODO reformat
+            // TODO reformat code inside loop
             for(let i = 0; i < files.length; i++) {
                 $("#station").append('<option value="' + files[i] + (files[i] === current_station ? '" selected>' : '">') + files[i].replace(/_/g, " ") + "</option>");
             }
