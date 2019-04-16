@@ -13,7 +13,7 @@
 	box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
 }
 
-.nav_button a, a:visited, a:active
+.nav_button a, a:visited
 {
 	margin-bottom: 0px;
 	color: black;
@@ -51,7 +51,7 @@
 	font-weight: 400;	
 }
 
-.child_nav_button a, a:visited, a:active
+.child_nav_button a, a:visited
 {
 	margin-bottom: .05em;
 	display: block;
@@ -96,7 +96,7 @@
 	font-weight: 400;
 }
 
-.child_sub_nav_button a, a:visited, a:active
+.child_sub_nav_button a, a:visited
 {
 	margin-bottom: .05em;
 	display: block;
@@ -125,7 +125,7 @@
 
 .nav_loop
 {
-	margin: -48em 0 30em 0;
+	margin: -54em 0 30em 0;
 }
 
 .nav_ncep {
