@@ -1,14 +1,11 @@
 {% extends "loop_base.html" %}
+
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
 
 {% block title %}
 {{ radar_name }} Radar
-{% endblock %}
-
-{% block script %}
-<script src="{% static "js/radar.js" %}"></script>
 {% endblock %}
 
 {% block form_data %}

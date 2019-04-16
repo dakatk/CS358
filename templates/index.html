@@ -1,15 +1,19 @@
-<html>
+<html lang="en">
 	<head>
 		<title>Home Page</title>
 
 		{% load static %}
 
 		{% include "frag/metas.html" %}
+
+        <script src="{% static "js/min/jquery.min.js" %}"></script>
+
         <link rel="stylesheet" type="text/css" href="{% static "css/home_page.css" %}"/>
         <link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}"/>
 	</head>
+
 	<body>
-        <div class="content">
+        <!-- <div class="content"> -->
 
 		<div>{% include "frag/header.html" %}</div>
 
@@ -21,7 +25,7 @@
             <table>
                 <tr>
                     <td colspan="2">
-                        <a href="forecast/">
+                        <a href="/forecast/">
                             <div id="forecast_data">
                                 <div class="column-header">Forecast</div>
                                 {% include "frag/forecast_data.html" %}
@@ -32,7 +36,7 @@
                 <tr>
                     <td>
                         <div id="non-first-element">
-                            <a href="radar/?type=ref">
+                            <a href="/radar/?type=ref">
                                 <div class="column-header">Local Radar</div>
                                 <img src="http://bergeron.valpo.edu/~wxweb/radar/reflectivity/ref_img0.png" alt="Radar Picture"/>
                             </a>
@@ -40,7 +44,7 @@
                     </td>
                     <td>
                         <div id="non-first-element">
-                            <a href="wrf_model/">
+                            <a href="/wrf_model/">
                                 <div class="column-header">WRF Forecast</div>
                                 <img src="http://bergeron.valpo.edu/model/WRF/sfc_mslp_tmpf_wind_f000.png" alt="Forecast Picture"/>
                             </a>

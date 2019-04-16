@@ -6,7 +6,7 @@ from django.views.decorators.csrf import csrf_protect
 NUM_IMAGES = 30
 
 # Base url for pulling images
-IMAGE_URL = 'http://bergeron.valpo.edu/~wxweb/satellite/conus/'
+IMAGE_URL = '/static/satellite/conus/'
 
 
 def image_file(channel, index):
@@ -14,9 +14,9 @@ def image_file(channel, index):
     
     global IMAGE_URL
 
-    channel_path = f"ch{channel}"
+    channel_path = f'ch{channel}'
     
-    return IMAGE_URL + f"{channel_path}/{channel_path}_img{index}.png"
+    return IMAGE_URL + f'{channel_path}/{channel_path}_img{index}.png'
 
 
 def satellite(request):
@@ -78,13 +78,13 @@ def images(request):
         '4_nir': 4, '9_wv': 2, '14_longwave': 2
     }
 
-    satellite_channel = request.POST['channel']
+    satellite_channel = request.POST['satellite_channel']
 
     session_key = satellite_channel + '_post'
 
     # Reload from session cookies if applicable
     if session_key in request.session:
-            return JsonResponse(request.session[session_key])
+        return JsonResponse(request.session[session_key])
 
     # Check that sent data is a proper value
     if satellite_channel not in channel_values:

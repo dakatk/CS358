@@ -1,16 +1,14 @@
 {% extends "loop_base.html" %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static "css/ncep.css" %}" />
+
+<link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
+
 {% block title %}
 GFS Model
 {% endblock %}
 
-{% block script %}
-<script src="{% static "js/ncep_models.js" %}"></script>
-{% endblock %}
-
 {% block navbar %}
-<div class ="nav_ncep">{% include "nav/ncep_models_nav.html" %}</div>	
+<div class="nav_ncep">{% include "nav/ncep_models_nav.html" %}</div>
 {% endblock %}
 
 {% block content_title %}

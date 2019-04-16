@@ -1,7 +1,7 @@
-#animate_loop img
-{
-	width: 650px;
-	height: 600px;
-	padding-left:6%;
-	padding-top: 3%;
+#animate_loop img {
+    width: 650px;
+    height: 600px;
+    padding-left: 6%;
+    padding-top: 3%;
+    z-index: -1;
 }

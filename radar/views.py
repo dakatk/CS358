@@ -8,7 +8,7 @@ NUM_IMAGES = 30
 
 
 # Base url for pulling images
-IMAGE_URL = 'http://bergeron.valpo.edu/~wxweb/radar/'
+IMAGE_URL = '/static/radar/'
 
 
 def image_file(radar_type, image_path, index):

@@ -1,11 +1,13 @@
 $(function () {
   
-  const csrf_token = $('[name=csrfmiddlewaretoken]').val();
+  const csrf_form = $('#csrf_form');
   const image_tag = $('#show_image');
+
+  const error_response = $('#error_response');
   
   var image_selects = [];
   
-  $('#options').on('change', function (event) {
+  $('#options').on('change', function () {
     
     let val = this.value;
     
@@ -19,10 +21,7 @@ $(function () {
     type: 'POST',
     url: 'images/',
     dataType: 'JSON',
-    data: {},
-    headers: {
-      'X-CSRFTOKEN': csrf_token
-    },
+    data: csrf_form.jsonify_form(),
     success: function (response) {
       
       let image_urls = response['image_selects'];
@@ -37,12 +36,12 @@ $(function () {
       for (let i in image_urls) {
         
         image_selects[i] = new Image();
-        image_selects[i].onload = function () {
-          // TODO
-        };
         image_selects[i].src = image_urls[i];
       }
       image_tag.html(image_selects[0]);
+    },
+    error: function (response) {
+      error_response.text('Error loading images');
     }
   });
 });

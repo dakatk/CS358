@@ -1,0 +1,56 @@
+<html lang="en">
+
+<head>
+    <title>File Upload Form</title>
+
+    {% load static %}
+
+    {% include "frag/metas.html" %}
+
+    <link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}"/>
+
+    <script src="{% static "js/min/jquery.min.js" %}"></script>
+    <script src="{% static "js/upload.js" %}"></script>
+</head>
+
+<body>
+<div>{% include "frag/header.html" %}</div>
+<div class="content">
+    <div class="extra-space">
+        <div class="content-main">
+
+            {% include "frag/responses.html" %}
+
+            <p>This allows you to upload sounding files to the server.</p><br/>
+
+            <form id="sounding_data" name="sounding" enctype="multipart/form-data">
+                {% csrf_token %}
+                Choose file(s) to upload: <input type="file" name="uploadFile[]" multiple>
+                <input id="upload_files" type="submit" value="Upload Files">
+            </form>
+        </div>
+    </div>
+
+    <div id="navbar">
+        <div class="nav_loop">{% include "nav/upload_nav.html" %}</div>
+    </div>
+</div>
+
+<!--
+<form name="flightpath" action="getflightpath.php" method="post"><br>
+This allows you to upload the Google Earth flight path (if available).<br>
+Select the flight number:
+
+Type HTML code for Google Earth flight path: <br><textarea rows="5" cols="75" name="path" wrap="virtual"></textarea><br>
+<input type="submit" value="Submit">
+</form>
+-->
+</body>
+
+<footer>
+    <div id="links">
+        {% include "frag/footer.html" %}
+    </div>
+</footer>
+
+</html>

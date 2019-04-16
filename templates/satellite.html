@@ -1,13 +1,11 @@
 {% extends "loop_base.html" %}
+
 {% load static %}
+
 <link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
-<link rel="stylesheet" type="text/css" href="{% static "css/satellite.css" %}" />
+
 {% block title %}
 {{ satellite_name }} Satellite
-{% endblock %}
-
-{% block script %}
-<script src="{% static "js/satellite.js" %}"></script>
 {% endblock %}
 
 {% block form_data %}

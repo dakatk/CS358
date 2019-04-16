@@ -1,20 +1,29 @@
 .slidecontainer {
-  width: 100%;
+    width: 100%;
 }
 
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 10px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
+.slider:disabled {
+    width: 100%;
+    height: 10px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
 }
 
-.slider:hover {
-  opacity: 1;
+.slider:enabled {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover:enabled {
+    opacity: 1;
+    cursor: pointer;
 }
 
 .slider::-webkit-slider-thumb {

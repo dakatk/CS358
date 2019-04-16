@@ -1,9 +1,8 @@
-
 #forecast
 {
     margin: -18em 0 0 19em;
     position: relative;
-	z-index:2;
+    z-index: 2;
 }
 
 #forecast img {
@@ -22,7 +21,6 @@
 #forecast_container {
     position: relative;
 }
-
 
 .forecast_text {
     width: 100%;
@@ -54,7 +52,5 @@
     margin-bottom: 10px;
     font-size: 25px;
     font-weight: bold;
-    font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Avenir LT W01 65 Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
-

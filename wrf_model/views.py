@@ -8,7 +8,7 @@ NUM_IMAGES = 25
 
 
 # Base url for pulling images
-IMAGE_URL = 'http://bergeron.valpo.edu/model/WRF/'
+IMAGE_URL = '/static/wrf_model/'
 
 
 def image_file(model_type, index):

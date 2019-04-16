@@ -113,7 +113,7 @@ def get_launch_sub_dirs():
     global LAUNCH_DIR
 
     walk = os.walk(LAUNCH_DIR)
-    blacklist = ['launches', '007_001', '039_002']
+    blacklist = ['launches', '007_001', '039_002', '017_001']
 
     def dirname(d):
         return d.replace('\\', '/').split('/')[-1]

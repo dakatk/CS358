@@ -1,19 +1,19 @@
-<html>
+<html lang="en">
     <head>
         <title>KVUM Sounding</title>
 
-        {% csrf_token %}
         {% load static %}
 
         {% include "frag/metas.html" %}
-        {% include "frag/scripts.html" %}
 
+        <script src="{% static "js/min/jquery.min.js" %}"></script>
         <script src="{% static "js/soundings.js" %}"></script>
 
 	<link rel="stylesheet" type="text/css" href="{% static "css/soundings.css" %}" />
         <link rel="stylesheet" type="text/css" href="{% static "css/content.css" %}" />
     </head>
     <body>
+        <form id="csrf_form">{% csrf_token %}</form>
 		<div>{% include "frag/header.html" %}</div>
 			<div id="nav_sounding">
                 <div id="navbar">
@@ -23,8 +23,12 @@
 			<div class="space">
 				<div id="preload"></div>
 				<div class="content-main">
-					<h2>HVUM Soundings</h2>
-					<select id="options">
+					<h2>KVUM Soundings</h2>
+
+                    {% include "frag/responses.html" %}
+
+                    <label for="options"></label>
+					<select id="options" name="options">
 						{% for name in names %}
 							<option value="{{ forloop.counter0 }}" {% if forloop.first %}selected="selected"{% endif %}>{{ name }}</option>
 						{% endfor %}
