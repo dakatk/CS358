@@ -5,7 +5,7 @@ $(function () {
   
   var image_selects = [];
   
-  $('#options').on('change', function (event) {
+  $('#options').on('change', function () {
     
     let val = this.value;
     
@@ -15,7 +15,7 @@ $(function () {
     image_tag.html(image_selects[val]);
   });
 
-  function serialize_form_data (form) {
+  /*function serialize_form_data (form) {
 
     let form_data = {};
 
@@ -23,13 +23,13 @@ $(function () {
       form_data[data['name']] = data['value'];
     });
     return form_data;
-  }
+  }*/
   
   $.ajax({
     type: 'POST',
     url: 'images/',
     dataType: 'JSON',
-    data: serialize_form_data(csrf_form),
+    data: csrf_form.jsonify_form(),//serialize_form_data(csrf_form),
     success: function (response) {
       
       let image_urls = response['image_selects'];

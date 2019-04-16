@@ -8,14 +8,14 @@ NUM_IMAGES = 81
 
 
 # Base url for pulling images
-IMAGE_URL = '/ncep_models/gfs/'
+IMAGE_URL = '/static/ncep_models/gfs/'
 
 
 def image_file(index):
     """Returns the absolute url of an image file given the index"""
     
     global IMAGE_URL
-    return IMAGE_URL + '/gfs_four_panel_f%02d.png' % (index * 3)
+    return IMAGE_URL + 'gfs_four_panel_f%02d.png' % (index * 3)
 
 
 def ncep_models(request):
@@ -30,7 +30,7 @@ def ncep_models(request):
     if len(request.GET) is not 0:
         raise Http404('Page not found')
 
-    return render(None, 'ncep_models.html', dict())
+    return render(request, 'ncep_models.html', dict())
     
 
 @csrf_protect
@@ -52,7 +52,7 @@ def images(request):
         return JsonResponse(request.session[session_key])
 
     # No additional data should be sent with the request
-    if len(request.POST) is not 0:
+    if len(request.POST) is not 1:
         raise Http404('Page not found')
 
     image_cycle = list(map(image_file, range(NUM_IMAGES)))

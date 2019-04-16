@@ -4,7 +4,7 @@ $(function () {
   const upload_button = $('#upload_files');
   const form = $('#sounding_data');
 
-  function serialize_file_form(form) {
+  /*function serialize_file_form(form) {
 
       let form_data = new FormData();
 
@@ -16,7 +16,7 @@ $(function () {
       });
 
       return form_data
-  }
+  }*/
 
   upload_button.on('click', function () {
 
@@ -25,7 +25,7 @@ $(function () {
           url: 'files/',
           contentType: false,
           processData: false,
-          data: serialize_file_form(form),
+          data: form.jsonify_file_form(),//serialize_file_form(form),
           headers: {
               'X-CSRFTOKEN': csrf_token
           }

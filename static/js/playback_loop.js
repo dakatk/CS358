@@ -79,7 +79,7 @@ $(function () {
     interval = setInterval(loop_images, delay);
   }
 
-  function serialize_form(form) {
+  /*function serialize_form(form) {
     
     let unindexed_array = form.serializeArray();
     let indexed_array = {};
@@ -89,7 +89,7 @@ $(function () {
     });
 
     return indexed_array;
-  }
+  }*/
 
   function ui_setup () {
       
@@ -168,7 +168,7 @@ $(function () {
     type: 'POST',
     url: url,
     dataType: 'JSON',
-    data: serialize_form(form_data),
+    data: form_data.jsonify_form(),//serialize_form(form_data),
     headers: {
       'X-CSRFTOKEN': csrf_token
     },

@@ -17,17 +17,17 @@ $(function () {
 
     $('#login').click(function () {
 
-        let form_data = {};
+        /*let form_data = {};
 
         $.map(login_form.serializeArray(), function (data, i) {
             form_data[data['name']] = data['value'];
-        });
+        });*/
 
         $.ajax({
             type: 'POST',
             url: '/upload/verify/',
             dataType: 'JSON',
-            data: form_data,
+            data: login_form.jsonify_form(),//form_data,
             success: function (response) {
 
                 if (response.hasOwnProperty('success')) {
