@@ -15,6 +15,7 @@ $(function () {
   const playback_bar = $('#playback_bar');
 
   const form_data = $('#send_data');
+  const error_response = $('#error_response');
   
   var image_cycles = [];
   var image_index = 0;
@@ -78,18 +79,6 @@ $(function () {
     }
     interval = setInterval(loop_images, delay);
   }
-
-  /*function serialize_form(form) {
-    
-    let unindexed_array = form.serializeArray();
-    let indexed_array = {};
-
-    $.map(unindexed_array, function(data, i){
-        indexed_array[data['name']] = data['value'];
-    });
-
-    return indexed_array;
-  }*/
 
   function ui_setup () {
       
@@ -160,7 +149,7 @@ $(function () {
     });
   }
 
-  const csrf_token = $('[name=csrfmiddlewaretoken]').val();
+  //const csrf_token = $('[name=csrfmiddlewaretoken]').val();
   const url = form_data.attr('action');
 
   $.ajax({
@@ -168,10 +157,7 @@ $(function () {
     type: 'POST',
     url: url,
     dataType: 'JSON',
-    data: form_data.jsonify_form(),//serialize_form(form_data),
-    headers: {
-      'X-CSRFTOKEN': csrf_token
-    },
+    data: form_data.jsonify_form(),
     success: function (response) {
           
       let image_urls = response['image_cycle'];
@@ -200,7 +186,7 @@ $(function () {
       reset_interval();
     },
     error: function (response) {
-      alert('Error loading images');
+      error_response.text('Error loading images');
     }
   });
   ui_setup();

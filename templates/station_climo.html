@@ -24,6 +24,9 @@
 	    </div>
 
             <div id="content">
+
+                {% include "frag/responses.html" %}
+
                 <h1 style="text-align: center;">Surface Temp from {{ current_city }}</h1>
                 <input type="hidden" name="current_station" value="{{ current_station }}" />
                 <form method="GET">

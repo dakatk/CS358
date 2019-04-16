@@ -4,7 +4,6 @@
     <title>File Upload Form</title>
 
     {% load static %}
-    {% csrf_token %}
 
     {% include "frag/metas.html" %}
 
@@ -19,13 +18,16 @@
 <div class="content">
     <div class="extra-space">
         <div class="content-main">
+
+            {% include "frag/responses.html" %}
+
             <p>This allows you to upload sounding files to the server.</p><br/>
 
             <form id="sounding_data" name="sounding" enctype="multipart/form-data">
+                {% csrf_token %}
                 Choose file(s) to upload: <input type="file" name="uploadFile[]" multiple>
+                <input id="upload_files" type="submit" value="Upload Files">
             </form>
-
-            <input id="upload_files" type="button" value="Upload Files">
         </div>
     </div>
 

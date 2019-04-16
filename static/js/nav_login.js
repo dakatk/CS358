@@ -3,25 +3,23 @@ $(function () {
     const login_modal = $('#login_modal');
     const login_form = $('#login_form');
 
-    const error_text = $('#error_text');
+    const upload_link = $('#upload_link');
+    const error_response = $('#error_response');
 
     login_modal.modal('hide');
 
-    $('#upload_link').click(function (event) {
+    upload_link.on('click', function (event) {
 
         event.preventDefault();
-        error_text.text('');
+        error_response.text('');
 
         login_modal.modal('show');
     });
 
-    $('#login').click(function () {
+    //$('#login').click(function () {
+    login_form.on('submit', function (event) {
 
-        /*let form_data = {};
-
-        $.map(login_form.serializeArray(), function (data, i) {
-            form_data[data['name']] = data['value'];
-        });*/
+        event.preventDefault();
 
         $.ajax({
             type: 'POST',
@@ -36,11 +34,11 @@ $(function () {
                     window.location.replace('/upload/');
                 }
                 else if (response.hasOwnProperty('error')) {
-                    error_text.text(response['error']);
+                    error_response.text(response['error']);
                 }
             },
             error: function (response) {
-                error_text.text('Error requesting login from server');
+                error_response.text('Error requesting login from server');
             }
         });
     });

@@ -1,34 +1,38 @@
 $(function () {
 
-  const csrf_token = $('[name=csrfmiddlewaretoken]').val();
-  const upload_button = $('#upload_files');
-  const form = $('#sounding_data');
+    const form = $('#sounding_data');
 
-  /*function serialize_file_form(form) {
+    const error_response = $('#error_response');
+    const info_response = $('#info_response');
+    const success_response = $('#success_response');
 
-      let form_data = new FormData();
+    form.on('submit', function (event) {
 
-      $.each(form.find('input[type="file"]'), function(i, el) {
+        error_response.text('');
+        info_response.text('Submitting file(s)...');
+        success_response.text('');
 
-          $.each($(el)[0].files, function (i, file) {
-              form_data.append(el.name, file, file.name);
-          });
-      });
+        event.preventDefault();
 
-      return form_data
-  }*/
+        $.ajax({
+            type: 'POST',
+            url: 'files/',
+            contentType: false,
+            processData: false,
+            data: form.jsonify_file_form(),
+            success: function (response) {
 
-  upload_button.on('click', function () {
+                if (response.hasOwnProperty('success')) {
+                    success_response.text(response['success']);
+                }
 
-      $.ajax({
-          type: 'POST',
-          url: 'files/',
-          contentType: false,
-          processData: false,
-          data: form.jsonify_file_form(),//serialize_file_form(form),
-          headers: {
-              'X-CSRFTOKEN': csrf_token
-          }
-      });
-  });
+                if (response.hasOwnProperty('info')) {
+                    success_response.text(response['info']);
+                }
+            },
+            error: function (response) {
+                error_response.text('Error submitting file(s)');
+            }
+        });
+    });
 });

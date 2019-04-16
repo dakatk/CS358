@@ -21,5 +21,9 @@ $.fn.jsonify_file_form = function () {
         });
     });
 
+    $.map($(this).serializeArray(), function (data, i) {
+       form_data.append(data['name'], data['value']);
+    });
+
     return form_data
 };

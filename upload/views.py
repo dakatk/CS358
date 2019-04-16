@@ -60,6 +60,9 @@ def files(request):
 
     files_dict = dict(request.FILES.lists())
 
+    if 'uploadFile[]' not in files_dict:
+        return JsonResponse({'info': 'Missing file input'})
+
     for file in files_dict['uploadFile[]']:
         write_from_uploaded_file(file)
 
@@ -70,7 +73,7 @@ def write_from_uploaded_file(uploaded_file):
     """Write contents of in-memory uploaded file to
        raw file text on the server"""
 
-    with open(uploaded_file.name, 'w+') as f:
+    with open(uploaded_file.name, 'w') as f:
 
         for chunk in uploaded_file.chunks():
             f.write(chunk)
