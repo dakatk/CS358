@@ -1,14 +1,35 @@
 #content {
-    position: absolute;
-    right: 25%;
-    margin-top: 5%;
+    position: relative;
+    left: 30em;
+    margin-top: -20em;
+	width:56vw;
+	max-width:60vw;
+	min-width:55vw;
 }
 
 #graph a:hover {
     display: inline;
 }
 
-#station_history table, td {
+#station_history table {
+    position: relative;
     border: 1px solid black;
     border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#station_history td {
+    position: relative;
+    padding: 1px 4px 1px 4px;
+    font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    text-align: center;
+    border: 1px solid black;
+}
+
+#station_history {
+    font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    text-align: center;
 }

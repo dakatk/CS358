@@ -16,7 +16,9 @@
         <form id="csrf_form">{% csrf_token %}</form>
 		<div>{% include "frag/header.html" %}</div>
 			<div id="nav_sounding">
-				<div>{% include "nav/soundings_nav.html" %}</div>
+                <div id="navbar">
+				    <div>{% include "nav/soundings_nav.html" %}</div>
+                </div>
 			</div>
 			<div class="space">
 				<div id="preload"></div>

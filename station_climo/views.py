@@ -47,14 +47,8 @@ def file_names(request):
             history_file = item
 
     read_file = open(path + history_file, "r")
-    output = '<table>'
-    for line in read_file.readlines():
-        output += '<tr>'
-        s = line.split(',')
-        for value in s:
-            output += '<td>' + value.strip() + '</td>'
-        output += '</tr>'
-    output += '</table>'
+    output = read_file.readlines()
     context['file_names'] = files
+    # Data formatting into HTML will be delegated to the end user's device and handled by the javascript
     context['history_data'] = output
     return JsonResponse(context)

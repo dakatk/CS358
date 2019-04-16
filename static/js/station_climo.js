@@ -26,6 +26,18 @@ $(function() {
         },
         error: function (response) {
             error_response.text('Error loading data');
+          
+            let output = "<table>";
+            for(let i = 0; i < historyData.length; i++) {
+                output += "<tr>";
+                let s = historyData[i].split(",");
+                for(let j = 0; j < s.length; j++) {
+                    output += "<td>" + s[j] + "</td>";
+                }
+                output += "</tr>";
+            }
+            output += "</table>";
+            $("#station_history").append(output);
         }
     });
 });

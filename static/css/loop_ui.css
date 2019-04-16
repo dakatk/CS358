@@ -27,15 +27,17 @@
 }
 
 .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background: #381e0e;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2em;
+  height: 2em;
+  background: #381e0e;
+  cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: #381e0e;
+  width: 2em;
+  height: 2em;
+  background: #381e0e;
+  cursor: pointer;
 }

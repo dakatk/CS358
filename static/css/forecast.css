@@ -1,5 +1,6 @@
-#forecast {
-    margin: -20% 0% 0% 22%;
+#forecast
+{
+    margin: -18em 0 0 19em;
     position: relative;
     z-index: 2;
 }
@@ -12,7 +13,7 @@
     font-weight: bold;
     font-size: 25px;
     border-bottom: 1px solid black;
-    width: 1020px;
+    width: 40em;
     position: relative;
     margin-bottom: 30px;
 }
@@ -28,21 +29,21 @@
     overflow: hidden;
     position: relative;
     z-index: 30;
-    top: -490px;
+    top: -25em;
     color: #000;
     font-weight: bold;
-    margin-bottom: 20px;
-    font-family: "Avenir LT W01 65 Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 1em;
+    font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 #graphic_container {
     position: relative;
-    margin: -28% 0% 0% 0%;
-    width: 1020px;
+    margin: -16em 0 0 0;
+    width: 63em;
 }
 
 #graphic_container img {
-    width: 1020px;
+    width: 63.7em
 }
 
 #graphic_title {
@@ -52,8 +53,4 @@
     font-size: 25px;
     font-weight: bold;
     font-family: "Avenir LT W01 65 Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.forecast {
-    margin: 0 0 0 0;
 }

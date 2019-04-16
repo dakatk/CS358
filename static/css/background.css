@@ -1,38 +1,42 @@
 html, body {
     background-color: #FFF;
-}
+	  margin: 0;
+  }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-    display: block;
-}
 
-.top-bar {
-    overflow: hidden;
-    background-color: #381e0e;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100.75%;
-    vertical-align: middle;
-    box-shadow: 0 5px 3px rgba(0, 0, 0, .5);
-}
+	article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {display:block;}
+	
 
-.top-bar img {
-    height: auto;
-    vertical-align: middle;
-    padding-left: 33%;
-}
+	.top-bar
+	{
+		overflow: hidden;
+		background-color: #381e0e;
+		position: absolute;
+		top: 0;
+		left:0;
+		width: 100%;
+		vertical-align:middle;
+		box-shadow: 0 5px 3px rgba(0,0,0,.5);
+	}
 
-#intro {
-    text-align: center;
-    margin-left: -1%;
-    color: #F3F3CF;
-}
 
-#navbar {
-    margin: -25% 0 0 3%;
-}
+	.top-bar img
+	{
+		max-width: fixed;
+		height: auto;
+		vertical-align:middle;
+		padding-left:33vw;
 
-#nav_sounding {
-    margin: -25% 0 0 3%;
-}
+	}
+	
+	#intro
+	{
+		text-align: center;
+		color: #F3F3CF;
+	}
+
+
+	#navbar
+	{
+		margin: -20em 0 3em 4em;
+	}

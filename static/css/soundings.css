@@ -3,10 +3,17 @@
     height: 550px;
 }
 
-.space {
-    position: relative;
-    margin: 6% 0 0 5%;
-    z-index: 3;
+#nav_sounding {
+	position: relative;
+	z-index: 10;
+	width: 0;
+}
+
+.space
+{
+	position: relative;
+	margin: 6% 0% 0% 5%;
+	z-index: 3;
 }
 
 .home {
