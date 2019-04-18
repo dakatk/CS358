@@ -122,25 +122,10 @@
     color: #502207;
 }
 
-
-.nav_loop
-{
-	margin: -54em 0 30em 0;
-}
-
-.nav_ncep {
-    margin: -58% 0 40% 0;
-}
-
 #upload_link {
     cursor: pointer;
 }
 
 .login_required {
     
-}
-  
-.nav_ncep
-{
-	margin: -48em 0 35em 0;
 }

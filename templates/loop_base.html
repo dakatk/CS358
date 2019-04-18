@@ -16,6 +16,9 @@
 	<body>
 		<div>{% include "frag/header.html" %}</div>
 		<div class="content">
+            <div id="navbar">
+				{% block navbar %}{% endblock %}
+			</div>
 			<form id="send_data" action={% block post_url %}"images/"{% endblock %}>
                 {% csrf_token %}
 				{% block form_data %}{% endblock %}
@@ -34,10 +37,6 @@
 
 					{% include "frag/loop_ui/bottom.html" %}
 				</div>
-			</div>
-			
-			<div id="navbar">
-				{% block navbar %}{% endblock %}
 			</div>
 		</div>
 	</body>

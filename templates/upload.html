@@ -16,6 +16,9 @@
 <body>
 <div>{% include "frag/header.html" %}</div>
 <div class="content">
+    <div id="navbar">
+        <div>{% include "nav/upload_nav.html" %}</div>
+    </div>
     <div class="extra-space">
         <div class="content-main">
 
@@ -29,10 +32,6 @@
                 <input id="upload_files" type="submit" value="Upload Files">
             </form>
         </div>
-    </div>
-
-    <div id="navbar">
-        <div class="nav_loop">{% include "nav/upload_nav.html" %}</div>
     </div>
 </div>
 
