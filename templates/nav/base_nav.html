@@ -1,6 +1,7 @@
 {% load static %}
 
 <script src="{% static "js/min/bootstrap.min.js" %}"></script>
+<script src="{% static "js/md5.js" %}"></script>
 <script src="{% static "js/form.js" %}"></script>
 
 <link rel="stylesheet" type="text/css" href="{% static "css/min/bootstrap.min.css" %}" />
@@ -21,17 +22,16 @@
             </div>
             <form id="login_form">
             <div class="modal-body">
-                <!--<form id="login_form">-->
-                    {% csrf_token %}
-                    <p>
-                        <label for="modal_username">Username:</label>
-                        <input id="modal_username" name="modal_username" type="text">
-                    </p>
-                    <p>
-                        <label for="modal_password">Password:</label>
-                        <input id="modal_password" name="modal_password" type="password">
-                    </p>
-                <!--</form>-->
+                {% csrf_token %}
+
+                <label for="modal_username">Username:</label>
+                <input id="modal_username" name="modal_username" type="text">
+
+                <label for="modal_password">Password:</label>
+                <input id="modal_password" name="modal_password" type="password">
+
+		<label for="save_login">Keep me logged in:&nbsp;</label>
+		<input id="save_login" type="checkbox">
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-default" id="login">Login</button>
