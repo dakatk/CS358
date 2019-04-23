@@ -4,7 +4,7 @@ from django.views.decorators.csrf import csrf_protect
 
 
 # Username and MD5 encoded password bytestring pair for logging into student-specific pages
-CREDENTIALS = ['student', b'N\xc3\x972\xc3\xa3\xc2\xbb@\x06\x10\x16\xc3\x9ad:\xc2\x80\x15\xc2\xac\x11']
+CREDENTIALS = ['student', b'C\xc3\x8b\xc3\xbc\xc3\x91^\xc3\x8b)\xc2\xb8\xc2\x85\xc3\xa3Z\x15\x13\xc3\x8b1H']
 
 
 def upload(request):
@@ -42,6 +42,8 @@ def verify_credentials(request):
 
     username = request.POST['modal_username']
     password = bytearray(request.POST['modal_password'], 'UTF-8')
+
+    print(password)
 
     if [username, password] != CREDENTIALS:
         return JsonResponse({'error': 'Invalid credentials'})

@@ -51,8 +51,9 @@ $(function () {
         event.preventDefault();
 
 	let send_data = login_form.jsonify_form();
+	let salt = 'B8lIoP90'
 	
-	send_data['modal_password'] = $.md5(send_data['modal_password'], null, true);
+	send_data['modal_password'] = $.md5(send_data['modal_password'] + salt, null, true);
 
         $.ajax({
             type: 'POST',

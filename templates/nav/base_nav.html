@@ -20,18 +20,28 @@
                 {% include "frag/responses.html" %}
 
             </div>
+
             <form id="login_form">
+
             <div class="modal-body">
                 {% csrf_token %}
 
-                <label for="modal_username">Username:</label>
-                <input id="modal_username" name="modal_username" type="text">
+		<table style="border-collapse: collapse; width: 75%; margin-left: 10%">
+			<tr>
+                		<td class="login_input"><label for="modal_username">Username:</label></td>
+                		<td class="login_input"><input id="modal_username" name="modal_username" type="text"></td>
+			</tr>
 
-                <label for="modal_password">Password:</label>
-                <input id="modal_password" name="modal_password" type="password">
+			<tr>
+                		<td class="login_input"><label for="modal_password">Password:</label></td>
+                		<td class="login_input"><input id="modal_password" name="modal_password" type="password"></td>
+			</tr>
 
-		<label for="save_login">Keep me logged in:&nbsp;</label>
-		<input id="save_login" type="checkbox">
+			<tr>
+				<td class="login_input"><label for="save_login">Keep me logged in:</label></td>
+				<td class="login_input"><input id="save_login" type="checkbox"></td>
+			</tr>
+		</table>
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-default" id="login">Login</button>
