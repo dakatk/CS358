@@ -71,6 +71,7 @@
 	filter:opacity(.4);
 	overflow:hidden;
 	z-index:-2;
+	position: relative;
 	}
 	
 	.container-climo
