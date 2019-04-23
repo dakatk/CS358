@@ -26,18 +26,18 @@
 
 			<div id="preload"></div>
 
-			<div class="extra-space">
-				<div class="content-main">
-					<h2 id="title">{% block content_title %}{% endblock %}</h2>
+            <div class="content-main">
+                {% block style_main_content %}<div>{% endblock %}
+                    <h2 id="title">{% block content_title %}{% endblock %}</h2>
 
-					{% include "frag/loop_ui/top.html" %}
+                    {% include "frag/loop_ui/top.html" %}
                     {% include "frag/responses.html" %}
 
-					<div id="animate_loop"></div>
+                    <div id="animate_loop"></div>
 
-					{% include "frag/loop_ui/bottom.html" %}
-				</div>
-			</div>
+                    {% include "frag/loop_ui/bottom.html" %}
+                </div>
+            </div>
 		</div>
 	</body>
 	<footer>
