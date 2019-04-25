@@ -85,6 +85,30 @@
 	z-index:1
 	}
 	
+	.container-upload
+	{
+	margin: -20em 0 0 19em;
+	background: grey;
+	width:28em;
+	height:13em;
+	filter:opacity(.4);
+	overflow:hidden;
+	z-index:0;
+	}
+	
+	.content-main
+	{
+		z-index:2;
+		color:black;
+		position:relative;
+		font-weight:400;
+	}
+	
+	.extra-space-upload
+	{
+		margin: 10em 0 12em 0;
+	}
+	
 	#svg-container
 	{
 		margin: 0 0 50em 0;
