@@ -13,9 +13,13 @@
 {% endblock %}
 
 {% block navbar %}
-<div class="nav_loop">{% include "nav/satellite_nav.html" %}</div>
+<div>{% include "nav/satellite_nav.html" %}</div>
 {% endblock %}
 
 {% block content_title %}
 {{ satellite_name }} Satellite
+{% endblock %}
+
+{% block style_main_content %}
+<div style="margin: -32em 0 0 0;">
 {% endblock %}

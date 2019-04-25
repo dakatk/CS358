@@ -16,6 +16,9 @@
 	<body>
 		<div>{% include "frag/header.html" %}</div>
 		<div class="content">
+            <div id="navbar">
+				{% block navbar %}{% endblock %}
+			</div>
 			<form id="send_data" action={% block post_url %}"images/"{% endblock %}>
                 {% csrf_token %}
 				{% block form_data %}{% endblock %}
@@ -23,21 +26,19 @@
 
 			<div id="preload"></div>
 
-			<div class="extra-space">
-				<div class="content-main">
-					<h2 id="title">{% block content_title %}{% endblock %}</h2>
+            <div class="content-main">
+                {% block style_main_content %}<div>{% endblock %}
+                    <h2 id="title">{% block content_title %}{% endblock %}</h2>
 
-					{% include "frag/loop_ui/top.html" %}
+                    {% include "frag/loop_ui/top.html" %}
                     {% include "frag/responses.html" %}
 
-					<div id="animate_loop"></div>
+                    <div id="animate_loop"></div>
 
-					{% include "frag/loop_ui/bottom.html" %}
-				</div>
-			</div>
-			
-			<div id="navbar">
-				{% block navbar %}{% endblock %}
+                    {% include "frag/loop_ui/bottom.html" %}
+                </div>
+            </div>
+			<div class="container-loop">
 			</div>
 		</div>
 	</body>
