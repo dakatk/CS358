@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="{% static "css/min/bootstrap.min.css" %}" />
 <link rel="stylesheet" type="text/css" href="{% static "css/nav.css" %}" />
 
-<!-- Modal -->
+{% block signin_modal %}
 <div class="modal fade" id="login_modal" role="dialog">
     <div class="modal-dialog">
 
@@ -54,6 +54,7 @@
 </div>
 
 <script src="{% static "js/nav_login.js" %}"></script>
+{% endblock %}
 
 <ul class="nav_list">
 
@@ -110,9 +111,9 @@
 		   target="_blank">Department Page</a>
 	</li>
 
-    {% block upload_nav %}
-    <li class="nav_button login_required">
-        <a id="upload_link">Upload</a>
-    </li>
-    {% endblock %}
+        {% block upload_nav %}
+        <li class="nav_button login_required">
+            <a id="upload_link">Upload</a>
+        </li>
+        {% endblock %}
 </ul>

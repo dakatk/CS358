@@ -34,12 +34,6 @@ def verify_credentials(request):
     if request.method != 'POST':
         return HttpResponseForbidden()
 
-    if 'modal_username' not in request.POST:
-        return JsonResponse({'error': 'Username not supplied'})
-
-    if 'modal_password' not in request.POST:
-        return JsonResponse({'error': 'Password not supplied'})
-
     username = request.POST['modal_username']
     password = bytearray(request.POST['modal_password'], 'UTF-8')
 
@@ -61,7 +55,7 @@ def files(request):
     files_dict = dict(request.FILES.lists())
 
     if 'uploadFile[]' not in files_dict:
-        return JsonResponse({'info': 'Missing file input'})
+        return JsonResponse({'warning': 'Missing file input'})
 
     for file in files_dict['uploadFile[]']:
         write_from_uploaded_file(file)
@@ -73,7 +67,7 @@ def write_from_uploaded_file(uploaded_file):
     """Write contents of in-memory uploaded file to
        raw file text on the server"""
 
-    with open(uploaded_file.name, 'w') as f:
+    with open(uploaded_file.name, 'wb') as f:
 
         for chunk in uploaded_file.chunks():
             f.write(chunk)

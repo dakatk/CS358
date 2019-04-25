@@ -1,18 +1,22 @@
 $(function () {
 
-    const form = $('#sounding_data');
-
     const error_response = $('#error_response');
     const info_response = $('#info_response');
+    const warning_response = $('#warning_response');
     const success_response = $('#success_response');
+
+    const form = $('#sounding_data');
 
     form.on('submit', function (event) {
 
-        error_response.text('');
-        info_response.text('Submitting file(s)...');
-        success_response.text('');
+	event.preventDefault();
 
-        event.preventDefault();
+        error_response.hide();
+        warning_response.hide();
+        success_response.hide();
+
+        info_response.html('<strong>Submitting file(s)...</strong>');
+	info_response.show();
 
         $.ajax({
             type: 'POST',
@@ -23,15 +27,25 @@ $(function () {
             success: function (response) {
 
                 if (response.hasOwnProperty('success')) {
-                    success_response.text(response['success']);
+
+                    success_response.html('<strong>' + response['success'] + '</strong>');
+                    success_response.show();
                 }
 
-                if (response.hasOwnProperty('info')) {
-                    success_response.text(response['info']);
+                if (response.hasOwnProperty('warning')) {
+
+                    warning_response.html('<strong>' + response['warning'] + '</strong>');
+                    warning_response.show();
                 }
+
+		info_response.hide();
             },
             error: function (response) {
-                error_response.text('Error submitting file(s)');
+
+                error_response.html('<strong>Error submitting file(s)</strong>');
+                error_response.show();
+
+                info_response.hide();
             }
         });
     });

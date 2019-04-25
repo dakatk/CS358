@@ -1,5 +1,15 @@
 $(function () {
 
+    const login_modal = $('#login_modal');
+    const login_form = $('#login_form');
+
+    const upload_link = $('#upload_link');
+    const error_response = $('#error_response');
+
+    const salt = 'B8lIoP90'
+
+    login_modal.modal('hide');
+
     function getCookie(cname) {
 
         let name = cname + '=';
@@ -22,14 +32,6 @@ $(function () {
         return '';
     }
 
-    const login_modal = $('#login_modal');
-    const login_form = $('#login_form');
-
-    const upload_link = $('#upload_link');
-    const error_response = $('#error_response');
-
-    login_modal.modal('hide');
-
     upload_link.on('click', function (event) {
 
         event.preventDefault();
@@ -51,7 +53,6 @@ $(function () {
         event.preventDefault();
 
 	let send_data = login_form.jsonify_form();
-	let salt = 'B8lIoP90'
 	
 	send_data['modal_password'] = $.md5(send_data['modal_password'] + salt, null, true);
 
@@ -61,6 +62,8 @@ $(function () {
             dataType: 'JSON',
             data: send_data,
             success: function (response) {
+
+                error_response.hide();
 
                 if (response.hasOwnProperty('success')) {
 
@@ -72,11 +75,15 @@ $(function () {
                     window.location.href = '/upload/';
                 }
                 else if (response.hasOwnProperty('error')) {
-                    error_response.text(response['error']);
+
+                    error_response.html('<strong>' + response['error'] + '</strong>');
+                    error_response.show();
                 }
             },
             error: function (response) {
-                error_response.text('Error requesting login from server');
+
+                error_response.html('<strong>Error requesting login from server</strong>');
+                error_response.show();
             }
         });
     });
