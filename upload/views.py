@@ -43,8 +43,6 @@ def verify_credentials(request):
     username = request.POST['modal_username']
     password = bytearray(request.POST['modal_password'], 'UTF-8')
 
-    print(password)
-
     if [username, password] != CREDENTIALS:
         return JsonResponse({'error': 'Invalid credentials'})
 
