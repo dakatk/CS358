@@ -3,8 +3,8 @@ from django.http import Http404, HttpResponseForbidden, JsonResponse
 from django.views.decorators.csrf import csrf_protect
 
 
-# Username and password pair for logging into student-specific pages
-CREDENTIALS = ['student', 'valpo1991']
+# Username and MD5 encoded password bytestring pair for logging into student-specific pages
+CREDENTIALS = ['student', b'C\xc3\x8b\xc3\xbc\xc3\x91^\xc3\x8b)\xc2\xb8\xc2\x85\xc3\xa3Z\x15\x13\xc3\x8b1H']
 
 
 def upload(request):
@@ -26,7 +26,7 @@ def upload(request):
 
 @csrf_protect
 def verify_credentials(request):
-    """Verify that the username and password exist ain sent data and
+    """Verify that the username and password exist in sent data and
        that they are valid credentials for accessing certain pages"""
 
     global CREDENTIALS
@@ -41,7 +41,7 @@ def verify_credentials(request):
         return JsonResponse({'error': 'Password not supplied'})
 
     username = request.POST['modal_username']
-    password = request.POST['modal_password']
+    password = bytearray(request.POST['modal_password'], 'UTF-8')
 
     if [username, password] != CREDENTIALS:
         return JsonResponse({'error': 'Invalid credentials'})

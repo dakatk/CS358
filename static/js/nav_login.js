@@ -1,5 +1,27 @@
 $(function () {
 
+    function getCookie(cname) {
+
+        let name = cname + '=';
+
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+
+        for(let i = 0; i < ca.length; i++) {
+
+            let c = ca[i];
+
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return '';
+    }
+
     const login_modal = $('#login_modal');
     const login_form = $('#login_form');
 
@@ -13,25 +35,41 @@ $(function () {
         event.preventDefault();
         error_response.text('');
 
-        login_modal.modal('show');
-        login_modal.appendTo('body');
+	if (getCookie('save_login') == 'true') {
+            window.location.href = '/upload/';
+	}
+
+        else {
+
+            login_modal.modal('show');
+            login_modal.appendTo('body');
+        }
     });
 
     login_form.on('submit', function (event) {
 
         event.preventDefault();
 
+	let send_data = login_form.jsonify_form();
+	let salt = 'B8lIoP90'
+	
+	send_data['modal_password'] = $.md5(send_data['modal_password'] + salt, null, true);
+
         $.ajax({
             type: 'POST',
             url: '/upload/verify/',
             dataType: 'JSON',
-            data: login_form.jsonify_form(),
+            data: send_data,
             success: function (response) {
 
                 if (response.hasOwnProperty('success')) {
 
+		    if ($('#save_login').prop('checked')) {
+                        document.cookie = 'save_login=true; path=/';
+		    }
+
                     login_modal.modal('hide');
-                    window.location.replace('/upload/');
+                    window.location.href = '/upload/';
                 }
                 else if (response.hasOwnProperty('error')) {
                     error_response.text(response['error']);
