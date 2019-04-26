@@ -35,7 +35,7 @@
 	background: grey;
 	width:73.7em;
 	height:71em;
-	filter:opacity(.4);
+	filter:opacity(.6);
 	overflow:hidden;
 	z-index:1
 	}
@@ -46,7 +46,7 @@
 	background: grey;
 	width:74em;
 	height:86.5em;
-	filter:opacity(.4);
+	filter:opacity(.6);
 	overflow:hidden;
 	z-index:1
 	}
@@ -57,7 +57,7 @@
 	background: grey;
 	width:44.5em;
 	height:45em;
-	filter:opacity(.4);
+	filter:opacity(.6);
 	overflow:hidden;
 	z-index:1;
 	}
@@ -68,7 +68,7 @@
 	background: grey;
 	width:54em;
 	height:58em;
-	filter:opacity(.4);
+	filter:opacity(.6);
 	overflow:hidden;
 	z-index:-2;
 	position: relative;
@@ -80,33 +80,34 @@
 	background: grey;
 	width:74em;
 	height:75em;
-	filter:opacity(.4);
+	filter:opacity(.6);
 	overflow:hidden;
 	z-index:1
 	}
 	
 	.container-upload
 	{
-	margin: -20em 0 0 19em;
+	margin: -20em 0 3em 19em;
 	background: grey;
 	width:28em;
-	height:13em;
-	filter:opacity(.4);
+	height:17em;
+	filter:opacity(.6);
 	overflow:hidden;
 	z-index:0;
 	}
 	
-	.content-main
+	.content-main-upload
 	{
 		z-index:2;
 		color:black;
 		position:relative;
 		font-weight:400;
+		margin-top:-25em;
 	}
 	
 	.extra-space-upload
 	{
-		margin: 10em 0 12em 0;
+		margin: 10em 0 10em 0;
 	}
 	
 	#svg-container
