@@ -128,3 +128,9 @@
 	{
 		margin: 50em 0 0 0;
 	}
+
+.alert {
+  padding: 9px !important;
+  margin-top: 5px !important;
+  width: max-content !important;
+}
