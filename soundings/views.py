@@ -22,8 +22,8 @@ def soundings(request):
 
     session_key = 'soundings'
 
-    # if session_key in request.session:
-    #     return render(request, 'soundings.html', request.session[session_key])
+    if session_key in request.session:
+        return render(request, 'soundings.html', request.session[session_key])
 
     context = parse_soundings_data()
     request.session[session_key] = context
@@ -85,7 +85,7 @@ def parse_name_from_summary(summary_file):
 @csrf_protect
 def images(request):
     """Parses the POST request that the page uses to retrieve
-    specified data via JS and Ajax"""
+    image data via JS and Ajax"""
 
     global LAUNCH_DIR
 
@@ -97,15 +97,16 @@ def images(request):
     if session_key in request.session:
         return JsonResponse(request.session[session_key])
 
-    context = dict()
-
     image_ref_dirs = get_launch_sub_dirs()
 
-    context['image_selects'] = [f'/{LAUNCH_DIR}/{ref}/{ref}_KVUM.png' for ref in image_ref_dirs]
+    context = dict()
+    # context['image_selects'] = [f'/{LAUNCH_DIR}/{ref}/{ref}_KVUM.png' for ref in image_ref_dirs]
+    context['launch_files'] = [f'/{LAUNCH_DIR}/{ref}/{ref}' for ref in image_ref_dirs]
+    
     request.session[session_key] = context
 
     return JsonResponse(context)
-
+    
 
 def get_launch_sub_dirs():
     """Returns all sub-directories of the 'launch' directory as an array"""
