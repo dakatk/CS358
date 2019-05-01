@@ -8,14 +8,45 @@ $(function () {
   const sounding_title = $('#sounding_title');
 
   const raw_data = $('#raw_data');
+
   const standard_levels = $('#standard_levels');
   const significant_levels = $('#significant_levels');
+
   const sharppy_ready = $('#sharppy_ready');
   const sounding_summary = $('#sounding_summary');
+
   const flight_path = $('#flight_path');
   
   var image_selects = [];
   var launch_files = [];
+
+  function update_dl_links(index) {
+
+    // .dat
+    raw_data.attr('href', launch_files[index] + '.dat');
+
+    // _STDLVLS.txt
+    standard_levels.attr('href', launch_files[index] + '_STDLVLS.txt');
+
+    // _SIGLVLS.txt
+    significant_levels.attr('href', launch_files[index] + '_SIGLVLS.txt');
+
+    // _SHARPPY.txt
+    sharppy_ready.attr('href', launch_files[index] + '_SHARPPY.txt');
+
+    // _SUMMARY.txt
+    sounding_summary.attr('href', launch_files[index] + '_SUMMARY.txt');
+
+    // _Path.png
+    flight_path.attr('href', launch_files[index] + '_Path.png');
+  }
+
+  function update_header() {
+
+    let header = options.children("option:selected").text();   
+
+    sounding_title.text('Sounding taken ' + header);
+  }
   
   options.on('change', function () {
     
@@ -26,23 +57,8 @@ $(function () {
     }
     image_tag.html(image_selects[val]);
 
-    // .dat
-    // _STDLVLS.txt
-    // _SIGLVLS.txt
-    // _SHARPPY.txt
-    // _SUMMARY.txt
-    // _Path.png
-
-    raw_data.attr('href', launch_files[val] + '.dat');
-    standard_levels.attr('href', launch_files[val] + '_STDLVLS.txt');
-    significant_levels.attr('href', launch_files[val] + '_SIGLVLS.txt');
-    sharppy_ready.attr('href', launch_files[val] + '_SHARPPY.txt');
-    sounding_summary.attr('href', launch_files[val] + '_SUMMARY.txt');
-    flight_path.attr('href', launch_files[val] + '_Path.png');
-
-    let header = $(this).children("option:selected").text();   
-
-    sounding_title.text('Sounding taken ' + header);
+    update_dl_links(val);
+    update_header();
   });
 
   sounding_title.text('Sounding taken ' + options.children("option:selected").text());
@@ -59,12 +75,7 @@ $(function () {
       launch_files = response['launch_files'];
       image_selects = new Array(launch_files.length);
 
-      raw_data.attr('href', launch_files[0] + '.dat');
-      standard_levels.attr('href', launch_files[0] + '_STDLVLS.txt');
-      significant_levels.attr('href', launch_files[0] + '_SIGLVLS.txt');
-      sharppy_ready.attr('href', launch_files[0] + '_SHARPPY.txt');
-      sounding_summary.attr('href', launch_files[0] + '_SUMMARY.txt');
-      flight_path.attr('href', launch_files[0] + '_Path.png');
+      update_dl_links(launch_files.length - 1);
       
       for (let i in launch_files) {
         image_preload.append('<div style="background-image: ' + launch_files[i] + '_KVUM.png;"></div>');
@@ -76,8 +87,12 @@ $(function () {
         image_selects[i].src = launch_files[i] + '_KVUM.png';
       }
 
-      // $('#options option[val=
-      image_tag.html(image_selects[0]);
+      $('#options option[value="' + (image_selects.length - 1) + '"]').prop('selected', true);
+      $('#options option[value="' + 0 + '"]').prop('selected', false);
+
+      update_header();
+
+      image_tag.html(image_selects[image_selects.length - 1]);
     },
     error: function (response) {
       error_response.text('Error loading images');

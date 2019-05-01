@@ -56,7 +56,7 @@ def images(request):
         raise Http404('Page not found')
 
     image_cycle = list(map(image_file, range(NUM_IMAGES)))
-    context = {'image_cycle': image_cycle}
+    context = {'image_cycle': reversed(image_cycle)}
 
     request.session[session_key] = context
     
