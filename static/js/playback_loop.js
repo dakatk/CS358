@@ -198,9 +198,13 @@ $(function () {
           
       image_index = image_cycles.length - 1;
 
+      let loading_gif = new Image();
+      loading_gif.src = '/static/gifs/loading.gif';
+
       setTimeout(function () {
 
-        update_frame();
+        // update_frame();
+        image_tag.html(loading_gif);
         reset_interval();
 
       }, 100);
