@@ -100,7 +100,6 @@ def images(request):
     image_ref_dirs = get_launch_sub_dirs()
 
     context = dict()
-    # context['image_selects'] = [f'/{LAUNCH_DIR}/{ref}/{ref}_KVUM.png' for ref in image_ref_dirs]
     context['launch_files'] = [f'/{LAUNCH_DIR}/{ref}/{ref}' for ref in image_ref_dirs]
     
     request.session[session_key] = context

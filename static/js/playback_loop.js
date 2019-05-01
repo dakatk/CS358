@@ -20,8 +20,10 @@ $(function () {
   var image_cycles = [];
   var image_index = 0;
 
-  var running = true;
+  var running = false;
   var forward = true;
+
+  var loaded = 0;
 
   var interval;
 
@@ -167,22 +169,41 @@ $(function () {
       frame_value.prop('max', image_urls.length);
       playback_bar.prop('max', image_urls.length);
           
-      for (let i in image_urls) {
+      /*for (let i in image_urls) {
 
         let preload_el = '<div style="background-image: url(' + image_urls[i] + ');"></div>';
         image_preload.append($(preload_el));
-      }
+      }*/
           
       for (let i in image_urls) {
             
         image_cycles[i] = new Image();
+        
+
+        image_cycles[i].onload = function () { 
+
+
+          if (this.complete) {
+            loaded ++; 
+          }
+
+          // buffering
+          if (loaded == image_cycles.length) {
+            running = true;
+          }
+        };
+
         image_cycles[i].src = image_urls[i];
       }
           
       image_index = image_cycles.length - 1;
 
-      update_frame();
-      reset_interval();
+      setTimeout(function () {
+
+        update_frame();
+        reset_interval();
+
+      }, 100);
     },
     error: function (response) {
       error_response.text('Error loading images');

@@ -9,7 +9,7 @@ $(function () {
 
   const raw_data = $('#raw_data');
   const standard_levels = $('#standard_levels');
-  const siginificant_levels = $('#siginificant_levels');
+  const significant_levels = $('#significant_levels');
   const sharppy_ready = $('#sharppy_ready');
   const sounding_summary = $('#sounding_summary');
   const flight_path = $('#flight_path');
@@ -35,7 +35,7 @@ $(function () {
 
     raw_data.attr('href', launch_files[val] + '.dat');
     standard_levels.attr('href', launch_files[val] + '_STDLVLS.txt');
-    siginificant_levels.attr('href', launch_files[val] + '_SIGLVLS.txt');
+    significant_levels.attr('href', launch_files[val] + '_SIGLVLS.txt');
     sharppy_ready.attr('href', launch_files[val] + '_SHARPPY.txt');
     sounding_summary.attr('href', launch_files[val] + '_SUMMARY.txt');
     flight_path.attr('href', launch_files[val] + '_Path.png');
@@ -57,7 +57,18 @@ $(function () {
       let image_preload = $('#preload');
       
       launch_files = response['launch_files'];
-      image_selects = new Array(image_urls.length);
+      image_selects = new Array(launch_files.length);
+
+      console.log('setting href...');
+
+      raw_data.attr('href', launch_files[0] + '.dat');
+      standard_levels.attr('href', launch_files[0] + '_STDLVLS.txt');
+      significant_levels.attr('href', launch_files[0] + '_SIGLVLS.txt');
+      sharppy_ready.attr('href', launch_files[0] + '_SHARPPY.txt');
+      sounding_summary.attr('href', launch_files[0] + '_SUMMARY.txt');
+      flight_path.attr('href', launch_files[0] + '_Path.png');
+
+      console.log('set href');
       
       for (let i in launch_files) {
         image_preload.append('<div style="background-image: ' + launch_files[i] + '_KVUM.png;"></div>');
