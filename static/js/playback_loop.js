@@ -29,19 +29,19 @@ $(function () {
 
   function step_forward () {
 
-    image_index --;
+    image_index ++;
     
-    if (image_index < 0) {
-      image_index = image_cycles.length - 1;
+    if (image_index >= image_cycles.length) {
+      image_index = 0;
     }
   }
 
   function step_backward () {
 
-    image_index ++;
+    image_index --;
     
-    if (image_index >= image_cycles.length) {
-      image_index = 0;
+    if (image_index < 0) {
+      image_index = image_cycles.length - 1;
     }
   }
   
@@ -49,8 +49,8 @@ $(function () {
     
     image_tag.html(image_cycles[image_index]);
 
-    playback_bar.val(image_cycles.length - image_index);
-    frame_value.val(image_cycles.length - image_index);
+    playback_bar.val(image_index);
+    frame_value.val(image_index);
   }
   
   function loop_images () {
@@ -162,26 +162,17 @@ $(function () {
     success: function (response) {
           
       let image_urls = response['image_cycle'];
-      let image_preload = $('#preload');
           
       image_cycles = new Array(image_urls.length);
           
       frame_value.prop('max', image_urls.length);
       playback_bar.prop('max', image_urls.length);
           
-      /*for (let i in image_urls) {
-
-        let preload_el = '<div style="background-image: url(' + image_urls[i] + ');"></div>';
-        image_preload.append($(preload_el));
-      }*/
-          
       for (let i in image_urls) {
             
         image_cycles[i] = new Image();
         
-
         image_cycles[i].onload = function () { 
-
 
           if (this.complete) {
             loaded ++; 
@@ -213,5 +204,6 @@ $(function () {
       error_response.text('Error loading images');
     }
   });
+
   ui_setup();
 });

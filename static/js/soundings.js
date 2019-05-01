@@ -59,16 +59,12 @@ $(function () {
       launch_files = response['launch_files'];
       image_selects = new Array(launch_files.length);
 
-      console.log('setting href...');
-
       raw_data.attr('href', launch_files[0] + '.dat');
       standard_levels.attr('href', launch_files[0] + '_STDLVLS.txt');
       significant_levels.attr('href', launch_files[0] + '_SIGLVLS.txt');
       sharppy_ready.attr('href', launch_files[0] + '_SHARPPY.txt');
       sounding_summary.attr('href', launch_files[0] + '_SUMMARY.txt');
       flight_path.attr('href', launch_files[0] + '_Path.png');
-
-      console.log('set href');
       
       for (let i in launch_files) {
         image_preload.append('<div style="background-image: ' + launch_files[i] + '_KVUM.png;"></div>');
@@ -79,6 +75,8 @@ $(function () {
         image_selects[i] = new Image();
         image_selects[i].src = launch_files[i] + '_KVUM.png';
       }
+
+      // $('#options option[val=
       image_tag.html(image_selects[0]);
     },
     error: function (response) {
