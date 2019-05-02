@@ -47,10 +47,12 @@ $(function () {
   
   function update_frame () {
     
-    image_tag.html(image_cycles[image_index]);
+    image_tag.animate({}, 10, function () {
+      image_tag.html(image_cycles[image_index]);
+    });
 
-    playback_bar.val(image_index);
-    frame_value.val(image_index);
+    playback_bar.val(image_index + 1);
+    frame_value.val(image_index + 1);
   }
   
   function loop_images () {
@@ -83,6 +85,15 @@ $(function () {
   }
 
   function ui_setup () {
+
+    // Necessary for page refresh
+    start_button.prop('disabled', true);
+        
+    back_button.prop('disabled', true);
+    forward_button.prop('disabled', true);
+
+    playback_bar.prop('disabled', true);
+    frame_value.prop('disabled', true);
       
     // Top
     start_button.on('click', function () {
@@ -177,6 +188,7 @@ $(function () {
           if (this.complete) {
             loaded ++; 
           }
+          console.log(loaded);
 
           // buffering
           if (loaded == image_cycles.length) {
