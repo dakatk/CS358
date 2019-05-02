@@ -46,10 +46,8 @@ $(function () {
   }
   
   function update_frame () {
-    
-    image_tag.animate({}, 10, function () {
-      image_tag.html(image_cycles[image_index]);
-    });
+
+    image_tag.html(image_cycles[image_index]);
 
     playback_bar.val(image_index + 1);
     frame_value.val(image_index + 1);
@@ -58,8 +56,10 @@ $(function () {
   function loop_images () {
     
     if (running) {
+      // TODO dry run one loop (hidden, only override preload)
       
-      update_frame();
+      window.requestAnimationFrame(update_frame);
+      // update_frame();
       
       if (forward) {
         step_forward();
@@ -67,6 +67,16 @@ $(function () {
       else {
         step_backward();
       }
+    }
+  }
+
+  function dry_run (image_urls) {
+
+    for (let i in image_urls) {
+
+      $('#preload').append(
+        '<div style=background-image: url("' + image_urls[i] + '")></div>'
+      );
     }
   }
   
@@ -173,6 +183,7 @@ $(function () {
     success: function (response) {
           
       let image_urls = response['image_cycle'];
+      dry_run(image_urls);
           
       image_cycles = new Array(image_urls.length);
           
@@ -204,13 +215,9 @@ $(function () {
       let loading_gif = new Image();
       loading_gif.src = '/static/gifs/loading.gif';
 
-      setTimeout(function () {
+      image_tag.html(loading_gif);
 
-        // update_frame();
-        image_tag.html(loading_gif);
-        reset_interval();
-
-      }, 100);
+      reset_interval();
     },
     error: function (response) {
       error_response.text('Error loading images');
