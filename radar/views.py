@@ -94,7 +94,7 @@ def images(request):
         return image_file(radar_type, image_url, i)
 
     image_cycle = list(map(image_path, range(NUM_IMAGES)))
-    context = {'image_cycle': reversed(image_cycle)}
+    context = {'image_cycle': list(reversed(image_cycle))}
 
     request.session[session_key] = context
     

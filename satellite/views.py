@@ -99,7 +99,7 @@ def images(request):
         return image_file(channel_value, i)
 
     image_cycle = list(map(image_path, range(NUM_IMAGES)))
-    context = {'image_cycle': reversed(image_cycle)}
+    context = {'image_cycle': list(reversed(image_cycle))}
 
     request.session[session_key] = context
 
