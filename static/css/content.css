@@ -32,10 +32,10 @@
 	.container-index
 	{
 	margin: -36em 0 -50em 18em;
-	background: grey;
+	background: white;
 	width:73.7em;
 	height:71em;
-	filter:opacity(.6);
+	filter:opacity(.7);
 	overflow:hidden;
 	z-index:1
 	}
@@ -43,10 +43,10 @@
 	.container-forecast
 	{
 	margin: -85.5em 0 0 18em;
-	background: grey;
+	background: white;
 	width:74em;
 	height:86.5em;
-	filter:opacity(.6);
+	filter:opacity(.7);
 	overflow:hidden;
 	z-index:1
 	}
@@ -54,10 +54,10 @@
 	.container-soundings
 	{
 	margin: -5em 0 0 25em;
-	background: grey;
-	width:44.5em;
+	background: white;
+	width:56em;
 	height:45em;
-	filter:opacity(.6);
+	filter:opacity(.7);
 	overflow:hidden;
 	z-index:1;
 	}
@@ -65,10 +65,10 @@
 	.container-loop
 	{
 	margin: -56em 0 0 23em;
-	background: grey;
+	background: white;
 	width:54em;
 	height:58em;
-	filter:opacity(.6);
+	filter:opacity(.7);
 	overflow:hidden;
 	z-index:-2;
 	position: relative;
@@ -77,10 +77,10 @@
 	.container-climo
 	{
 	margin: -74em 0 0 19em;
-	background: grey;
+	background: white;
 	width:74em;
 	height:75em;
-	filter:opacity(.6);
+	filter:opacity(.7);
 	overflow:hidden;
 	z-index:1
 	}
@@ -88,10 +88,10 @@
 	.container-upload
 	{
 	margin: -20em 0 3em 19em;
-	background: grey;
+	background: white;
 	width:28em;
 	height:17em;
-	filter:opacity(.6);
+	filter:opacity(.7);
 	overflow:hidden;
 	z-index:0;
 	}
@@ -103,6 +103,7 @@
 		position:relative;
 		font-weight:400;
 		margin-top:-25em;
+		max-height:7em;
 	}
 	
 	.extra-space-upload
@@ -114,12 +115,12 @@
 	{
 		margin: 0 0 50em 0;
 	}
-	
+
 	footer
 	{
-		margin: 2em 0 0 0;
+		margin-top: 13em;
 	}
-	
+
 	#below
 	{
 		margin: 40em 0 0 5.5em;

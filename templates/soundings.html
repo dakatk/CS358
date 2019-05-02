@@ -20,24 +20,8 @@
                         <div>{% include "nav/soundings_nav.html" %}</div>
                 </div>
 			</div>
-			<div class="space">
-				<div id="preload"></div>
-				<div class="content-main">
-					<h2 id="sounding_title"></h2>
-
-                    {% include "frag/responses.html" %}
-
-                    <label for="options"></label>
-					<select id="options" name="options">
-						{% for name in names %}
-							<option value="{{ forloop.counter0 }}" {% if forloop.first %}selected="selected"{% endif %}>{{ name }}</option>
-						{% endfor %}
-					</select>
-					<div id="show_image"></div>
-				</div>
-			</div>
-			<div class="container-soundings">
-				<table style="border-collapse: collapse; width: 100%;">
+			<div id="downloads">
+			<table style="border-collapse: collapse; width: 100%;">
 					<tr><th>
 						Downloadable Files
 					</th></tr>
@@ -60,6 +44,24 @@
 						<a id="flight_path" target="_blank" download href="">Flight Path Map</a>
 					</td></tr>
 				</table>
+			</div>
+			<div class="space">
+				<div id="preload"></div>
+				<div class="content-main">
+					<h2 id="sounding_title"></h2>
+
+                    {% include "frag/responses.html" %}
+
+                    <label for="options"></label>
+					<select id="options" name="options">
+						{% for name in names %}
+							<option value="{{ forloop.counter0 }}" {% if forloop.first %}selected="selected"{% endif %}>{{ name }}</option>
+						{% endfor %}
+					</select>
+					<div id="show_image"></div>
+				</div>
+			</div>
+			<div class="container-soundings">
 			</div>	
 	
 

@@ -12,7 +12,7 @@
 .space
 {
 	position: relative;
-	margin: 6% 0% 0% 5%;
+	margin: 10em 0% 0% 5%;
 	z-index: 3;
 }
 
@@ -22,4 +22,20 @@
 
 .content-main h2 {
     margin-left: 30%;
+}
+
+#sounding_title
+{
+	color:black;
+	width: 20em;
+	text-align:center;
+	margin:0 0 0 -1em;
+}
+
+#downloads
+{
+	color:black;
+	margin: -20em 0 -10em 70em;
+	position:relative;
+	z-index:2;
 }
