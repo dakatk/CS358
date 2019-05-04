@@ -24,6 +24,11 @@
     margin-left: 30%;
 }
 
+#show_image
+{
+	margin-top: .5em;
+}
+
 #sounding_title
 {
 	color:black;
@@ -32,10 +37,16 @@
 	margin:0 0 0 -1em;
 }
 
-#downloads
+#downloads 
 {
 	color:black;
-	margin: -20em 0 -10em 70em;
+	margin: -21em 0 -10em 70em;
 	position:relative;
 	z-index:2;
+	text-decoration: underline, bold;
+}
+
+tr a, tr a:active
+{
+	color:black;
 }
