@@ -93,19 +93,30 @@ def images(request):
         return HttpResponseForbidden()
 
     session_key = 'soundings_selects'
+    rescan_key = 'rescan_launches'
 
-    if session_key in request.session:
-        return JsonResponse(request.session[session_key])
+    if rescan_key not in request.session:
 
+        if request.session[rescan_key] and session_key in request.session:
+
+            request.session[rescan_key] = False
+            return JsonResponse(request.session[session_key])
+
+    return JsonResponse(rescan_launches())
+
+
+def rescan_launches():
+    """Re-scans the soundings laucnhes directory for sub-directories to show"""
+    
     image_ref_dirs = get_launch_sub_dirs()
 
     context = dict()
     context['launch_files'] = [f'/{LAUNCH_DIR}/{ref}/{ref}' for ref in image_ref_dirs]
     
-    request.session[session_key] = context
+    request.session['soundings_selects'] = context
 
-    return JsonResponse(context)
-    
+    return context
+
 
 def get_launch_sub_dirs():
     """Returns all sub-directories of the 'launch' directory as an array"""
