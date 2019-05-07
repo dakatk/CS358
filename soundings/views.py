@@ -95,17 +95,17 @@ def images(request):
     session_key = 'soundings_selects'
     rescan_key = 'rescan_launches'
 
-    if rescan_key not in request.session:
+    if rescan_key in request.session:
 
         if request.session[rescan_key] and session_key in request.session:
 
             request.session[rescan_key] = False
             return JsonResponse(request.session[session_key])
 
-    return JsonResponse(rescan_launches())
+    return JsonResponse(rescan_launches(request))
 
 
-def rescan_launches():
+def rescan_launches(request):
     """Re-scans the soundings laucnhes directory for sub-directories to show"""
     
     image_ref_dirs = get_launch_sub_dirs()
