@@ -15,11 +15,8 @@ $(function () {
         event.preventDefault();
         error_response.text('');
 
-        else {
-
-            login_modal.modal('show');
-            login_modal.appendTo('body');
-        }
+        login_modal.modal('show');
+        login_modal.appendTo('body');
     });
 
     login_form.on('submit', function (event) {
