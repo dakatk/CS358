@@ -33,11 +33,14 @@
                     <label for="station"></label>
                     <select id="station" name="station" onchange="submit(); return false;"></select>
                 </form>
+                <!-- Div containing the graph that shows up on the page. See this page's views.py -->
                 <div id="graph">{% include station_template %}</div>
+                <!-- Div containing the station history data. This is appended to by station_climo.js -->
                 <div id="station_history">
                     <h2>Station History</h2>
                 </div>
             </div>
+            <!-- Div with the sole purpose of creating the white box around the content for this page. See the CSS code for specifics -->
 			<div class="container-climo">
 			</div>
         </div>

@@ -20,6 +20,7 @@
                         <div>{% include "nav/soundings_nav.html" %}</div>
                 </div>
 			</div>
+            <!-- Div containing the download links. These are assigned their hrefs in soundings.js -->
 			<div id="downloads">
 			<table style="border-collapse: collapse; width: 100%;">
 					<tr><th>
@@ -58,11 +59,13 @@
 							<option value="{{ forloop.counter0 }}" {% if forloop.first %}selected="selected"{% endif %}>{{ name }}</option>
 						{% endfor %}
 					</select>
+                    <!-- Div where the image is appended to in js -->
 					<div id="show_image">
-                                            <img id="current_image" src="" />
-                                        </div>
+                        <img id="current_image" src="" />
+                    </div>
 				</div>
 			</div>
+            <!-- Div with the sole purpose of creating the white box around the content for this page. See the CSS code for specifics -->
 			<div class="container-soundings">
 			</div>	
 	

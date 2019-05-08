@@ -1,56 +1,87 @@
-#forecast
-{
-    margin: -18em 0 0 19em;
-    position: relative;
-    z-index: 2;
-}
+/*
+Styles the individual forecast boxes
+*/
+	#forecast
+	{
+		margin: -18em 0 0 19em;
+		position: relative;
+		z-index: 2;
+	}
 
-#forecast img {
-    width: 200px;
-}
+/*
+Sizes the images correctly for the forecast page
+*/
+	#forecast img
+	{
+		width: 200px;
+	}
 
-#forecast_title {
-    font-weight: bold;
-    font-size: 25px;
-    border-bottom: 1px solid black;
-    width: 40em;
-    position: relative;
-    margin-bottom: 30px;
-}
+/*
+Centers and styles the text for the Forecast page title
+*/
+	#forecast_title 
+	{
+		font-weight: bold;
+		font-size: 25px;
+		border-bottom: 1px solid black;
+		width: 40em;
+		position: relative;
+		margin-bottom: 30px;
+	}
 
-#forecast_container {
-    position: relative;
-}
+/*
+Surrounds the entire forecast page
+*/
+	#forecast_container
+	{
+		position: relative;
+	}
 
-.forecast_text {
-    width: 100%;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    position: relative;
-    z-index: 30;
-    top: -25em;
-    color: #000;
-    font-weight: bold;
-    margin-bottom: 1em;
-    font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
-}
+/*
+Styles the font for the individual forecast days
+*/
+	.forecast_text 
+	{
+		width: 100%;
+		text-align: center;
+		white-space: nowrap;
+		overflow: hidden;
+		position: relative;
+		z-index: 3;
+		top: -25em;
+		color: #000;
+		font-weight: bold;
+		margin-bottom: 1em;
+		font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+	}
 
-#graphic_container {
-    position: relative;
-    margin: -16em 0 0 0;
-    width: 63em;
-}
+/*
+Surrounds only the secondary image on the forecast page
+*/
+	#graphic_container
+	{
+		position: relative;
+		margin: -16em 0 0 0;
+		width: 63em;
+	}
 
-#graphic_container img {
-    width: 72em
-}
+/*
+Gives the second image on the forecast page a fixed size
+*/
+	#graphic_container img
+	{
+		width: 72em
+	}
 
-#graphic_title {
-    position: relative;
-    border-bottom: 1px solid black;
-    margin-bottom: 10px;
-    font-size: 25px;
-    font-weight: bold;
-    font-family: "Avenir LT W01 65 Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+/*
+Styles the title for the secondary image on the forecast page
+*/
+	#graphic_title 
+	{
+		position: relative;
+		border-bottom: 1px solid black;
+		margin-bottom: 10px;
+		font-size: 25px;
+		font-weight: bold;
+		font-family: "Avenir LT W01 65 Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}

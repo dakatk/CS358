@@ -1,141 +1,176 @@
-.nav_list
-{
-	list-style-type: none;
-	padding: 0;
-	min-width: 12em;
-	width: 10em;
-	margin: 0;
-	color: #7C7C7C;
-	background-color: #F2EDE3;
-	position: relative;
-	top: 0;
-	overflow: auto;
-	box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
-}
+/*
+Styles the overall list that all buttons are contained in
+*/
+	.nav_list
+	{
+		list-style-type: none;
+		padding: 0;
+		min-width: 12em;
+		width: 10em;
+		margin: 0;
+		color: #7C7C7C;
+		background-color: #F2EDE3;
+		position: relative;
+		top: 0;
+		overflow: auto;
+		box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+	}
 
-.nav_button a, a:visited
-{
-	margin-bottom: 0px;
-	color: black;
-	display: block;
-	padding: .32em 1em;
-	text-decoration: none;
-	text-align: center;
-	font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
-	text-shadow: none;
-	font-weight: 400;
-}
+/*
+Styles the links themselves when after being clicked or before being moused over
+*/
+	.nav_button a, a:visited
+	{
+		margin-bottom: 0px;
+		color: black;
+		display: block;
+		padding: .32em 1em;
+		text-decoration: none;
+		text-align: center;
+		font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+		text-shadow: none;
+		font-weight: 400;
+	}
 
-.nav_button a:hover
-{
-	display: block;
-	background: #584A42;
-	color: white;
-}
+/*
+Styles the links when hovered over
+*/
+	.nav_button a:hover
+	{
+		display: block;
+		background: #584A42;
+		color: white;
+	}
 
-.child_nav_list
-{
-	list-style-type: none;
-	padding: 0;
-	min-width: 12em;
-	width: 10em;
-	margin: 0 0 0 1em;
-	color: #7c7c7c;
-	background-color: #fcf0bd;
-	position: relative;
-	top: 0;
-	overflow: auto;
-	box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
-	font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
-	text-shadow: none;
-	font-weight: 400;	
-}
+/*
+Styles the sub buttons for pages such as radar
+*/
+	.child_nav_list
+	{
+		list-style-type: none;
+		padding: 0;
+		min-width: 12em;
+		width: 10em;
+		margin: 0 0 0 1em;
+		color: #7c7c7c;
+		background-color: #fcf0bd;
+		position: relative;
+		top: 0;
+		overflow: auto;
+		box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+		font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+		text-shadow: none;
+		font-weight: 400;	
+	}
 
-.child_nav_button a, a:visited
-{
-	margin-bottom: .05em;
-	display: block;
-	padding: .25em 1em;
-	color: black;
-	text-decoration: none;
-	text-align: center;
-	font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
-	text-shadow: none;
-	font-weight: 400;
-}
+/*
+Styles the links of the subbuttons when visited or not moused over yet
+*/
+	.child_nav_button a, a:visited
+	{
+		margin-bottom: .05em;
+		display: block;
+		padding: .25em 1em;
+		color: black;
+		text-decoration: none;
+		text-align: center;
+		font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+		text-shadow: none;
+		font-weight: 400;
+	}
 
-.child_nav_button a:hover {
-    background: #584A42;
-    font-family: "Avenir LT W01 65 Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-shadow: none;
-    font-weight: 400;
-    color: white;
-}
+/*
+Styles the links of the subbuttons when currently moused over
+*/
+	.child_nav_button a:hover 
+	{
+		background: #584A42;
+		font-family: "Avenir LT W01 65 Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-shadow: none;
+		font-weight: 400;
+		color: white;
+	}	
+	
+/*
+Styles the button of the current page to show clearly
+*/
+	#selected
+	{
+		background: #fc0;
+		color: #613318;
+	}	
+	
+/*
+Styles the nav of child buttons of the subnav bars for WRF models
+*/
+	.child_sub_nav_list 
+	{
+		list-style-type: none;
+		padding: 0;
+		min-width: 200px;
+		width: 3em;
+		margin:0;
+		margin-left: 4em;
+		color: #7c7c7c;
+		background-color: #fcf0bd;
+		position: relative;
+		top: 0;
+		overflow: auto;
+		box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
+		font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+		text-shadow: none;
+		font-weight: 400;
+	}
 
-#selected {
-    background: #fc0;
-    color: #613318;
-}
+/*
+Styles the links for visited or not moused over
+*/
+	.child_sub_nav_button a, a:visited
+	{
+		margin-bottom: .05em;
+		display: block;
+		padding: .25em 1em;
+		color: black;
+		text-decoration: none;
+		text-align: center;
+		font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
+		text-shadow: none;
+		font-weight: 400;
+	}
 
-.child_sub_nav_list 
-{
-	list-style-type: none;
-	padding: 0;
-	min-width: 200px;
-	width: 3em;
-	margin:0;
-	margin-left: 4em;
-	color: #7c7c7c;
-	background-color: #fcf0bd;
-	position: relative;
-	top: 0;
-	overflow: auto;
-	box-shadow: 0px 2px 10px rgba(0,0,0,0.2);
-	font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
-	text-shadow: none;
-	font-weight: 400;
-}
+/*
+Styles the links when currently moused over
+*/
+	.child_sub_nav_button a:hover
+	{
+		background: #584A42;
+		font-family: "Avenir LT W01 65 Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-shadow: none;
+		font-weight: 400;
+		color: white;
+	}
+	
+/*
+Changes color of child link to clearly display
+*/
+	#selected_child 
+	{
+		background: #eaf;
+		color: #502207;
+	}
 
-.child_sub_nav_button a, a:visited
-{
-	margin-bottom: .05em;
-	display: block;
-	padding: .25em 1em;
-	color: black;
-	text-decoration: none;
-	text-align: center;
-	font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
-	text-shadow: none;
-	font-weight: 400;
-}
+/*
+Links to upload page
+*/
+	#upload_link
+	{
+		cursor: pointer;
+	}
 
-.child_sub_nav_button a:hover {
-    background: #584A42;
-    font-family: "Avenir LT W01 65 Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-shadow: none;
-    font-weight: 400;
-    color: white;
-}
-
-#selected_child {
-    background: #eaf;
-    color: #502207;
-}
-
-#upload_link {
-    cursor: pointer;
-}
-
-.login_required {
-    /* TODO */
-}
-
-.nav_ncep
-{
-	margin: -48em 0 35em 0;
-}
-
-.login_input {
-	text-align: left;
-	padding: 8px;
-}
+/*
+Shifts the nav bar on NCEP up necessarily
+*/
+	.nav_ncep
+	{
+		margin: -48em 0 35em 0;
+	}

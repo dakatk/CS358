@@ -8,14 +8,16 @@ from os.path import isfile, join
 
 
 def station_climo(request):
+    """Parses the GET request that loads the station_climo page"""
 
     if request.method != 'GET':
         return HttpResponseForbidden()
 
     context = dict()
-
+    # Set the HTML file of the graph that will be used. This will be included through Django in station_climo.html
     context['station_template'] = 'station_climo/' + request.GET['station'] + '.html'
     s = request.GET['station']
+    # current_station is used in the station_climo.js to determine which dropdown is selected when the page loads up
     context['current_station'] = s
     context['current_city'] = s.split('_')[0]
     return render(request, 'station_climo.html', context)
@@ -23,6 +25,8 @@ def station_climo(request):
 
 @csrf_protect
 def file_names(request):
+    """Parses the POST request that the page uses to retrieve
+        the list of available files and station history via JS and Ajax"""
 
     if request.method != 'POST':
         return HttpResponseForbidden()
@@ -31,16 +35,20 @@ def file_names(request):
         return Http404()
 
     context = dict()
-
+    # The path where the files are located
     path = 'templates/station_climo/'
+    # A list of strings for all the files in the path directory (Does not include anything in super or sub directories)
     files = [f for f in listdir(path) if isfile(join(path, f))]
+    # Remove the .html from the end of the file names
     for index in range(len(files)):
         files[index] = files[index].replace('.html', '')
 
+    # Shift the path a directory further (Where the station history is located)
     path = path + 'files/'
     history_files = [f for f in listdir(path) if isfile(join(path, f))]
     history_file = ''
-    # Find the station history file corresponding to the currently selected station
+    # Find the station history file corresponding to the currently selected station.
+    # The name of the station starts with the city followed by a '_', which is why it is split and compared this way
     for item in history_files:
         s = item.split('_')
         if request.POST['current_station'].find(s[0]) != -1:

@@ -1,52 +1,83 @@
-#show_image img {
-    width: 600px;
-    height: 550px;
-}
+/*
+Standardizes the images for the soundings page
+*/
+	#show_image img
+	{
+		width: 600px;
+		height: 550px;
+	}
 
-#nav_sounding {
-	position: relative;
-	z-index: 10;
-	width: 0;
-}
+/*
+Ensures the the navigational bar for soundings is layered correctly
+*/
+	#nav_sounding
+	{
+		position: relative;
+		z-index: 3;
+		width: 0;
+	}
 
-.space
-{
-	position: relative;
-	margin: 10em 0% 0% 5%;
-	z-index: 3;
-}
+/*
+Shifts soundings down necessarily
+*/
+	.space
+	{
+		position: relative;
+		margin: 10em 0% 0% 5%;
+		z-index: 3;
+	}
 
-.home {
-    margin: 10% 0 0 0;
-}
+/*
+Shifts down more
+*/
+	.home 
+	{
+		margin: 10% 0 0 0;
+	}
 
-.content-main h2 {
-    margin-left: 30%;
-}
+/*
+Centers the title
+*/
+	.content-main h2 
+	{
+		margin-left: 30%;
+	}
+	
+/*
+Shives image down
+*/
+	#show_image
+	{
+		margin-top: .5em;
+	}
 
-#show_image
-{
-	margin-top: .5em;
-}
+/*
+Styles the title text
+*/
+	#sounding_title
+	{
+		color:black;
+		width: 20em;
+		text-align:center;
+		margin:0 0 0 -1em;
+	}
 
-#sounding_title
-{
-	color:black;
-	width: 20em;
-	text-align:center;
-	margin:0 0 0 -1em;
-}
+/*
+Styles the download links 
+*/
+	#downloads 
+	{
+		color:black;
+		margin: -21em 0 -10em 70em;
+		position:relative;
+		z-index:2;
+		text-decoration: underline, bold;
+	}
 
-#downloads 
-{
-	color:black;
-	margin: -21em 0 -10em 70em;
-	position:relative;
-	z-index:2;
-	text-decoration: underline, bold;
-}
-
-tr a, tr a:active
-{
-	color:black;
-}
+/*
+Changes the color of download links
+*/
+	tr a, tr a:active
+	{
+		color:black;
+	}

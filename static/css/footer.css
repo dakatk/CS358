@@ -1,41 +1,64 @@
-.column {
+/*
+Styles the vertical columns of the Footer for all pages
+*/
+	.column 
+	{
     float: left;
     width: 24%;
-}
+	}
 
-.row {
-  content: "";
-  display: table;
-  clear: both;
-  overflow: hidden;
-  background-color: #381e0e;
-  position: absolute;
-  left:0;
-  width: 100%;
-  vertical-align: middle;
-  text-align: center;
-  margin-left: 0;
-  margin-right: 0;
-}
+/*
+Styles the horizontal rows of the Footer for all pages
+*/
+	.row 
+	{
+		display: table;
+		clear: both;
+		overflow: hidden;
+		background-color: #381e0e;
+		position: absolute;
+		left:0;
+		width: 100%;
+		vertical-align: middle;
+		text-align: center;
+		margin-left: 0;
+		margin-right: 0;
+	}
 
-.column h3 {
-    font-size: 13px;
-    line-height: 5px;
-    font-weight: normal;
-    color: white;
-}
+/*
+Styles the smaller text of the columns for the Footer
+*/
+	.column h3
+	{
+		font-size: 13px;
+		line-height: 5px;
+		font-weight: normal;
+		color: white;
+	}
 
-.column h2 {
-    font-size: 15px;
-    text-decoration: underline;
-    color: #c8b18b;
-}
+/*
+Styles the larger text of the columns for the Footer
+*/
+	.column h2 
+	{
+		font-size: 15px;
+		text-decoration: underline;
+		color: #c8b18b;
+	}
 
-.column a, .column a:active, .column a:visited {
-    color: white;
-    text-decoration: none;
-}
+/*
+Styles the links within the Footer along with when its being clicked or has been clicked previously
+*/
+	.column a, .column a:active, .column a:visited 
+	{
+		color: white;
+		text-decoration: none;
+	}
 
-.column a:hover {
-    color: yellow;
-}
+/*
+Styles the links within the Footer while they are being moused over
+*/
+	.column a:hover 
+	{
+		color: yellow;
+	}

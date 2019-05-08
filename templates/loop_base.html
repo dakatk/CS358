@@ -27,12 +27,15 @@
 			<div id="preload"></div>
 
             <div class="content-main">
+                <!-- Block that is customized by each implementation of loop_base.html (see html files that have an extends block for this file).
+                This is needed in order to make sure they are all positioned vertically in the right way. -->
                 {% block style_main_content %}<div>{% endblock %}
                     <h2 id="title">{% block content_title %}{% endblock %}</h2>
 
                     {% include "frag/loop_ui/top.html" %}
                     {% include "frag/responses.html" %}
 
+                    <!-- Div where the image loop is loaded by js. See playback_loop.js for implementation-->
                     <div id="animate_loop">
                         <img id="current_frame" src="" alt="Failed to load image">
                     </div>
@@ -40,6 +43,7 @@
                     {% include "frag/loop_ui/bottom.html" %}
                 </div>
             </div>
+            <!-- Div with the sole purpose of creating the white box around the content for this page. See the CSS code for specifics -->
 			<div class="container-loop">
 			</div>
 		</div>

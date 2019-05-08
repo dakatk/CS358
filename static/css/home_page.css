@@ -1,41 +1,71 @@
+/*
+Layers the correct content to the front
+*/
+	#content 
+	{
+		position: relative;
+		margin: -19em 0 0 19em;
+		height: 500px;
+		z-index: 2;
+	}
 
-#content {
-    position: relative;
-    margin: -19em 0 0 19em;
-    height: 500px;
-    z-index: 2;
-}
+/*
+Centers text for titles on index
+*/
+	#content td 
+	{
+		text-align: center;
+	}
 
-#content td {
-    text-align: center;
-}
+/*
+Styles links to not look different from normal text
+*/
+	#content a {
+		
+		text-decoration: none;
+	}
 
-#content a {
-    text-decoration: none;
-}
+/*
+Provides a fixed size to the forecast data on the index page
+*/
+	#forecast_data img 
+	{
+		width: 200px;
+	}
 
-#forecast_data img {
-    width: 200px;
-}
+/*
+Upward shift to the different radar and model images
+*/
+	#non-first-element
+	{
+		position: relative;
+		top: -17em;
+	}
 
-#non-first-element {
-    position: relative;
-    top: -17em;
-}
+/*
+Fixed heigh for the pictures of models and radars
+*/
+	#non-first-element img
+	{
+		height: 25em;
+	}
 
-#non-first-element img {
-    height: 25em;
-}
+/*
+Styles the text for the forecast information
+*/
+	.column-header
+	{
+		font-size: 25px;
+		font-weight: bold;
+		position: relative;
+		margin-bottom: 25px;
+		font-family: "Avenir LT W01 65 Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
 
-.column-header {
-    font-size: 25px;
-    font-weight: bold;
-    position: relative;
-    margin-bottom: 25px;
-    font-family: "Avenir LT W01 65 Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
-.home
-{
-	padding: 58em 0 0em 0;
-}
+/*
+Shifts the footer up necessarily
+*/
+	.home
+	{
+		padding: 58em 0 0em 0;
+	}

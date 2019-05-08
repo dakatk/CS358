@@ -1,12 +1,14 @@
+/*
+Sets all base elements to White with Margin 0
+*/
 html, body {
     background-color: #FFF;
 	  margin: 0;
   }
 
-
-	article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {display:block;}
-	
-
+/*
+Styles the top bar to accept the valparaiso prestige logo
+*/
 	.top-bar
 	{
 		overflow: hidden;
@@ -18,8 +20,6 @@ html, body {
 		vertical-align:middle;
 		box-shadow: 0 5px 3px rgba(0,0,0,.5);
 	}
-
-
 	.top-bar img
 	{
 		max-width: fixed;
@@ -28,14 +28,19 @@ html, body {
 		padding-left:33vw;
 
 	}
-	
+
+/*
+Sets background color and centers page titles for all pages
+*/	
 	#intro
 	{
 		text-align: center;
 		color: #F3F3CF;
 	}
 
-
+/*
+Shifts all Navigation bars up to be in a better position to be moved up as necessary individually
+*/
 	#navbar
 	{
 		margin: -20em 0 3em 4em;

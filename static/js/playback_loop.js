@@ -67,7 +67,9 @@ $(function () {
       }
     }
   }
-  
+
+  //Determine and set the necessary interval between each frame
+  //This is also what initially drives the image loop for the page (See setInterval())
   function reset_interval () {
 
     if (image_cycles.length === 0) {
@@ -82,6 +84,7 @@ $(function () {
     interval = setInterval(loop_images, delay);
   }
 
+  //Set up all the situations whe buttons should be disabled/enabled
   function ui_setup () {
 
     // Necessary for page refresh:

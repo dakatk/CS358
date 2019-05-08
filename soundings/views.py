@@ -10,7 +10,7 @@ LAUNCH_DIR = 'static/soundings/launches'
 
 
 def soundings(request):
-    """Parses the GET request that loads the forecast page"""
+    """Parses the GET request that loads the soundings page"""
 
     # Stop POST and other potentially harmful requests
     if request.method != 'GET':
