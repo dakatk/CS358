@@ -177,6 +177,11 @@ $(function () {
           
       frame_value.prop('max', image_urls.length);
       playback_bar.prop('max', image_urls.length);
+
+      let playback_width = image_tag.css('width');
+      let playback_height = image_tag.css('height');
+
+      image_tag.attr('src', '/static/gifs/loading.gif');
           
       for (let i in image_urls) {
             
@@ -197,14 +202,16 @@ $(function () {
             frame_value.prop('disabled', false);
             playback_bar.prop('disabled', false);
 
-            start_button.prop('disabled', false);
+            stop_button.prop('disabled', false);
+            
             image_tag.attr('src', image_urls[0]);
+
+            running = true;
           }
         };
 
         image_cycles[i].src = image_urls[i];
       }
-      image_tag.attr('src', '/static/gifs/loading.gif');
 
       reset_interval();
     },

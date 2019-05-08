@@ -1,7 +1,7 @@
 $(function () {
   
   const csrf_form = $('#csrf_form');
-  const image_tag = $('#show_image');
+  const image_tag = $('#current_image');
 
   const options = $('#options');
   const error_response = $('#error_response');
@@ -55,7 +55,7 @@ $(function () {
     if (val >= image_selects.length) {
       return false;
     }
-    image_tag.html(image_selects[val]);
+    image_tag.attr('src', image_selects[val].src);
 
     update_dl_links(val);
     update_header();
@@ -92,7 +92,8 @@ $(function () {
 
       update_header();
 
-      image_tag.html(image_selects[image_selects.length - 1]);
+      image_tag.attr('src', image_selects[image_selects.length - 1].src);
+      image_tag.attr('alt', 'Failed to load image');
     },
     error: function (response) {
       error_response.text('Error loading images');
