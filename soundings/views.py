@@ -39,16 +39,20 @@ def parse_soundings_data():
     launch_dirs = get_launch_sub_dirs()
     names = ['' for _ in launch_dirs]
 
+    # Read from .STD or SUMMARY.txt file to parse
+    # date and time for each sounding:
     for (index, ref) in enumerate(launch_dirs):
 
         std_path = f'{LAUNCH_DIR}/{ref}/{ref}.STD'
         summary_path = f'{LAUNCH_DIR}/{ref}/{ref}_SUMMARY.txt'
 
         if os.path.isfile(std_path):
+            
             with open(std_path, 'r', encoding='utf-8', errors='ignore') as f:
                 names[index] = parse_name_from_std(f)
 
         elif os.path.isfile(summary_path):
+            
             with open(summary_path, 'r', encoding='utf-8', errors='ignore') as f:
                 names[index] = parse_name_from_summary(f)
 
@@ -95,6 +99,9 @@ def images(request):
     session_key = 'soundings_selects'
     rescan_key = 'rescan_launches'
 
+    # Check if the launches directory needs to be rescanned,
+    # regardless of whether or not the paths have already been parsed
+    # and saved in session data
     if rescan_key in request.session:
 
         if request.session[rescan_key] and session_key in request.session:
@@ -124,11 +131,14 @@ def get_launch_sub_dirs():
     global LAUNCH_DIR
 
     walk = os.walk(LAUNCH_DIR)
+
+    # Ignore sub-directories with these names:
     blacklist = ['launches', '007_001', '039_002', '017_001']
 
     def dirname(d):
         return d.replace('\\', '/').split('/')[-1]
 
+    # Returns a list of the raw directory names without the preceeding file path
     dirs = [dirname(d[0]) for d in walk if dirname(d[0]) not in blacklist]
 
     return sorted(dirs)

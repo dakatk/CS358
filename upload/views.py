@@ -98,6 +98,7 @@ def check_file(upload_file_name):
 
     global ENDINGS
 
+    # Check that the file ends in one of the known file format strings:
     has_ending = False
     
     for ending in ENDINGS:
@@ -110,13 +111,17 @@ def check_file(upload_file_name):
     if not has_ending:
         return None
 
-    regex = '^[0-9]+_[0-9]+'
+    # fits format: {number(s)}_{number(s)}
+    regex = '^[0-9]+_[0-9]+' 
 
     match = re.search(regex, upload_file_name)
 
     if match is None:
         return None
 
+    # Split off the timestamp from the beginning of the file name
+    # string. For example, the string 20190303_01 would be pulled
+    # from the file named 20190303_01_SUMMARY.txt 
     return upload_file_name[match.start():match.end()]
 
 
@@ -126,6 +131,7 @@ def write_from_uploaded_file(uploaded_file, launch_timestamp):
 
     launch_dir = 'static/soundings/launches/' + launch_timestamp
 
+    # Create the directory in launches if it does not yet exist
     if not os.path.exists(launch_dir):
         os.mkdir(launch_dir)
 
