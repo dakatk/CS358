@@ -1,1 +1,6 @@
 Django==2.1.5
+scipy==1.2.1
+numpy==1.15.4
+matplotlib==3.0.3
+MetPy==0.10.0
+SHARPpy==1.4.0a4

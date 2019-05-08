@@ -1,6 +1,6 @@
 $(function () {
 
-  const image_tag = $('#animate_loop');
+  const image_tag = $('#current_frame');
 
   const start_button = $('#start_button');
   const stop_button = $('#stop_button');
@@ -47,7 +47,7 @@ $(function () {
   
   function update_frame () {
 
-    image_tag.html(image_cycles[image_index]);
+    image_tag.attr('src', image_cycles[image_index].src);
 
     playback_bar.val(image_index + 1);
     frame_value.val(image_index + 1);
@@ -56,10 +56,8 @@ $(function () {
   function loop_images () {
     
     if (running) {
-      // TODO dry run one loop (hidden, only override preload)
       
-      window.requestAnimationFrame(update_frame);
-      // update_frame();
+      update_frame();
       
       if (forward) {
         step_forward();
@@ -67,16 +65,6 @@ $(function () {
       else {
         step_backward();
       }
-    }
-  }
-
-  function dry_run (image_urls) {
-
-    for (let i in image_urls) {
-
-      $('#preload').append(
-        '<div style=background-image: url("' + image_urls[i] + '")></div>'
-      );
     }
   }
   
@@ -96,8 +84,9 @@ $(function () {
 
   function ui_setup () {
 
-    // Necessary for page refresh
+    // Necessary for page refresh:
     start_button.prop('disabled', true);
+    stop_button.prop('disabled', true);
         
     back_button.prop('disabled', true);
     forward_button.prop('disabled', true);
@@ -159,7 +148,7 @@ $(function () {
         
       image_index = parseInt(playback_bar.val()) - 1;
 
-      image_tag.html(image_cycles[image_index]);
+      image_tag.attr('src', image_cycles[image_index]);
       frame_value.val(image_index + 1);
     });
       
@@ -167,7 +156,7 @@ $(function () {
         
       image_index = parseInt(frame_value.val()) - 1;
 
-      image_tag.html(image_cycles[image_index]);
+      image_tag.attr('src', image_cycles[image_index]);
       playback_bar.val(image_index + 1);
     });
   }
@@ -183,12 +172,16 @@ $(function () {
     success: function (response) {
           
       let image_urls = response['image_cycle'];
-      dry_run(image_urls);
           
       image_cycles = new Array(image_urls.length);
           
       frame_value.prop('max', image_urls.length);
       playback_bar.prop('max', image_urls.length);
+
+      let playback_width = image_tag.css('width');
+      let playback_height = image_tag.css('height');
+
+      image_tag.attr('src', '/static/gifs/loading.gif');
           
       for (let i in image_urls) {
             
@@ -199,23 +192,26 @@ $(function () {
           if (this.complete) {
             loaded ++; 
           }
-          console.log(loaded);
 
           // buffering
           if (loaded == image_cycles.length) {
+
+            frame_value.val(1);
+            playback_bar.val(1);
+
+            frame_value.prop('disabled', false);
+            playback_bar.prop('disabled', false);
+
+            stop_button.prop('disabled', false);
+            
+            image_tag.attr('src', image_urls[0]);
+
             running = true;
           }
         };
 
         image_cycles[i].src = image_urls[i];
       }
-          
-      image_index = image_cycles.length - 1;
-
-      let loading_gif = new Image();
-      loading_gif.src = '/static/gifs/loading.gif';
-
-      image_tag.html(loading_gif);
 
       reset_interval();
     },

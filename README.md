@@ -1,3 +1,7 @@
+Made using Django version 2.1.5 framework with Python version 3.7
+
+Developers: Colin Braun, Dusten Knull, and Chris Zeniecki
+
 To install dependencies: 
 
  - On Unix, cd into the Django directory from a Terminal window, then run `bash install.sh`

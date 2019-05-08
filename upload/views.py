@@ -85,6 +85,9 @@ def files(request):
             written = True
             write_from_uploaded_file(file, launch_timestamp)
 
+    if not written:
+        return JsonResponse({'warning': 'Failed to write files'})
+        
     request.session[RESCAN_KEY] = written
 
     return JsonResponse({'success': 'Files successfully written'})

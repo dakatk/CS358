@@ -10,42 +10,13 @@ $(function () {
 
     login_modal.modal('hide');
 
-    function getCookie(cname) {
-
-        let name = cname + '=';
-
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-
-        for(let i = 0; i < ca.length; i++) {
-
-            let c = ca[i];
-
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-            }
-        }
-        return '';
-    }
-
     upload_link.on('click', function (event) {
 
         event.preventDefault();
         error_response.text('');
 
-	if (getCookie('save_login') == 'true') {
-            window.location.href = '/upload/';
-	}
-
-        else {
-
-            login_modal.modal('show');
-            login_modal.appendTo('body');
-        }
+        login_modal.modal('show');
+        login_modal.appendTo('body');
     });
 
     login_form.on('submit', function (event) {
@@ -66,10 +37,6 @@ $(function () {
                 error_response.hide();
 
                 if (response.hasOwnProperty('success')) {
-
-		    if ($('#save_login').prop('checked')) {
-                        document.cookie = 'save_login=true; path=/';
-		    }
 
                     login_modal.modal('hide');
                     window.location.href = '/upload/';

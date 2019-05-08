@@ -1,6 +1,6 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static "css/forecast.css" %}" />
-<div>
+<!-- A fragment that contains all the forecast data. Note that if this is being used, the page using it MUST call and add the contents to context of parse_forecast_data(), located in forecast's views.py-->
 <table>
     <tr>
         {% for arr in data %}
@@ -15,4 +15,3 @@
         {% endfor %}
     </tr>
 </table>
-</div>
