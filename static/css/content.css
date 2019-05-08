@@ -135,4 +135,5 @@
   padding: 9px !important;
   margin-top: 5px !important;
   width: max-content !important;
+  max-width: 95% !important;
 }
