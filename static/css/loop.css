@@ -1,7 +1,12 @@
-#animate_loop img {
-    width: 750px;
-    height: 650px;
-    padding-left: 4%;
-    padding-top: 3%;
-    z-index: -1;
-}
+/*
+Styles the images on loop pages to ensure they are the correct size and layer for their GUI 
+and their container
+*/
+	#animate_loop img
+	{
+		width: 750px;
+		height: 650px;
+		padding-left: 4%;
+		padding-top: 3%;
+		z-index: -1;
+	}

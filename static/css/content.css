@@ -1,25 +1,43 @@
-.content
+/*
+Prepares all pages with necessary additions to put the content on top
+*/	
+	.content
 	{
 		margin-top: 0;
 		position:relative;
 		z-index:2;
 	}
+	
+/*
+Accounts for navigation bars pushing down main content
+*/	
 	.content-main
 	{
 		margin: -22em 0em 0em 21em;
 		max-width:45em;
 
 	}
+
+/*
+Centers and Prepares page titles
+*/	
 	.content-main h2
 	{
 		padding-left:2.5em;
 		text-align:center;
 	}
+
+/*
+Ensures the background image does not shift
+*/	
 	.content-main img
 	{
 		position:absolute;
 	}
 	
+/*
+Changes text font and thickness to fit specification
+*/	
 	#title
 	{
 		font-family: "Avenir LT W01 65 Medium","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -29,73 +47,94 @@
 		
 	}
 	
+/*
+Styles the background container on Index page
+*/	
 	.container-index
 	{
-	margin: -36em 0 -50em 18em;
-	background: white;
-	width:73.7em;
-	height:71em;
-	filter:opacity(.7);
-	overflow:hidden;
-	z-index:1
+		margin: -36em 0 -50em 18em;
+		background: white;
+		width:73.7em;
+		height:71em;
+		filter:opacity(.7);
+		overflow:hidden;
+		z-index:1
 	}
 	
+/*
+Styles the background container on Forecast Page
+*/	
 	.container-forecast
 	{
-	margin: -85.5em 0 0 18em;
-	background: white;
-	width:74em;
-	height:86.5em;
-	filter:opacity(.7);
-	overflow:hidden;
-	z-index:1
+		margin: -85.5em 0 0 18em;
+		background: white;
+		width:74em;
+		height:86.5em;
+		filter:opacity(.7);
+		overflow:hidden;
+		z-index:1
 	}
 	
+/*
+Styles the background container on Soundings Page
+*/	
 	.container-soundings
 	{
-	margin: -5em 0 0 25em;
-	background: white;
-	width:56em;
-	height:45em;
-	filter:opacity(.7);
-	overflow:hidden;
-	z-index:1;
+		margin: -5em 0 0 25em;
+		background: white;
+		width:56em;
+		height:45em;
+		filter:opacity(.7);
+		overflow:hidden;
+		z-index:1;
 	}
 	
+/*
+Styles the background container on ALL Image looping Pages
+*/	
 	.container-loop
 	{
-	margin: -56em 0 0 23em;
-	background: white;
-	width:54em;
-	height:58em;
-	filter:opacity(.7);
-	overflow:hidden;
-	z-index:-2;
-	position: relative;
+		margin: -56em 0 0 23em;
+		background: white;
+		width:54em;
+		height:58em;
+		filter:opacity(.7);
+		overflow:hidden;
+		z-index:-2;
+		position: relative;
 	}
 	
+/*
+Styles the background container on Station Climo Page
+*/	
 	.container-climo
 	{
-	margin: -74em 0 0 19em;
-	background: white;
-	width:74em;
-	height:75em;
-	filter:opacity(.7);
-	overflow:hidden;
-	z-index:1
+		margin: -74em 0 0 19em;
+		background: white;
+		width:74em;
+		height:75em;
+		filter:opacity(.7);
+		overflow:hidden;
+		z-index:1
 	}
 	
+/*
+Styles the background container on Upload Page
+*/	
 	.container-upload
 	{
-	margin: -20em 0 3em 19em;
-	background: white;
-	width:28em;
-	height:17em;
-	filter:opacity(.7);
-	overflow:hidden;
-	z-index:0;
+		margin: -20em 0 3em 19em;
+		background: white;
+		width:28em;
+		height:17em;
+		filter:opacity(.7);
+		overflow:hidden;
+		z-index:0;
 	}
 	
+/*
+Shifts the main buttons and box for upload up
+*/	
 	.content-main-upload
 	{
 		z-index:2;
@@ -106,33 +145,52 @@
 		max-height:7em;
 	}
 	
+/*
+Shifts upload up and overrides HTML margins
+*/	
 	.extra-space-upload
 	{
 		margin: 10em 0 10em 0;
 	}
 	
+/*
+Styles the background container on the SVG pages
+*/	
 	#svg-container
 	{
 		margin: 0 0 50em 0;
 	}
 
+/*
+Shifts the bottom links bar down 
+*/	
 	footer
 	{
 		margin-top: 13em;
 	}
 
+/*
+pushes Footer down on all loop pages necessarily
+*/	
 	#below
 	{
 		margin: 40em 0 0 5.5em;
 	}
 
+/*
+Shifts entire satellite page down 
+*/	
 	.satellite
 	{
 		margin: 50em 0 0 0;
 	}
 
-.alert {
-  padding: 9px !important;
-  margin-top: 5px !important;
-  width: max-content !important;
-}
+/*
+Styles the alert for Upload page
+*/	
+	.alert 
+	{
+		padding: 9px !important;
+		margin-top: 5px !important;
+		width: 10em !important;
+	}
