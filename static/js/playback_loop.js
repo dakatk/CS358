@@ -191,8 +191,6 @@ $(function () {
           // buffering
           if (loaded == image_cycles.length) {
 
-            // running = true;
-
             frame_value.val(1);
             playback_bar.val(1);
 
